@@ -1,0 +1,96 @@
+//
+//  NewAddressViewController.m
+//  PinPrice
+//
+//  Created by lvyongtao on 16/8/22.
+//  Copyright © 2016年 lvyongtao. All rights reserved.
+//
+#define BTN_H 50
+#define NEWVIEW_H 50
+#import "NewAddressViewController.h"
+#import "NewAddressView.h"
+
+
+@interface NewAddressViewController ()
+@property (strong, nonatomic) UIButton *SaveBtn;
+@property (strong, nonatomic) NSArray *titleArr;
+
+@end
+@implementation NewAddressViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    [self initNavgationBar];
+    [self initNewAddressView];
+}
+- (void)initNavgationBar{
+    [self addTitleViewWithTitle:@"新建地址"];
+    [self.SaveBtn setTintColor:[UIColor clearColor]];
+}
+- (void)initNewAddressView{
+    _titleArr = @[@"收货人",@"手机号码",@"所在地区",@"详细地址"];
+
+    for (int i = 0; i < 4; i ++) {
+        NewAddressView *view = [[NewAddressView alloc] init];
+        view.tag = i;
+        if (self.model) {
+            switch (view.tag) {
+                case 0:
+                    view.detailText = self.model.name;
+                    break;
+                case 1:
+                    view.detailText = self.model.phone;
+                    break;
+                case 2:
+                    view.detailText = self.model.address;
+                    break;
+                case 3:
+                    view.detailText = self.model.address;
+                    break;
+                default:
+                    break;
+            }
+        }
+        view.titleText = _titleArr[i];
+        view.frame = CGRectMake(0,NEWVIEW_H*i, WIDTH, NEWVIEW_H);
+        [self.view addSubview:view];
+        
+        
+    }
+}
+#pragma mark --lazyload
+- (UIButton *)SaveBtn{
+    if (!_SaveBtn) {
+        _SaveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _SaveBtn.backgroundColor = [UIColor grayColor];
+        _SaveBtn.frame = CGRectMake(0, HEIGHT - BTN_H - NavH, WIDTH, BTN_H);
+        [_SaveBtn setTitle:@"保存" forState:UIControlStateNormal];
+        _SaveBtn.userInteractionEnabled = YES;
+        [_SaveBtn addTarget:self action:@selector(SaveBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_SaveBtn];
+    }
+    return _SaveBtn;
+}
+- (void)SaveBtnClick:(UIButton *)btn{
+    
+    NSLog(@"保存");
+    
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LikeCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="176" height="127"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="176" height="127"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pR5-JU-Dbz">
+                        <rect key="frame" x="8" y="0.0" width="168" height="92"/>
+                        <color key="backgroundColor" red="0.68744367709999998" green="1" blue="0.70590287009999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="连衣裙" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uc-Ct-W0i">
+                        <rect key="frame" x="8" y="101" width="168" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="pR5-JU-Dbz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="0bM-Vf-B9E"/>
+                <constraint firstAttribute="trailing" secondItem="pR5-JU-Dbz" secondAttribute="trailing" id="6Ue-QU-Lod"/>
+                <constraint firstItem="1uc-Ct-W0i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="DOj-hw-8wV"/>
+                <constraint firstItem="1uc-Ct-W0i" firstAttribute="top" secondItem="pR5-JU-Dbz" secondAttribute="bottom" constant="9" id="EWB-J0-el4"/>
+                <constraint firstAttribute="trailing" secondItem="1uc-Ct-W0i" secondAttribute="trailing" id="Ma6-Wv-ZYl"/>
+                <constraint firstAttribute="bottom" secondItem="1uc-Ct-W0i" secondAttribute="bottom" constant="8" id="bkZ-tc-3Yu"/>
+                <constraint firstItem="1uc-Ct-W0i" firstAttribute="top" secondItem="pR5-JU-Dbz" secondAttribute="bottom" constant="9" id="fjX-15-lIi"/>
+                <constraint firstItem="pR5-JU-Dbz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nqh-l5-SJB"/>
+            </constraints>
+            <size key="customSize" width="176" height="127"/>
+            <connections>
+                <outlet property="likegoodImage" destination="pR5-JU-Dbz" id="ITg-Tc-dWt"/>
+                <outlet property="likegoodLable" destination="1uc-Ct-W0i" id="mIZ-PV-gRd"/>
+            </connections>
+            <point key="canvasLocation" x="316" y="320.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
