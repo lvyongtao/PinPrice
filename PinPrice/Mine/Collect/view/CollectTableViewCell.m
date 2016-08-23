@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.selectionStyle = UITableViewCellSelectionStyleGray;
+    self.selectionStyle = UITableViewCellSelectionStyleDefault;
     
     _sizeLable.layer.cornerRadius = 4.f;
     _sizeLable.layer.masksToBounds = YES;

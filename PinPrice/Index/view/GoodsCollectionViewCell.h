@@ -11,6 +11,9 @@
 
 @interface GoodsCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *goodsImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLable;
+@property (weak, nonatomic) IBOutlet UILabel *priceLable;
 
 @property (strong, nonatomic) RelatedGoodsListModel *model;
 

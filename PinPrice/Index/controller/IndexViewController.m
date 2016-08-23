@@ -20,7 +20,6 @@
 #import "PinGood.h"
 #import "LikeCollectionViewCell.h"
 #import "AllCollectionViewCell.h"
-#import "GoodsViewController.h"
 
 @interface IndexViewController ()<SDCycleScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 

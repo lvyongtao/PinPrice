@@ -11,7 +11,7 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+//系统类头文件&&第三方类头文件
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "ACMacros.h"
@@ -22,15 +22,19 @@
 #import "UIView+Extension.h"
 #import "NSObject+YYModel.h"
 #import "UIImageView+WebCache.h"
-
-
+#import "UITableView+FDTemplateLayoutCell.h"
+//自定义类头文件
 #import "PinConfig.h"
 #import "PinUserInfo.h"
 #import "BaseModel.h"
 #import "UIView+MBView.h"
 #import "UIImage+Extensition.h"
 #import "UITableView+EmptyTableView.h"
-#import "UITableView+FDTemplateLayoutCell.h"
+
+
+//商品类头文件
+#import "GoodsViewController.h"
+#import "PinGood.h"
 
 
 

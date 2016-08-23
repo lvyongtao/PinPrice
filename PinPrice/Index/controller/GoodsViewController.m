@@ -7,15 +7,15 @@
 //
 //#define TIMECELL_HEIGHT 40
 //#define MINLINESPACEING 5
-#define MINLINESPACEING_RELATED 15
+#define MINLINESPACEING_RELATED 5
 
 
 //#define CELL_NUM 32
 //#define LINESPACE_Y 5
 
-#import "GoodsViewController.h"
 #import "GoodDetaiView.h"
 #import "GoodsCollectionViewCell.h"
+#import "BuyGoodsViewController.h"
 
 
 @interface GoodsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,GoodDetaiViewBtnActionDelegate>
@@ -56,7 +56,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 }
 - (void)initgoodColletionView{
     
-    [self.goodColletionView reloadData];
+    [self requsetData];
     
 }
 
@@ -128,7 +128,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     if (!_goodColletionView) {
         _goodLayout = [[UICollectionViewFlowLayout alloc] init];
         [_goodLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-        _goodLayout.itemSize = CGSizeMake(WIDTH/2 - MINLINESPACEING_RELATED/2, 0.38*HEIGHT - MINLINESPACEING_RELATED/2);
+        _goodLayout.itemSize = CGSizeMake(WIDTH/2 - MINLINESPACEING_RELATED/2, 1.5*WIDTH/2);
         _goodLayout.minimumLineSpacing = 0;
         _goodLayout.minimumInteritemSpacing = 0;
         _goodColletionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH,HEIGHT - NavH) collectionViewLayout:_goodLayout];
@@ -150,8 +150,6 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     }
     return _goods;
 }
-
-
 #pragma mark --UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -178,6 +176,9 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     GoodsCollectionViewCell *cell = (GoodsCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
+    
+    GoodsViewController *good = [[GoodsViewController alloc] init];
+    [self.navigationController pushViewController:good animated:YES];
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     GoodsCollectionViewCell *cell = (GoodsCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
@@ -201,7 +202,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (collectionView == _goodColletionView) {
-        return (CGSize){WIDTH,HEIGHT - NavH};
+        return (CGSize){WIDTH,HEIGHT - NavH + 0.11*HEIGHT};
     }else{
         return (CGSize){0,0};
     }
@@ -226,7 +227,8 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     NSLog(@"%zi",type);
 }
 - (void)ActionTypeBuy{
-    
+    BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
+    [self.navigationController pushViewController:buy animated:YES];
 }
 - (void)ActionTypeCart{
     

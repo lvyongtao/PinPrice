@@ -15,6 +15,7 @@
     _deleteBtn.tag = self.tag;
     _editingBtn.tag = self.tag;
     _setDefaultBtn.tag = self.tag;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Initialization code
 }
 - (void)setModel:(AddressModel *)model{

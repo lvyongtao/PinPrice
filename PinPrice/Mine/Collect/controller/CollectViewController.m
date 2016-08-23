@@ -141,7 +141,11 @@ static NSString *const cellID = @"CollectTableViewCell";
         NSLog(@"选中----%zi",indexPath.row);
         CollectModel *model = self.collects[indexPath.row];
         [self.deletes addObject:model];
+        return;
     }
+    
+    GoodsViewController *good = [[GoodsViewController alloc] init];
+    [self.navigationController pushViewController:good animated:YES];
     
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -149,6 +153,7 @@ static NSString *const cellID = @"CollectTableViewCell";
         CollectModel *model = self.collects[indexPath.row];
         [self.deletes removeObject:model];
         NSLog(@"移除----%zi",indexPath.row);
+        return;
     }
 }
 //设置section的高度

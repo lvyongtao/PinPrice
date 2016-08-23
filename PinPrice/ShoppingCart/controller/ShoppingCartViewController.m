@@ -131,6 +131,15 @@ static NSString *cellID = @"ShoppingCartViewCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 1.0;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    GoodsViewController *good = [[GoodsViewController alloc] init];
+    good.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:good animated:YES];
+}
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+#pragma mark --ShopButtonClickDelegate
 - (void)shopButtonClickNumString:(NSString *)numString ButtonTag:(NSInteger)buttonTag{
     
      NSLog(@"buy count--->%@--->%zi",numString,buttonTag);

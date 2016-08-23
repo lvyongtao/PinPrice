@@ -29,6 +29,7 @@
 		D83FB9A01D644D1500CFD5E3 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FB9981D644D1500CFD5E3 /* SDCycleScrollView.m */; };
 		D83FB9A11D644D1500CFD5E3 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FB99A1D644D1500CFD5E3 /* UIView+SDExtension.m */; };
 		D83FB9A41D64701500CFD5E3 /* GoodCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FB9A31D64701500CFD5E3 /* GoodCollectionViewLayout.m */; };
+		D84244DE1D6C4D9100632C14 /* BuyGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84244DD1D6C4D9100632C14 /* BuyGoodsViewController.m */; };
 		D8445DA61D62E61B0031C02A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8445DA51D62E61B0031C02A /* RegisterViewController.m */; };
 		D8445DA81D62E7790031C02A /* all_back.png in Resources */ = {isa = PBXBuildFile; fileRef = D8445DA71D62E7790031C02A /* all_back.png */; };
 		D8445DAB1D6303C10031C02A /* UIView+MBView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8445DAA1D6303C10031C02A /* UIView+MBView.m */; };
@@ -233,6 +234,8 @@
 		D83FB99A1D644D1500CFD5E3 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		D83FB9A21D64701500CFD5E3 /* GoodCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodCollectionViewLayout.h; sourceTree = "<group>"; };
 		D83FB9A31D64701500CFD5E3 /* GoodCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodCollectionViewLayout.m; sourceTree = "<group>"; };
+		D84244DC1D6C4D9100632C14 /* BuyGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyGoodsViewController.h; sourceTree = "<group>"; };
+		D84244DD1D6C4D9100632C14 /* BuyGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyGoodsViewController.m; sourceTree = "<group>"; };
 		D8445DA41D62E61B0031C02A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D8445DA51D62E61B0031C02A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		D8445DA71D62E7790031C02A /* all_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_back.png; sourceTree = "<group>"; };
@@ -591,6 +594,15 @@
 			path = PageControl;
 			sourceTree = "<group>";
 		};
+		D84244DB1D6C4D7200632C14 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				D84244DC1D6C4D9100632C14 /* BuyGoodsViewController.h */,
+				D84244DD1D6C4D9100632C14 /* BuyGoodsViewController.m */,
+			);
+			path = Buy;
+			sourceTree = "<group>";
+		};
 		D8445DB01D6311FB0031C02A /* OTTServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -906,6 +918,7 @@
 				D8A5ECEA1D585E36004551FB /* IndexViewController.m */,
 				D8D8F6A41D6AD55D00FD7868 /* GoodsViewController.h */,
 				D8D8F6A51D6AD55D00FD7868 /* GoodsViewController.m */,
+				D84244DB1D6C4D7200632C14 /* Buy */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1678,6 +1691,7 @@
 				D8A5ECE51D585E20004551FB /* ShoppingCartViewController.m in Sources */,
 				D8E017B61D63F8C300DC4A40 /* MineViewController.m in Sources */,
 				D8E70E6D1D5B059D0008801D /* MJRefreshBackGifFooter.m in Sources */,
+				D84244DE1D6C4D9100632C14 /* BuyGoodsViewController.m in Sources */,
 				D8E70E711D5B059D0008801D /* MJRefreshNormalHeader.m in Sources */,
 				D8E70E681D5B059D0008801D /* MJRefreshFooter.m in Sources */,
 				D8E70E871D5B059D0008801D /* UIImageView+WebCache.m in Sources */,

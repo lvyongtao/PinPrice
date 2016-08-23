@@ -22,6 +22,10 @@
  *  停止加载
  */
 - (void)stopLoadingAnimation;
+/**
+ *  自定义NavgationBar
+ */
+- (void)initNavgationBar;
 
 ///创建导航栏标题
 -(void)addTitleViewWithTitle:(NSString *)title;

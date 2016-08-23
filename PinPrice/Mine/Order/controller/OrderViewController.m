@@ -237,8 +237,8 @@ static NSString *const cellID = @"orderTableViewCell";
 }
 #pragma mark --UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   
-    
+    GoodsViewController *good = [[GoodsViewController alloc] init];
+    [self.navigationController pushViewController:good animated:YES];
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     

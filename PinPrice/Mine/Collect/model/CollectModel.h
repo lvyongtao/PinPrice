@@ -17,4 +17,5 @@
 @property (copy, nonatomic) NSString *price;
 @property (copy, nonatomic) NSString *state;
 
+
 @end

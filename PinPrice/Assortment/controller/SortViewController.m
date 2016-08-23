@@ -16,7 +16,6 @@
 #import "SortViewController.h"
 #import "RecommendCell.h"
 #import "HotCollectionViewCell.h"
-#import "GoodsViewController.h"
 #import "RecommendModel.h"
 #import "HotModel.h"
 
@@ -46,7 +45,11 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initNavgationBar];
     [self requestDataHot];
+}
+- (void)initNavgationBar{
+    [self addTitleViewWithTitle:@"分类"];
 }
 
 #pragma mark --requestData

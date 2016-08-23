@@ -123,17 +123,17 @@
         self.relatedLable.text = self.reloatedText;
     }
     
-    self.goodsImage.frame = CGRectMake(0, 0, self.width, self.height - 0.11*self.height);
+    self.goodsImage.frame = CGRectMake(0, 0, self.width, self.height - 0.11*self.height - 0.11*HEIGHT);
     
     self.goodsLable.frame = CGRectMake(0, self.goodsImage.height - 0.088*self.height, self.width/2, 0.088*self.height);
     
     self.priceLable.frame = CGRectMake(self.width/2, self.goodsImage.height - 0.088*self.height, self.width/2, 0.088*self.height);
     
-    self.relatedLable.frame = CGRectMake(0, self.goodsImage.height +0.11*self.height, self.width, 0.11*self.height);
+    self.relatedLable.frame = CGRectMake(0, self.goodsImage.height +0.11*self.height, self.width, 0.11*HEIGHT);
     
     for (int i = 0;i < 3; i ++) {
         UIButton *btn = [self viewWithTag:100 + i];
-        btn.frame = CGRectMake(i*self.width/3, self.height - 0.11*self.height,self.width/3, 0.11*self.height);
+        btn.frame = CGRectMake(i*self.width/3, self.goodsImage.height,self.width/3, 0.11*self.height);
         [btn setTitle:self.btnTitles[i] forState:UIControlStateNormal];
     }
 }
