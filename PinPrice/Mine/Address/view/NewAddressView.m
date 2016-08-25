@@ -27,7 +27,7 @@
         _titleLable.backgroundColor = [UIColor clearColor];//0.07
         _titleLable.textColor = [UIColor grayColor];
         _titleLable.textAlignment = NSTextAlignmentLeft;
-        _titleLable.font = [UIFont systemFontOfSize:18];
+        _titleLable.font = [UIFont systemFontOfSize:16];
         [self addSubview:_titleLable];
     }
     return _titleLable;
@@ -39,6 +39,7 @@
         _textField.backgroundColor = [UIColor clearColor];
         _textField.textAlignment = NSTextAlignmentLeft;
         _textField.borderStyle = UITextBorderStyleNone;
+        _textField.font = [UIFont systemFontOfSize:16];
         _textField.returnKeyType = UIReturnKeyDone;
         _textField.tag = self.tag;
         _textField.delegate = self;
@@ -51,7 +52,8 @@
         _textView = [[UITextView alloc] init];
         _textView.textAlignment = NSTextAlignmentLeft;
         _textView.returnKeyType = UIReturnKeyDone;
-        _textView.font = [UIFont systemFontOfSize:18];
+        _textView.font = [UIFont systemFontOfSize:16];
+        _textView.tag =self.tag;
         _textView.delegate = self;
         [self addSubview:_textView];
     }
@@ -65,7 +67,7 @@
     }
     return _singleLine;
 }
-#pragma mark --delegate
+#pragma mark --UITextFieldDelegate
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
     NSInteger existedLength = textField.text.length;
@@ -81,7 +83,7 @@
             if (existedLength - selectedLength + replaceLength > 11){return NO;}
             break;
         case 2:
-            if (existedLength - selectedLength + replaceLength > 11){return NO;}
+            if (existedLength - selectedLength + replaceLength > 40){return NO;}
             break;
         case 3:
             if (existedLength - selectedLength + replaceLength > 40){return NO;}
@@ -93,35 +95,39 @@
     return YES;
 }
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    //    if ([self.delegate respondsToSelector:@selector(newUserInfoTetxFiledClick:)]) {
-    //        [self.delegate newUserInfoTetxFiledClick:self.tag];
-    //    }
     return YES;
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     [self.textField resignFirstResponder];
     NSLog(@"%@",textField.text);
+    if ([self.delegate respondsToSelector:@selector(NewAddressViewEndEditingText:Index:)]) {
+        [self.delegate NewAddressViewEndEditingText:textField.text Index:self.tag];
+    }
     return YES;
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self.textField resignFirstResponder];
     return YES;
 }
-#pragma mark --
+#pragma mark --UITextViewDelegate
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView{
     
     [self.textView resignFirstResponder];
+    if ([self.delegate respondsToSelector:@selector(NewAddressViewEndEditingText:Index:)]) {
+        [self.delegate NewAddressViewEndEditingText:textView.text Index:self.tag];
+    }
     NSLog(@"%@",self.textView.text);
     return YES;
 }
 - (void)textViewDidChange:(UITextView *)textView{
     
     if ([self.textView.text containsString:@"\n"]) {
-        self.textView.text =[self.textView.text stringByReplacingOccurrencesOfString:@"\n" withString: @""];
+        self.textView.text =[self.textView.text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         NSLog(@"%@",self.textView.text);
         [self.textView resignFirstResponder];
     }
 }
+#pragma mark --layoutSubviews
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.titleLable.text = [NSString stringWithFormat:@"%@:",self.titleText];

@@ -21,7 +21,10 @@
 @end
 static NSString *const cellID = @"AddressTableViewCell";
 @implementation AddressViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -43,30 +46,30 @@ static NSString *const cellID = @"AddressTableViewCell";
     
     AddressModel *model = [[AddressModel alloc] init];
     model.name = @"taoaim0";
-    model.title = @"短袖1";
-    model.address = @"[郑州市]，郑州市金水区郑州市金水区郑州市金水区郑州市金水区";
+    model.address = @"北京市朝阳区";
+    model.detailaddress = @"来广营北纬40度幸福家园三层3318室";
     model.phone = @"18272917285";
     [self.addressArr addObject:model];
     
     AddressModel *model1 = [[AddressModel alloc] init];
     model1.name = @"taoaim1";
-    model1.title = @"短袖2";
-    model1.address = @"[郑州市]，郑州市金水区郑州市金水区郑州市金水区郑州市金水区";
+    model1.address = @"北京市朝阳区";
+    model1.detailaddress = @"来广营北纬40度幸福家园三层3318室01";
     model1.phone = @"18272917285";
     [self.addressArr addObject:model1];
     
     AddressModel *model2 = [[AddressModel alloc] init];
     model2.name = @"taoaim2";
-    model2.title = @"短袖3";
-    model2.address = @"[郑州市]，郑州市金水区郑州市金水区郑州市金水区郑州市金水区";
+    model2.address = @"河南省郑州市";
+    model2.detailaddress = @"来广营北纬40度幸福家园三层3318室02";
     model2.phone = @"18272917285";
     [self.addressArr addObject:model2];
     
     
     AddressModel *model3 = [[AddressModel alloc] init];
     model3.name = @"taoaim3";
-    model3.title = @"短袖4";
-    model3.address = @"[郑州市]，郑州市金水区郑州市金水区郑州市金水区郑州市金水区";
+    model3.address = @"河南省郑州市";
+    model3.detailaddress = @"来广营北纬40度幸福家园三层3318室03";
     model3.phone = @"18272917285";
     [self.addressArr addObject:model3];
     
@@ -81,7 +84,7 @@ static NSString *const cellID = @"AddressTableViewCell";
 }
 - (UITableView *)addressTableView{
     if (!_addressTableView) {
-        _addressTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - NavH - BTN_H) style:UITableViewStyleGrouped];
+        _addressTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NavH, WIDTH, HEIGHT - BTN_H - NavH) style:UITableViewStyleGrouped];
         _addressTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _addressTableView.backgroundColor = [UIColor clearColor];
         _addressTableView.rowHeight = cellH;
@@ -96,7 +99,7 @@ static NSString *const cellID = @"AddressTableViewCell";
     if (!_addAddressBtn) {
         _addAddressBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _addAddressBtn.backgroundColor = [UIColor grayColor];
-        _addAddressBtn.frame = CGRectMake(0, HEIGHT - BTN_H - NavH, WIDTH, BTN_H);
+        _addAddressBtn.frame = CGRectMake(0, HEIGHT - BTN_H, WIDTH, BTN_H);
         [_addAddressBtn setTitle:@"新增地址" forState:UIControlStateNormal];
         _addAddressBtn.userInteractionEnabled = YES;
         [_addAddressBtn addTarget:self action:@selector(addAddressBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -130,7 +133,11 @@ static NSString *const cellID = @"AddressTableViewCell";
 #pragma mark ——UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    AddressModel *model = self.addressArr[indexPath.row];
+    if (self.addressBlock) {
+        self.addressBlock(model);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -180,22 +187,24 @@ static NSString *const cellID = @"AddressTableViewCell";
     NSLog(@"点击的类型---->%zi",btntag);
 }
 - (void)actionTableViewBtnTypeDefaultTag:(NSInteger )index{
-    NSLog(@"%zi",index);
     AddressModel *model = self.addressArr[index];
     [self.addressArr removeObjectAtIndex:index];
     [self.addressArr insertObject:model atIndex:0];
 
     [self.addressTableView reloadData];
+    NSLog(@"设置默认地址");
 }
 - (void)actionTableViewBtnTypeEditingTag:(NSInteger )index{
-        NSLog(@"%zi",index);
     NewAddressViewController *new = [[NewAddressViewController alloc] init];
     new.model = self.addressArr[index];
+    [new returnAddressViewController:^(AddressModel *model) {
+        self.addressArr[index] = model;
+        [self.addressTableView reloadData];
+    }];
     [self.navigationController pushViewController:new animated:YES];
-    NSLog(@"新增地址");
+    NSLog(@"编辑地址");
 }
 - (void)actionTableViewBtnTypeDeleteTag:(NSInteger )index{
-        NSLog(@"%zi",index);
     [self.deletes addObject:self.addressArr[index]];
     if ([self.addressArr count] > 0 &&[self.addressArr count] > 0) {
         for (AddressModel *model in self.deletes) {
@@ -203,14 +212,22 @@ static NSString *const cellID = @"AddressTableViewCell";
         }
     }
     [self.addressTableView reloadData];
+    NSLog(@"删除地址");
 }
 
 
 
 - (void)addAddressBtnClick:(UIButton *)btn{
     NewAddressViewController *new = [[NewAddressViewController alloc] init];
+    [new returnAddressViewController:^(AddressModel *model) {
+        [self.addressArr addObject:model];
+        [self.addressTableView reloadData];
+    }];
     [self.navigationController pushViewController:new animated:YES];
     NSLog(@"新增地址");
+}
+- (void)returnBuyGoodsViewController:(AddressBuyBlock)block{
+    _addressBlock = block;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -11,13 +11,16 @@
 #import "NewAddressView.h"
 
 
-@interface NewAddressViewController ()
+@interface NewAddressViewController ()<NewAddressViewDelagete>
 @property (strong, nonatomic) UIButton *SaveBtn;
 @property (strong, nonatomic) NSArray *titleArr;
 
 @end
 @implementation NewAddressViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -28,11 +31,18 @@
     [self addTitleViewWithTitle:@"新建地址"];
     [self.SaveBtn setTintColor:[UIColor clearColor]];
 }
+- (AddressModel *)model{
+    if (!_model) {
+        _model =[[AddressModel alloc] init];
+    }
+    return _model;
+}
 - (void)initNewAddressView{
     _titleArr = @[@"收货人",@"手机号码",@"所在地区",@"详细地址"];
 
     for (int i = 0; i < 4; i ++) {
         NewAddressView *view = [[NewAddressView alloc] init];
+        view.delegate = self;
         view.tag = i;
         if (self.model) {
             switch (view.tag) {
@@ -46,14 +56,14 @@
                     view.detailText = self.model.address;
                     break;
                 case 3:
-                    view.detailText = self.model.address;
+                    view.detailText = self.model.detailaddress;
                     break;
                 default:
                     break;
             }
         }
         view.titleText = _titleArr[i];
-        view.frame = CGRectMake(0,NEWVIEW_H*i, WIDTH, NEWVIEW_H);
+        view.frame = CGRectMake(0, NavH + NEWVIEW_H*i, WIDTH, NEWVIEW_H);
         [self.view addSubview:view];
         
         
@@ -64,7 +74,7 @@
     if (!_SaveBtn) {
         _SaveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _SaveBtn.backgroundColor = [UIColor grayColor];
-        _SaveBtn.frame = CGRectMake(0, HEIGHT - BTN_H - NavH, WIDTH, BTN_H);
+        _SaveBtn.frame = CGRectMake(0, HEIGHT - BTN_H, WIDTH, BTN_H);
         [_SaveBtn setTitle:@"保存" forState:UIControlStateNormal];
         _SaveBtn.userInteractionEnabled = YES;
         [_SaveBtn addTarget:self action:@selector(SaveBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -74,11 +84,36 @@
 }
 - (void)SaveBtnClick:(UIButton *)btn{
     
-    NSLog(@"保存");
+    if (self.addressEdit) {
+        self.addressEdit(self.model);
+    }
+    NSLog(@"保存%@",self.model);
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
-
-
+- (void)returnAddressViewController:(AddressEditBlock)block{
+    _addressEdit = block;
+}
+#pragma mark --NewAddressViewDelagete
+- (void)NewAddressViewEndEditingText:(NSString *)text Index:(NSInteger)index{
+    switch (index) {
+        case 0:
+            self.model.name = text;
+            break;
+        case 1:
+            self.model.phone = text;
+            break;
+        case 2:
+            self.model.address = text;
+            break;
+        case 3:
+            self.model.detailaddress = text;
+            break;
+            
+        default:
+            break;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

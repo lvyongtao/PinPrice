@@ -23,10 +23,21 @@
  */
 - (void)stopLoadingAnimation;
 /**
+ *   提示信息
+ */
+- (void)showMessageTitle:(NSString *)title;
+/**
  *  自定义NavgationBar
  */
 - (void)initNavgationBar;
-
+/**
+ *  清除用户的信息
+ */
+- (void)clearUserInfo;
+/**
+ *  清除缓存信息
+ */
+- (void)cleanMemory;
 ///创建导航栏标题
 -(void)addTitleViewWithTitle:(NSString *)title;
 /// 导航栏设置左侧按钮

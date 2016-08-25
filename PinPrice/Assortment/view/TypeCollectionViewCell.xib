@@ -14,11 +14,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="117" height="137"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hs4-0t-Q1K">
-                        <rect key="frame" x="8" y="8" width="101" height="93"/>
+                        <rect key="frame" x="8" y="8" width="101" height="101"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="潮流女装" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-4S-XFq">
-                        <rect key="frame" x="8" y="114" width="101" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男装" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-4S-XFq">
+                        <rect key="frame" x="8" y="112" width="101" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="tmW-VW-gpe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -27,7 +30,7 @@
             </view>
             <constraints>
                 <constraint firstItem="O5X-4S-XFq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="58e-Vf-O8u"/>
-                <constraint firstItem="O5X-4S-XFq" firstAttribute="top" secondItem="hs4-0t-Q1K" secondAttribute="bottom" constant="13" id="COV-db-aJ6"/>
+                <constraint firstItem="O5X-4S-XFq" firstAttribute="top" secondItem="hs4-0t-Q1K" secondAttribute="bottom" constant="3" id="COV-db-aJ6"/>
                 <constraint firstItem="hs4-0t-Q1K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="PPv-xl-rLr"/>
                 <constraint firstAttribute="trailing" secondItem="hs4-0t-Q1K" secondAttribute="trailing" constant="8" id="ZdA-hm-J9c"/>
                 <constraint firstAttribute="bottom" secondItem="O5X-4S-XFq" secondAttribute="bottom" constant="8" id="sW1-lQ-DSX"/>

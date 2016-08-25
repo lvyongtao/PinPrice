@@ -82,20 +82,41 @@
 }
 
 - (void)showLoadingAnimation{
-    
+    [UIView MBAlertViewShowWith:self.view];
    
 }
 
 - (void)stopLoadingAnimation{
+    [UIView MBHiddenAllWith: self.view];
+}
+- (void)showMessageTitle:(NSString *)title{
+    [UIView MBAlertViewWithMsg:title With:self.view];
+    [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(removeMBAlertView:) userInfo:nil repeats:NO];
+}
+- (void)removeMBAlertView:(NSTimer *)timer{
+    [UIView MBHiddenAllWith:self.view];
+    [timer invalidate];
+}
+- (void)clearUserInfo{
+    [PinUserInfo deletePassword];
+    [PinUserInfo deleteUserID];
+    [PinUserInfo deletePhone];
+}
+- (void)cleanMemory{
+    [[SDImageCache sharedImageCache] cleanDiskWithCompletionBlock:^{
+        NSLog(@"清除缓存成功");
+    }];
+    [[SDImageCache sharedImageCache] clearMemory];
+}
+- (void)initNavgationBar{
     
 }
 //设置系统返回按钮
 -(void)creatBackBtnStyle{
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:[UIColor blackColor]}];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
 //    self.navigationController.navigationBar.tintColor = RGBCOLOR(225, 225, 225);
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : RGBCOLOR(225, 225, 225)}];

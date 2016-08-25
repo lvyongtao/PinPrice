@@ -123,7 +123,7 @@
         self.relatedLable.text = self.reloatedText;
     }
     
-    self.goodsImage.frame = CGRectMake(0, 0, self.width, self.height - 0.11*self.height - 0.11*HEIGHT);
+    self.goodsImage.frame = CGRectMake(0, 0, self.width, HEIGHT - 0.11*self.height - NavH);
     
     self.goodsLable.frame = CGRectMake(0, self.goodsImage.height - 0.088*self.height, self.width/2, 0.088*self.height);
     

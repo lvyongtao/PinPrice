@@ -23,6 +23,8 @@
     //是否登录
     [self initLogin];
     
+    [application setStatusBarStyle:UIStatusBarStyleDefault];
+    
     return YES;
 }
 

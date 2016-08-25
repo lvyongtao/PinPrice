@@ -113,12 +113,21 @@
 }
 #pragma mark --Action
 - (void)actionLogin{
-    if ([PinUserInfo getphone]> 0 && [PinUserInfo getpassword].length > 0) {
+    [PinUserInfo setUserID:@"临时的ID类型"];
+    if ([PinUserInfo getphone].length == 0) {
+        [self showMessageTitle:@"请重新输入帐号"];
+        return;
+    }
+    if ([PinUserInfo getpassword].length == 0) {
+        [self showMessageTitle:@"请重新输入密码"];
+        return;
+    }
+    if ([[PinUserInfo getphone] isEqualToString:@"18272917285"] && [[PinUserInfo getpassword] isEqualToString:@"12345678"]) {
         PinTabBarController *pinTabbar = [[PinTabBarController alloc] init];
         [self presentViewController:pinTabbar animated:YES completion:^{
             
         }];
-    }
+    }else{[self showMessageTitle:@"账号密码不正确，请重新输入"];};
     NSLog(@"登录");
 }
 

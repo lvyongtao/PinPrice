@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol NewAddressViewDelagete <NSObject>
+@required
+- (void)NewAddressViewEndEditingText:(NSString *)text Index:(NSInteger )index;
+
+@end
+
+
 @interface NewAddressView : UIView
+
+@property (weak, nonatomic) id<NewAddressViewDelagete >delegate;
+
 
 @property (copy, nonatomic) NSString *titleText;
 

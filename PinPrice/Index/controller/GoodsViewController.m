@@ -16,6 +16,8 @@
 #import "GoodDetaiView.h"
 #import "GoodsCollectionViewCell.h"
 #import "BuyGoodsViewController.h"
+#import "ShoppingCartViewController.h"
+#import "DetailGoodsViewController.h"
 
 
 @interface GoodsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,GoodDetaiViewBtnActionDelegate>
@@ -131,7 +133,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
         _goodLayout.itemSize = CGSizeMake(WIDTH/2 - MINLINESPACEING_RELATED/2, 1.5*WIDTH/2);
         _goodLayout.minimumLineSpacing = 0;
         _goodLayout.minimumInteritemSpacing = 0;
-        _goodColletionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH,HEIGHT - NavH) collectionViewLayout:_goodLayout];
+        _goodColletionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH,HEIGHT) collectionViewLayout:_goodLayout];
         _goodColletionView.backgroundColor =[UIColor whiteColor];
         _goodColletionView.delegate = self;
         _goodColletionView.dataSource = self;
@@ -202,7 +204,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (collectionView == _goodColletionView) {
-        return (CGSize){WIDTH,HEIGHT - NavH + 0.11*HEIGHT};
+        return (CGSize){WIDTH,HEIGHT + 0.11*HEIGHT - NavH};
     }else{
         return (CGSize){0,0};
     }
@@ -232,9 +234,16 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 }
 - (void)ActionTypeCart{
     
+    PinTabBarController *tabBar=[[PinTabBarController alloc] init];
+    tabBar.selectedIndex=2;
+    tabBar.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+    tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self presentViewController:tabBar animated:YES completion:nil];
 }
 - (void)ActionTypeDetail{
-    
+    DetailGoodsViewController *detail =[[DetailGoodsViewController alloc] init];
+    detail.url = @"http://v.juhe.cn/weixin/redirect?wid=wechat_20160825023108";
+    [self.navigationController pushViewController:detail animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

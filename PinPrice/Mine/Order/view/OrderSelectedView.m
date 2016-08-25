@@ -19,15 +19,14 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.segemented .backgroundColor = [UIColor whiteColor];
+    self.segemented.backgroundColor =[UIColor whiteColor];
+    self.segemented.frame = CGRectMake(0.05*self.width, self.height/6, self.width - 0.1*self.width, self.height*2/3);
+    self.segemented.centerX = self.centerX;
 }
 
 - (UISegmentedControl *)segemented{
     if (!_segemented) {
             _segemented = [[UISegmentedControl alloc] initWithItems:self.titles];
-            _segemented.frame = CGRectMake(0.05*WIDTH, self.height/6, self.width - 0.1*WIDTH, self.height*2/3);
-            _segemented.centerX = self.centerX;
-            _segemented.centerY = self.centerY;
             _segemented.layer.cornerRadius = 4.f;
             _segemented.layer.masksToBounds = YES;
             _segemented.layer.borderWidth = 1.f;

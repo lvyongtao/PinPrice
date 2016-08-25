@@ -22,6 +22,7 @@
 #import "UIView+Extension.h"
 #import "NSObject+YYModel.h"
 #import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 //自定义类头文件
 #import "PinConfig.h"
@@ -37,5 +38,6 @@
 #import "PinGood.h"
 
 
-
+//
+#import "PinTabBarController.h"
 #endif /* Pin_pch_pch */

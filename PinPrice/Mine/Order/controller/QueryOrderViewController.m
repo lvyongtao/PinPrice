@@ -26,7 +26,11 @@ static NSString *const cellID = @"QueryTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initNavgationBar];
     [self initqueryTableView];
+}
+- (void)initNavgationBar{
+    [self addTitleViewWithTitle:@"订单查询"];
 }
 - (void)initqueryTableView{
     if (self.queryOrders) {
@@ -69,7 +73,7 @@ static NSString *const cellID = @"QueryTableViewCell";
 
 - (UITableView *)queryTableView{
     if (!_queryTableView) {
-        _queryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - NavH) style:UITableViewStyleGrouped];
+        _queryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
         _queryTableView.backgroundColor = [UIColor clearColor];
         _queryTableView.estimatedRowHeight = cellH;
         _queryTableView.delegate = self;

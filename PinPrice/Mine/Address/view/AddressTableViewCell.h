@@ -16,9 +16,9 @@
 @end
 
 typedef NS_ENUM(NSInteger, AddressTableViewBtnType){
-    AddressTableViewBtnTypeDefault = 0,
-    AddressTableViewBtnTypeEditing,
-    AddressTableViewBtnTypeDelete
+    AddressTableViewBtnTypeDefault = 0,//设为默认
+    AddressTableViewBtnTypeEditing,//编辑
+    AddressTableViewBtnTypeDelete//删除
 };
 
 @interface AddressTableViewCell : UITableViewCell

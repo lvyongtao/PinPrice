@@ -29,6 +29,7 @@
 //获取用户的id
 + (NSString *)getUserID;
 
+
 /**
  *  @property (copy, nonatomic) NSString *phone;
  @property (copy, nonatomic) NSString *password;
@@ -37,4 +38,7 @@
 +(void)setUserID:(NSString *)userID;
 +(void)setphone:(NSString *)phone;
 +(void)setpassword:(NSString *)password;
++ (void)deleteUserID;
++ (void)deletePhone;
++ (void)deletePassword;
 @end

@@ -97,7 +97,7 @@ static NSString *const cellID = @"CollectTableViewCell";
 }
 - (UITableView *)collectTableView{
     if (!_collectTableView) {
-        _collectTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - kBottomBarHeight) style:UITableViewStyleGrouped];
+        _collectTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
         _collectTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _collectTableView.backgroundColor = [UIColor clearColor];
         _collectTableView.rowHeight = cellH;

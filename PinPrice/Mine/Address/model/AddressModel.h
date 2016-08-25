@@ -12,6 +12,7 @@
 
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *address;
+@property (copy, nonatomic) NSString *detailaddress;
 @property (copy, nonatomic) NSString *phone;
 @property (copy, nonatomic) NSString *name;
 

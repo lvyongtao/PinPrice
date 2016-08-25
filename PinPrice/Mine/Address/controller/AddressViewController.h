@@ -8,6 +8,12 @@
 
 #import "RootViewController.h"
 
+@class AddressModel;
+typedef void(^AddressBuyBlock)(AddressModel *);
 @interface AddressViewController : RootViewController
+
+
+@property (copy, nonatomic) AddressBuyBlock addressBlock;
+- (void)returnBuyGoodsViewController:(AddressBuyBlock )block;
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D814C1B41D6EBADE00C53F47 /* DetailGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D814C1B21D6EBADE00C53F47 /* DetailGoodsViewController.m */; };
+		D814C1BB1D6EC0DA00C53F47 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D814C1B81D6EC0DA00C53F47 /* NJKWebViewProgress.m */; };
+		D814C1BC1D6EC0DA00C53F47 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D814C1BA1D6EC0DA00C53F47 /* NJKWebViewProgressView.m */; };
 		D819C7BB1D61B481004A5D8A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D819C7BA1D61B481004A5D8A /* LoginViewController.m */; };
 		D819C7C21D61B7EC004A5D8A /* lock-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D819C7BD1D61B7EC004A5D8A /* lock-icon@2x.png */; };
 		D819C7C31D61B7EC004A5D8A /* qq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D819C7BE1D61B7EC004A5D8A /* qq@2x.png */; };
@@ -30,6 +33,7 @@
 		D83FB9A11D644D1500CFD5E3 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FB99A1D644D1500CFD5E3 /* UIView+SDExtension.m */; };
 		D83FB9A41D64701500CFD5E3 /* GoodCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FB9A31D64701500CFD5E3 /* GoodCollectionViewLayout.m */; };
 		D84244DE1D6C4D9100632C14 /* BuyGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84244DD1D6C4D9100632C14 /* BuyGoodsViewController.m */; };
+		D84244E11D6C615700632C14 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84244E01D6C615700632C14 /* SettingViewController.m */; };
 		D8445DA61D62E61B0031C02A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8445DA51D62E61B0031C02A /* RegisterViewController.m */; };
 		D8445DA81D62E7790031C02A /* all_back.png in Resources */ = {isa = PBXBuildFile; fileRef = D8445DA71D62E7790031C02A /* all_back.png */; };
 		D8445DAB1D6303C10031C02A /* UIView+MBView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8445DAA1D6303C10031C02A /* UIView+MBView.m */; };
@@ -43,6 +47,9 @@
 		D8445DC31D6329110031C02A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8445DC21D6329110031C02A /* CoreTelephony.framework */; };
 		D8445DC51D63291B0031C02A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8445DC41D63291B0031C02A /* libstdc++.tbd */; };
 		D8445DC71D6329230031C02A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8445DC61D6329230031C02A /* libz.tbd */; };
+		D8461E291D6D46CF008096A8 /* BuyGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8461E281D6D46CF008096A8 /* BuyGoodsView.m */; };
+		D8461E351D6D9C73008096A8 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8461E331D6D9C73008096A8 /* PaymentViewController.m */; };
+		D8461E361D6D9C73008096A8 /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8461E341D6D9C73008096A8 /* PaymentViewController.xib */; };
 		D86015A21D655088002DD67A /* PinGood.m in Sources */ = {isa = PBXBuildFile; fileRef = D86015A11D655088002DD67A /* PinGood.m */; };
 		D86015A61D655166002DD67A /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = D86015A31D655166002DD67A /* 1.plist */; };
 		D86015A71D655166002DD67A /* 2.plist in Resources */ = {isa = PBXBuildFile; fileRef = D86015A41D655166002DD67A /* 2.plist */; };
@@ -197,6 +204,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D814C1B11D6EBADE00C53F47 /* DetailGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsViewController.h; sourceTree = "<group>"; };
+		D814C1B21D6EBADE00C53F47 /* DetailGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsViewController.m; sourceTree = "<group>"; };
+		D814C1B71D6EC0DA00C53F47 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		D814C1B81D6EC0DA00C53F47 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		D814C1B91D6EC0DA00C53F47 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		D814C1BA1D6EC0DA00C53F47 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		D819C7B91D61B481004A5D8A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D819C7BA1D61B481004A5D8A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D819C7BD1D61B7EC004A5D8A /* lock-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock-icon@2x.png"; sourceTree = "<group>"; };
@@ -236,6 +249,8 @@
 		D83FB9A31D64701500CFD5E3 /* GoodCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodCollectionViewLayout.m; sourceTree = "<group>"; };
 		D84244DC1D6C4D9100632C14 /* BuyGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyGoodsViewController.h; sourceTree = "<group>"; };
 		D84244DD1D6C4D9100632C14 /* BuyGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyGoodsViewController.m; sourceTree = "<group>"; };
+		D84244DF1D6C615700632C14 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		D84244E01D6C615700632C14 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		D8445DA41D62E61B0031C02A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		D8445DA51D62E61B0031C02A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		D8445DA71D62E7790031C02A /* all_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_back.png; sourceTree = "<group>"; };
@@ -251,6 +266,11 @@
 		D8445DC21D6329110031C02A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D8445DC41D63291B0031C02A /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		D8445DC61D6329230031C02A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D8461E271D6D46CF008096A8 /* BuyGoodsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyGoodsView.h; sourceTree = "<group>"; };
+		D8461E281D6D46CF008096A8 /* BuyGoodsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyGoodsView.m; sourceTree = "<group>"; };
+		D8461E321D6D9C73008096A8 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		D8461E331D6D9C73008096A8 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		D8461E341D6D9C73008096A8 /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		D86015A01D655088002DD67A /* PinGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinGood.h; sourceTree = "<group>"; };
 		D86015A11D655088002DD67A /* PinGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinGood.m; sourceTree = "<group>"; };
 		D86015A31D655166002DD67A /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
@@ -536,6 +556,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D814C1B61D6EC0DA00C53F47 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				D814C1B71D6EC0DA00C53F47 /* NJKWebViewProgress.h */,
+				D814C1B81D6EC0DA00C53F47 /* NJKWebViewProgress.m */,
+				D814C1B91D6EC0DA00C53F47 /* NJKWebViewProgressView.h */,
+				D814C1BA1D6EC0DA00C53F47 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
 		D819C7BC1D61B7EC004A5D8A /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +630,9 @@
 			children = (
 				D84244DC1D6C4D9100632C14 /* BuyGoodsViewController.h */,
 				D84244DD1D6C4D9100632C14 /* BuyGoodsViewController.m */,
+				D8461E321D6D9C73008096A8 /* PaymentViewController.h */,
+				D8461E331D6D9C73008096A8 /* PaymentViewController.m */,
+				D8461E341D6D9C73008096A8 /* PaymentViewController.xib */,
 			);
 			path = Buy;
 			sourceTree = "<group>";
@@ -634,6 +668,15 @@
 			children = (
 			);
 			path = WeixinApi;
+			sourceTree = "<group>";
+		};
+		D8461E261D6D46B6008096A8 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				D8461E271D6D46CF008096A8 /* BuyGoodsView.h */,
+				D8461E281D6D46CF008096A8 /* BuyGoodsView.m */,
+			);
+			path = Buy;
 			sourceTree = "<group>";
 		};
 		D860CC5A1D5B1ED50043D1E7 /* shop */ = {
@@ -828,6 +871,7 @@
 				D8E70E2E1D5B059D0008801D /* SDWebImage */,
 				D8E70E531D5B059D0008801D /* YYModel */,
 				D83FB98B1D644D1500CFD5E3 /* SDCycleScrollView */,
+				D814C1B61D6EC0DA00C53F47 /* NJKWebViewProgress */,
 				D8ABE4381D66FB4F008B6F22 /* Categorys */,
 			);
 			path = Libs;
@@ -918,6 +962,8 @@
 				D8A5ECEA1D585E36004551FB /* IndexViewController.m */,
 				D8D8F6A41D6AD55D00FD7868 /* GoodsViewController.h */,
 				D8D8F6A51D6AD55D00FD7868 /* GoodsViewController.m */,
+				D814C1B11D6EBADE00C53F47 /* DetailGoodsViewController.h */,
+				D814C1B21D6EBADE00C53F47 /* DetailGoodsViewController.m */,
 				D84244DB1D6C4D7200632C14 /* Buy */,
 			);
 			path = controller;
@@ -951,6 +997,7 @@
 				D8732B0F1D6BFFB300963D30 /* GoodsCollectionViewCell.h */,
 				D8732B101D6BFFB300963D30 /* GoodsCollectionViewCell.m */,
 				D8732B111D6BFFB300963D30 /* GoodsCollectionViewCell.xib */,
+				D8461E261D6D46B6008096A8 /* Buy */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1165,6 +1212,8 @@
 			children = (
 				D8E017AA1D63F8C300DC4A40 /* MineViewController.h */,
 				D8E017AB1D63F8C300DC4A40 /* MineViewController.m */,
+				D84244DF1D6C615700632C14 /* SettingViewController.h */,
+				D84244E01D6C615700632C14 /* SettingViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1584,6 +1633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8445DA81D62E7790031C02A /* all_back.png in Resources */,
+				D8461E361D6D9C73008096A8 /* PaymentViewController.xib in Resources */,
 				D860CC621D5B1ED50043D1E7 /* reduceBlack@2x.png in Resources */,
 				D819C7C51D61B7EC004A5D8A /* weibo@2x.png in Resources */,
 				D86015A71D655166002DD67A /* 2.plist in Resources */,
@@ -1647,6 +1697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8461E291D6D46CF008096A8 /* BuyGoodsView.m in Sources */,
 				D83C5D011D66A8F60031D383 /* OrderSelectedView.m in Sources */,
 				D8E70E8A1D5B059D0008801D /* NSObject+YYModel.m in Sources */,
 				D83FB99D1D644D1500CFD5E3 /* TADotView.m in Sources */,
@@ -1734,8 +1785,10 @@
 				D8A1686F1D61BF40004CDA9B /* ThirdLoginView.m in Sources */,
 				D8E70E761D5B059D0008801D /* UIScrollView+MJRefresh.m in Sources */,
 				D8E70E5F1D5B059D0008801D /* NSArray+MASAdditions.m in Sources */,
+				D84244E11D6C615700632C14 /* SettingViewController.m in Sources */,
 				D83FB99F1D644D1500CFD5E3 /* SDCollectionViewCell.m in Sources */,
 				D8A5ECA81D585223004551FB /* ViewController.m in Sources */,
+				D8461E351D6D9C73008096A8 /* PaymentViewController.m in Sources */,
 				D8ABE4371D66F49F008B6F22 /* QueryheadView.m in Sources */,
 				D8ABE4441D66FB97008B6F22 /* UIImage+Extensition.m in Sources */,
 				D83FB99B1D644D1500CFD5E3 /* TAAbstractDotView.m in Sources */,
@@ -1744,6 +1797,7 @@
 				D8ABE42F1D66EE29008B6F22 /* QueryOrderModel.m in Sources */,
 				D8E70E881D5B059D0008801D /* UIView+WebCacheOperation.m in Sources */,
 				D8E70E5C1D5B059D0008801D /* MASLayoutConstraint.m in Sources */,
+				D814C1BB1D6EC0DA00C53F47 /* NJKWebViewProgress.m in Sources */,
 				D8E70E591D5B059D0008801D /* MASCompositeConstraint.m in Sources */,
 				D8A5EC711D585004004551FB /* PinPrice.xcdatamodeld in Sources */,
 				D8E70E7A1D5B059D0008801D /* NSData+ImageContentType.m in Sources */,
@@ -1752,11 +1806,13 @@
 				D8E70DDF1D5B04080008801D /* ShopTableViewCell.m in Sources */,
 				D8C8FDF51D6555C900C84CBC /* LikeCollectionViewCell.m in Sources */,
 				D8ABE43C1D66FB4F008B6F22 /* UIView+Extension.m in Sources */,
+				D814C1B41D6EBADE00C53F47 /* DetailGoodsViewController.m in Sources */,
 				D8E70E7F1D5B059D0008801D /* SDWebImageDownloaderOperation.m in Sources */,
 				D8A1686C1D61BF2E004CDA9B /* LoginView.m in Sources */,
 				D8E017C11D6425A800DC4A40 /* OrderViewController.m in Sources */,
 				D8D8F6B91D6AE12400FD7868 /* HotModel.m in Sources */,
 				D83C5CFD1D669F3C0031D383 /* OrderTableViewCell.m in Sources */,
+				D814C1BC1D6EC0DA00C53F47 /* NJKWebViewProgressView.m in Sources */,
 				D866D9C11D6AAB3E00D2BCDD /* NewAddressModel.m in Sources */,
 				D8732B0E1D6BFD8600963D30 /* GoodDetaiView.m in Sources */,
 				D860CC651D5B35850043D1E7 /* ShopToolbar.m in Sources */,

@@ -23,7 +23,8 @@
     MBProgressHUD *mbHub = [MBProgressHUD showHUDAddedTo:superMBView animated:YES];
     mbHub.mode = MBProgressHUDModeText;
     mbHub.labelFont = [UIFont systemFontOfSize:14];
-    mbHub.color = [UIColor colorWithRed:0.906 green:0.627 blue:0.638 alpha:1.000];
+    mbHub.color = RGBCOLOR(10, 10, 10);
+    mbHub.labelColor = [UIColor whiteColor];
     mbHub.labelText = message;
     [mbHub setMinSize:CGSizeZero];
     mbHub.margin = 10.f;

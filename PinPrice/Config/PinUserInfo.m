@@ -53,4 +53,19 @@
     [LVUserDefault setObject:password forKey:@"password"];
     [LVUserDefault synchronize];
 }
++(void)deleteUserID{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"userid"];
+    [defaults synchronize];
+}
++(void)deletePhone{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"phone"];
+    [defaults synchronize];
+}
++(void)deletePassword{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"password"];
+    [defaults synchronize];
+}
 @end

@@ -16,9 +16,9 @@
     // Initialization code
 }
 - (void)setValueWithModel:(AssertmentModel *)model{
-    if (model.imageUrl) {
-        [_typeImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
-    }
+    
+    [_typeImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+    
     if (model.name) {
         _nameLable.text = model.name;
     }

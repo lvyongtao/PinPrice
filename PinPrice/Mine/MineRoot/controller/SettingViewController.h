@@ -1,5 +1,5 @@
 //
-//  BuyGoodsViewController.h
+//  SettingViewController.h
 //  PinPrice
 //
 //  Created by lvyongtao on 16/8/23.
@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-//商品信息确认界面
-@interface BuyGoodsViewController : RootViewController
+
+@interface SettingViewController : RootViewController
 
 @end

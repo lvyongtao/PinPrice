@@ -79,7 +79,7 @@ static NSString *cellID = @"ShoppingCartViewCell";
 #pragma mark --lazyload
 - (UITableView *)shopTableView{
     if (!_shopTableView) {
-        _shopTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - kBottomBarHeight*2) style:UITableViewStyleGrouped];
+        _shopTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
         _shopTableView.showsVerticalScrollIndicator = NO;
         _shopTableView.showsHorizontalScrollIndicator = NO;
         _shopTableView.backgroundColor = [UIColor clearColor];

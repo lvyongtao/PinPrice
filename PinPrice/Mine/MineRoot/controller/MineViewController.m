@@ -12,6 +12,7 @@
 #import "CollectViewController.h"
 #import "OrderViewController.h"
 #import "AddressViewController.h"
+#import "SettingViewController.h"
 
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -36,7 +37,7 @@ static NSString *cellID = @"MineViewControllerCell";
 }
 - (void)initdate{
     [self addTitleViewWithTitle:@"我的"];
-    [self addRightBtnWithTitle:nil withImage:[UIImage imageNamed:@""] withTitleColor:[UIColor clearColor] withTarget:self withMethod:@selector(rightButtonClick)];
+    [self addRightBtnWithTitle:@"设置" withImage:[UIImage imageNamed:@""] withTitleColor:[UIColor blackColor] withTarget:self withMethod:@selector(rightButtonClick)];
     _titles = [NSArray arrayWithObjects:@"我的收藏",@"我的订单",@"地址管理", nil];
 }
 
@@ -85,7 +86,9 @@ static NSString *cellID = @"MineViewControllerCell";
     [self.navigationController pushViewController:root animated:YES];
 }
 - (void)rightButtonClick{
-    
+    SettingViewController *setting = [[SettingViewController alloc] init];
+    setting.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:setting animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

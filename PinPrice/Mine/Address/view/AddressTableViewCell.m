@@ -15,20 +15,24 @@
     _deleteBtn.tag = self.tag;
     _editingBtn.tag = self.tag;
     _setDefaultBtn.tag = self.tag;
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.selectionStyle = UITableViewCellSelectionStyleBlue;
     // Initialization code
 }
 - (void)setModel:(AddressModel *)model{
-    if (model.title) {
-        _titleLable.text = model.title;
+    if (model.name) {
+        _titleLable.text = model.name;
     }
     
     if (model.phone) {
         _phoneLable.text = model.phone;
     }
     
-    if (model.address) {
+    if (model.address && model.detailaddress) {
+        _addressLable.text = [model.address stringByAppendingString:model.detailaddress];
+    }else if (model.address){
         _addressLable.text = model.address;
+    }else{
+        _addressLable.text = model.detailaddress;
     }
 }
 - (IBAction)setDefaultBtnClick:(UIButton *)sender {

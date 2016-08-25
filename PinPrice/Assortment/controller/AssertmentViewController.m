@@ -48,28 +48,28 @@ static NSString *cellID = @"typeColletionViewCellID";
         [self.types removeAllObjects];
     }
     AssertmentModel *model = [[AssertmentModel alloc] init];
-    model.imageUrl = @"http://xqproduct.xiangqu.com/Fk8Q5q_MxELt_dFWP8afoGI38kmr?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/750x500/";
-    model.name = @"潮流女装";
+    model.imageUrl = @"http://xqproduct.xiangqu.com/FgUXjl4jUd7dfeiylxjmnfU0vABV?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
+    model.name = @"潮流女装1";
     [self.types addObject:model];
     
     AssertmentModel *model1 = [[AssertmentModel alloc] init];
-    model1.imageUrl = @"http://xqproduct.xiangqu.com/Fj2kU4K_TS8Kvolme1FhZpmB8weh?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
-    model.name = @"潮流女装";
+    model1.imageUrl = @"http://xqproduct.xiangqu.com/FogshFiq0lOFXGkj_hKHBUUVVvZW?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/650x650/";
+    model1.name = @"潮流女装2";
     [self.types addObject:model1];
     
     AssertmentModel *model2 = [[AssertmentModel alloc] init];
-    model2.imageUrl = @"http://xqproduct.xiangqu.com/FoYm07fprsGaSbbFYzAUXbAwMH09?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/1800x1200/";
-    model.name = @"潮流女装";
+    model2.imageUrl = @"http://xqproduct.xiangqu.com/FmNdIKHYerYg6jzW1OYzdhhWgqTr?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
+    model2.name = @"潮流女装3";
     [self.types addObject:model2];
     
     AssertmentModel *model3 = [[AssertmentModel alloc] init];
-    model3.imageUrl = @"http://xqproduct.xiangqu.com/FsMd6kTVFnqL5qhupgNeYu4veM39?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
-    model.name = @"潮流女装";
+    model3.imageUrl = @"http://xqproduct.xiangqu.com/FnHGHyoDQC0xX8XhSLmB7tPx4lQk?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/750x750/";
+    model3.name = @"潮流女装4";
     [self.types addObject:model3];
     
     AssertmentModel *model4 = [[AssertmentModel alloc] init];
-    model4.imageUrl = @"http://xqproduct.xiangqu.com/Fk8Q5q_MxELt_dFWP8afoGI38kmr?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/750x500/";
-    model.name = @"潮流女装";
+    model4.imageUrl = @"http://xqproduct.xiangqu.com/FmT4d_Yurwpqu_8sfOEoVDW0Smik?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
+    model4.name = @"潮流女装5";
     [self.types addObject:model4];
     [self.typeColletionView reloadData];
     
@@ -79,17 +79,15 @@ static NSString *cellID = @"typeColletionViewCellID";
         _typeLayout = [[UICollectionViewFlowLayout alloc] init];
         [_typeLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         _typeLayout.itemSize = CGSizeMake(WIDTH/3, WIDTH/3 +36);
-        _typeLayout.minimumLineSpacing = MINLINESPACEING;
+        _typeLayout.minimumLineSpacing = 0;
         _typeLayout.minimumInteritemSpacing = 0;
-        _typeColletionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - MINLINESPACEING,HEIGHT - kBottomBarHeight*2) collectionViewLayout:_typeLayout];
-        _typeColletionView.backgroundColor = [UIColor whiteColor];
+        _typeColletionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - MINLINESPACEING,HEIGHT) collectionViewLayout:_typeLayout];
+        _typeColletionView.backgroundColor = [UIColor clearColor];
         _typeColletionView.delegate = self;
         _typeColletionView.dataSource = self;
         _typeColletionView.showsVerticalScrollIndicator = NO;
         _typeColletionView.showsHorizontalScrollIndicator = NO;
-//        _typeColletionView.bounces = NO;
         [_typeColletionView registerNib:[UINib nibWithNibName:@"TypeCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellID];
-//        [_typeColletionView registerClass:[TypeCollectionViewCell class] forCellWithReuseIdentifier:cellID];
         [self.view addSubview:_typeColletionView];
     }
     return _typeColletionView;

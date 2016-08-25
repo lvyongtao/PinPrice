@@ -27,7 +27,10 @@
 
 static NSString *const cellID = @"orderTableViewCell";
 @implementation OrderViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -165,8 +168,8 @@ static NSString *const cellID = @"orderTableViewCell";
 }
 - (UITableView *)willOrderTableView{
     if (!_willOrderTableView) {
-        _willOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - kBottomBarHeight - SELECTED_HEIGHT) style:UITableViewStyleGrouped];
-        _willOrderTableView.backgroundColor = [UIColor grayColor];
+        _willOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - SELECTED_HEIGHT - NavH) style:UITableViewStyleGrouped];
+        _willOrderTableView.backgroundColor = [UIColor clearColor];
         _willOrderTableView.rowHeight = cellH;
         _willOrderTableView.delegate = self;
         _willOrderTableView.dataSource = self;
@@ -179,8 +182,8 @@ static NSString *const cellID = @"orderTableViewCell";
 }
 - (UITableView *)didOrderTableView{
     if (!_didOrderTableView) {
-        _didOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(WIDTH, 0, WIDTH, HEIGHT - kBottomBarHeight - SELECTED_HEIGHT) style:UITableViewStyleGrouped];
-        _didOrderTableView.backgroundColor = [UIColor grayColor];
+        _didOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(WIDTH, 0, WIDTH, HEIGHT - SELECTED_HEIGHT - NavH) style:UITableViewStyleGrouped];
+        _didOrderTableView.backgroundColor = [UIColor clearColor];
         _didOrderTableView.rowHeight = cellH + 30;
         _didOrderTableView.delegate = self;
         _didOrderTableView.dataSource = self;
@@ -194,7 +197,7 @@ static NSString *const cellID = @"orderTableViewCell";
 - (OrderSelectedView *)selectedView{
     if (!_selectedView) {
         _selectedView = [[OrderSelectedView alloc] init];
-        _selectedView.frame = CGRectMake(0, 0, WIDTH, SELECTED_HEIGHT);
+        _selectedView.frame = CGRectMake(0, NavH, WIDTH, SELECTED_HEIGHT);
         _selectedView.delegate = self;
         [self.view addSubview:_selectedView];
     }
@@ -202,7 +205,7 @@ static NSString *const cellID = @"orderTableViewCell";
 }
 - (UIScrollView *)orderScrollView{
     if (!_orderScrollView) {
-        _orderScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, SELECTED_HEIGHT, WIDTH, HEIGHT - kBottomBarHeight - SELECTED_HEIGHT)];
+        _orderScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,NavH +SELECTED_HEIGHT, WIDTH, HEIGHT - SELECTED_HEIGHT - NavH)];
         _orderScrollView.delegate=self;
         _orderScrollView.showsHorizontalScrollIndicator=NO;
         _orderScrollView.backgroundColor = [UIColor clearColor];

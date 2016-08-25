@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "PinGood.h"
+//商品信息
 @interface GoodsViewController : RootViewController
 
 @property (strong, nonatomic) DetailGoodsModel *model;
