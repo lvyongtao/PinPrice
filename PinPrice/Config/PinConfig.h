@@ -24,4 +24,8 @@
 #define SMSMobAppKeyTest @"114ed22f249fe"//MobAppKey--测试使用
 #define SMSMobAppSecretTest @"59c4b7aa8864140c2512acfaeb81e063"
 
+
+
+#define PinBaseBtnGreenColor RGBCOLOR(0,160,234)
+
 #endif /* PinConfig_h */

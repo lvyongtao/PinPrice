@@ -34,7 +34,7 @@
         btn.userInteractionEnabled = YES;
         if (i == 0 || i== 1) {
             [btn setImage:[UIImage imageNamed:@"white_line"] forState:UIControlStateNormal];
-            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, WIDTH/3 - 1, 0, 0)];
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(0, WIDTH/3 - 3, 0, 0)];
         }
         btn.backgroundColor = RGBCOLOR(0,160,234);
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -108,21 +108,22 @@
         [self.delegate GoodDetaiViewBtnAction:self.type];
     }
 }
+- (void)setModel:(DetailGoodsModel *)model{
+    _model = model;
+    [self.goodsImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+    if (self.model.goodsname) {
+        self.goodsLable.text = [NSString stringWithFormat:@"  %@",model.goodsname];
+    }
+    if (self.model.goodsprice) {
+        self.priceLable.text = [NSString stringWithFormat:@"¥%@",model.goodsprice];
+    }
+}
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    
-    [self.goodsImage sd_setImageWithURL:[NSURL URLWithString:self.model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
-    if (self.model.goodsname) {
-        self.goodsLable.text = [NSString stringWithFormat:@"  %@",self.model.goodsname ];
-    }
-    if (self.model.goodsprice) {
-        self.priceLable.text = self.model.goodsprice;
-    }
     if (self.reloatedText) {
         self.relatedLable.text = self.reloatedText;
     }
-    
     self.goodsImage.frame = CGRectMake(0, 0, self.width, HEIGHT - 0.11*self.height - NavH);
     
     self.goodsLable.frame = CGRectMake(0, self.goodsImage.height - 0.088*self.height, self.width/2, 0.088*self.height);

@@ -45,5 +45,5 @@
 ///导航栏设置右侧按钮
 -(UIButton *)addRightBtnWithTitle:(NSString *)title withImage:(UIImage *)image withTitleColor:(UIColor *)color withTarget:(id)target withMethod:(SEL)select;
 
--(void)addRightBtnsWithTitle1:(NSString *)title1 WithTitle2:(NSString *)title2 withImage:(UIImage *)image withTitleColor:(UIColor *)color withTarget:(id)target withMethod:(SEL)select;
+-(void)addRightBtnswithImage1:(UIImage *)image1 withImage2:(UIImage *)image2 withTitleColor:(UIColor *)color withTarget:(id)target withMethod:(SEL)select;
 @end

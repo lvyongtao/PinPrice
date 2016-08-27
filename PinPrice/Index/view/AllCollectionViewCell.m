@@ -16,8 +16,8 @@
     // Initialization code
 }
 - (void)setValueWithModel:(AllGoodsModel *)model{
-    if (model.allGoodimageUrl) {
-        [_allGoodImage sd_setImageWithURL:[NSURL URLWithString:model.allGoodimageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
-    }
+   
+    [_allGoodImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+
 }
 @end

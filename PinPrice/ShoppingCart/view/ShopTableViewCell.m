@@ -97,7 +97,7 @@
         _descLable.text = model.desctitle;
     }
     if (model.price) {
-        _priceLable.text = [NSString stringWithFormat:@"%@",model.price];
+        _priceLable.text = [@"¥" stringByAppendingString:model.price];
     }
     if(model.color){
         _typeLable.text = model.color;
@@ -114,50 +114,65 @@
     
     __weak typeof(self)weakSelf = self;
     [_iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.contentView.mas_left).offset(SPACE_LINE);
-        make.top.equalTo(weakSelf.contentView.mas_top).offset(SPACE_LINE);
-        make.width.height.offset(cellH - SPACE_LINE*2);
+        make.left.equalTo(weakSelf.contentView.mas_left).offset(SPACE_LINE*2);
+        make.top.equalTo(weakSelf.contentView.mas_top).offset(SPACE_LINE*2);
+        make.width.height.offset(cellH - SPACE_LINE*4);
     }];
-    
+//商品名称
     [_titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_iconImage.mas_top);
         make.left.equalTo(_iconImage.mas_right).offset(SPACE_LINE);
-        make.right.equalTo(_priceLable.mas_left).offset(- SPACE_LINE);
-        make.height.offset(cellH/4);
+        make.right.equalTo(self.priceLable.mas_left).offset(- SPACE_LINE);
+//        make.height.offset(cellH/4);
     }];
-    
-    [_descLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_titleLable.mas_bottom).offset(- SPACE_LINE*2);
-        make.left.equalTo(_iconImage.mas_right).offset(SPACE_LINE);
-        make.width.offset(WIDTH/3 - SPACE_LINE);
-        make.height.offset(cellH*3/8 + SPACE_LINE*2);
-    }];
+//商品价格
     [_priceLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_iconImage.mas_top);
         make.right.equalTo(weakSelf.mas_right).offset(- SPACE_LINE);
-        make.left.equalTo(_titleLable.mas_right);
-        make.height.offset(cellH/4);
-//        make.bottom.equalTo(_typeLable.mas_top);
+        make.left.equalTo(_titleLable.mas_right).offset( SPACE_LINE);
+        //        make.height.offset(cellH/4);
+        make.bottom.equalTo(self.typeLable.mas_top);
     }];
     
-//    [_typeLable mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(_priceLable.mas_bottom);
-//        make.right.equalTo(weakSelf.mas_right).offset(- SPACE_LINE);
-//        make.left.equalTo(_descLable.mas_right);
-//        make.height.offset(cellH/4);
-//    }];
+    
+//商品描述
+    [_descLable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_titleLable.mas_bottom).offset(SPACE_LINE);
+        make.left.equalTo(_titleLable.mas_left);
+        make.width.offset(WIDTH/3 - SPACE_LINE);
+//        make.height.offset(cellH*3/8 + SPACE_LINE*2);
+    }];
 
-    [_shopNumView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_descLable.mas_bottom).offset(5);
-        make.left.equalTo(_descLable.mas_left);
+//商品类型
+    [_typeLable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_priceLable.mas_bottom);
         make.right.equalTo(weakSelf.mas_right).offset(- SPACE_LINE);
+        make.left.equalTo(_descLable.mas_right);
+//        make.height.offset(cellH/4);
+//        make.bottom.equalTo(self.shopNumView.mas_top).offset( - 5);
+    }];
+//商品数量
+    [_shopNumView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_descLable.mas_bottom).offset(5);
+        make.left.equalTo(_iconImage.mas_right);
+        make.right.equalTo(weakSelf.mas_right);
         make.height.offset(cellH*3/8 - SPACE_LINE*4);
         //        make.right.equalTo(weakSelf.contentView.mas_bottom).offset(-5);
-        //        make.bottom.equalTo(weakSelf.mas_bottom).offset(-5);
+        make.bottom.equalTo(weakSelf.mas_bottom).offset(- SPACE_LINE);
     }];
     
 
 
+}
+
+- (BOOL )setSelfColorSelected:(BOOL )isSelected{
+    if (isSelected) {
+       self.backgroundColor = RGBCOLOR(204, 204, 204);
+        
+    }else{
+       self.backgroundColor = [UIColor clearColor];
+    }
+    return isSelected;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

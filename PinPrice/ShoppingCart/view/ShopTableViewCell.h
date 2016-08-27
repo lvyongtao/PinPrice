@@ -34,4 +34,6 @@
 
 - (void)setValueWithModel:(ShoppingModel *)model;
 
+- (BOOL )setSelfColorSelected:(BOOL )isSelected;
+
 @end

@@ -72,6 +72,9 @@
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [self.navigationController.navigationBar addSubview:_progressView];
+    
+    if (![Reachability_NetConnect NetConnect]) {[self showMessageTitle:@"请检查网络连接"];return;}
+    
     [self showLoadingAnimation];
     NSLog(@"开始加载");
 }

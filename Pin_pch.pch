@@ -31,6 +31,7 @@
 #import "UIView+MBView.h"
 #import "UIImage+Extensition.h"
 #import "UITableView+EmptyTableView.h"
+#import "Reachability_NetConnect.h"
 
 
 //商品类头文件

@@ -15,5 +15,10 @@
 @property (copy, nonatomic) NSString *price;
 @property (copy, nonatomic) NSString *color;
 @property (copy, nonatomic) NSString *maxnum;
+@property (copy, nonatomic) NSString *size;
+
+
+@property (assign, nonatomic) NSInteger index;
+@property (assign, nonatomic) int num;
 
 @end

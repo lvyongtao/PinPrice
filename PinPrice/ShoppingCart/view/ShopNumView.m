@@ -29,9 +29,9 @@
 - (void)viewdidload{
     self.userInteractionEnabled = YES;
     float selfHeight = cellH*3/8 - SPACE_LINE*4;
-    float selfWidth = WIDTH - cellH + SPACE_LINE*2 - SPACE_LINE*3;
+    float selfWidth = WIDTH - cellH + SPACE_LINE*2 - SPACE_LINE;
 
-    UIView*alphaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, selfWidth, selfHeight)];
+    UIView*alphaView = [[UIView alloc] initWithFrame:CGRectMake(SPACE_LINE*2, 0, selfWidth- SPACE_LINE*4, selfHeight)];
     alphaView.alpha = 0.2;
     alphaView.backgroundColor = [UIColor grayColor];
     [self addSubview:alphaView];
@@ -47,7 +47,8 @@
        //cellH*3/8 - SPACE_LINE*4
 //    _rightBtn.frame = CGRectMake(selfWidth - selfHeight, 0, selfHeight, selfHeight);
     [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.offset(selfHeight);
+        make.height.offset(selfHeight);
+        make.width.offset(selfWidth/3);
         make.right.equalTo(weakSelf.mas_right);
         make.centerY.equalTo(weakSelf.mas_centerY);
     }];
@@ -68,7 +69,7 @@
     [_numLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_rightBtn.mas_left);
         make.centerY.equalTo(weakSelf.mas_centerY);
-        make.width.offset(selfWidth - selfHeight*2);
+        make.width.offset(selfWidth/3);
         make.height.offset(selfHeight);
         
     }];
@@ -80,7 +81,7 @@
     [self addSubview:_leftBtn];
     _leftBtn.userInteractionEnabled = NO;
     [_leftBtn setImage:[UIImage imageNamed:@"reduceBlack"] forState:UIControlStateNormal];
-    _leftBtn.frame = CGRectMake(0, 0, selfHeight, selfHeight);
+    _leftBtn.frame = CGRectMake(0, 0, selfWidth/3, selfHeight);
 //    [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.width.height.offset(weakSelf.height);
 //        make.right.equalTo(_numLable.mas_left).offset(- 10);

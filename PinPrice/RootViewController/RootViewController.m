@@ -144,14 +144,15 @@
 -(void)addLeftBtnWithTitle:(NSString *)title withImage:(UIImage *)image WithTitleColor:(UIColor *)color withTarget:(id)target withMethod:(SEL)select
 {
     UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    leftBtn.frame=CGRectMake(0, 0, WIDTH/4, 35);
+//    leftBtn.backgroundColor =[UIColor redColor];
+    leftBtn.frame=CGRectMake(0, 0,WIDTH/4, 20);
     [leftBtn setTitle:title forState:UIControlStateNormal];
     if (image) {
         [leftBtn setImage:image forState:UIControlStateNormal];
         //        [leftBtn setBackgroundColor:[UIColor redColor]];
-        float width=[PinMethod sizeWithString:title fount:[UIFont systemFontOfSize:15] maxSize:CGSizeMake(WIDTH, 35)].width;
-        leftBtn.imageEdgeInsets=UIEdgeInsetsMake(2,-6, 0, leftBtn.frame.size.width-25);
-        leftBtn.titleEdgeInsets=UIEdgeInsetsMake(2, -40, 0, leftBtn.frame.size.width-width-30);
+//        float width=[PinMethod sizeWithString:title fount:[UIFont systemFontOfSize:15] maxSize:CGSizeMake(WIDTH, 35)].width;
+        leftBtn.imageEdgeInsets=UIEdgeInsetsMake(0,0, 0,WIDTH/4 - 15);
+//        leftBtn.titleEdgeInsets=UIEdgeInsetsMake(2, -40, 0, leftBtn.frame.size.width-width-30);
     }
     [leftBtn addTarget:target action:select forControlEvents:UIControlEventTouchUpInside];
     [leftBtn setTitleColor:color forState:UIControlStateNormal];
@@ -199,34 +200,26 @@
 }
 
 //导航栏设置右侧按钮
--(void)addRightBtnsWithTitle1:(NSString *)title1 WithTitle2:(NSString *)title2 withImage:(UIImage *)image withTitleColor:(UIColor *)color withTarget:(id)target withMethod:(SEL)select{
-    
+-(void)addRightBtnswithImage1:(UIImage *)image1 withImage2:(UIImage *)image2 withTitleColor:(UIColor *)color withTarget:(id)target withMethod:(SEL)select{
     
     UIView *view = [[UIView alloc] init];
+    view.frame = CGRectMake(0, 0, WIDTH/4 + 20, kTopBarHeight);
+    view.backgroundColor = [UIColor clearColor];
     for (int i = 0; i <2; i ++) {
         UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        rightBtn.frame=CGRectMake(i*35, 0, WIDTH/4, 35);
+        rightBtn.frame=CGRectMake(i*WIDTH/8 + i*10, 0, WIDTH/8, kTopBarHeight);
+        rightBtn.tag = i;
         rightBtn.titleLabel.font=[UIFont systemFontOfSize:16];
         [rightBtn setTitleColor:color forState:UIControlStateNormal];
-        if (title1 && i == 0) {
-            [rightBtn setTitle:title1 forState:UIControlStateNormal];
+        [rightBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+        if (image1 && i==0) {
+            [rightBtn setImage:image1 forState:UIControlStateNormal];
         }
-        if (title2 && i == 0) {
-            [rightBtn setTitle:title2 forState:UIControlStateNormal];
+        if (image1 && i==1) {
+            [rightBtn setImage:image2 forState:UIControlStateNormal];
         }
-        if (image) {
-            [rightBtn setImage:image forState:UIControlStateNormal];
-        }
-//        if (image && title1) {
-//            
-//            float width=[PinMethod sizeWithString:title fount:[UIFont systemFontOfSize:15] maxSize:CGSizeMake(WIDTH, 35)].width;
-//            rightBtn.imageEdgeInsets=UIEdgeInsetsMake(5, rightBtn.frame.size.width-35, 0, 0);
-//            rightBtn.titleEdgeInsets=UIEdgeInsetsMake(0,-width*3/4, 0, 28);
-//        }
         [rightBtn addTarget:target action:select forControlEvents:UIControlEventTouchUpInside];
-        
         [view addSubview:rightBtn];
-        
     }
     
     
@@ -241,5 +234,39 @@
     self.navigationItem.rightBarButtonItems=@[negativeSpacer,item];
     
 }
-
+#pragma mark 创建导航栏左侧按钮
+-(UIButton*)createLeftButtonWithFrame:(CGRect)frame title:(NSString*)title titleColor:(UIColor *)color imageName:(NSString*)imageName target:(id)target method:(SEL)select
+{
+    UIButton*button=[UIButton buttonWithType:UIButtonTypeCustom];
+    
+    button.frame=frame;
+    [button setTitleColor:color forState:UIControlStateNormal];
+    if (title) {
+        [button setTitle:title forState:UIControlStateNormal];
+    }
+    if (imageName) {
+        [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        button.imageEdgeInsets=UIEdgeInsetsMake(3, 0, 3, frame.size.width-35);
+        //        [leftBtn setBackgroundColor:[UIColor redColor]];
+    }
+    if (title.length>0 && imageName) {
+        float width1=[PinMethod sizeWithString:title fount:[UIFont systemFontOfSize:20] maxSize:CGSizeMake(1000, 1000)].width;
+        
+        button.titleEdgeInsets=UIEdgeInsetsMake(0, -30, 0,frame.size.width-30-width1);
+        button.imageEdgeInsets=UIEdgeInsetsMake(3, -8, 3, frame.size.width-25);
+    }
+    [button addTarget:target action:select forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item=[[UIBarButtonItem alloc] initWithCustomView:button];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    
+    negativeSpacer.width = -10;
+    self.navigationItem.leftBarButtonItems=@[negativeSpacer,item];
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
+    return button;
+}
 @end

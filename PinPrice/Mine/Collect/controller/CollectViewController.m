@@ -143,9 +143,16 @@ static NSString *const cellID = @"CollectTableViewCell";
         [self.deletes addObject:model];
         return;
     }
+    if ([self.collects count] > 0) {
+        CollectModel *model = self.collects[indexPath.row];
+        GoodsViewController *good = [[GoodsViewController alloc] init];
+        good.model.imageUrl = model.imageUrl;
+        good.model.goodsname = model.title;
+        good.model.goodsprice = model.price;
+        [self.navigationController pushViewController:good animated:YES];
+    }
+
     
-    GoodsViewController *good = [[GoodsViewController alloc] init];
-    [self.navigationController pushViewController:good animated:YES];
     
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -47,14 +47,20 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 #pragma mark --init
 - (void)initNavgationBar{
     [self addTitleViewWithTitle:@"商品"];
-//    [self addRightBtnsWithTitle1:@"收藏1" WithTitle2:@"收藏2" withImage:nil withTitleColor:[UIColor blackColor] withTarget:self withMethod:@selector(rightButtonClick:)];
-    self.model = [[DetailGoodsModel alloc] init];
-    self.model.imageUrl = @"http://xqproduct.xiangqu.com/FrGW-ZP5wTyOygFKx4w9CgNF1HWy?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x891/";
-        self.model.goodsname = @"外星人T恤";
-        self.model.goodsprice = @"¥45555.00";
+    [self addRightBtnswithImage1:[UIImage imageNamed:@"Index_selected"] withImage2:[UIImage imageNamed:@"ShoppingCart_selected"] withTitleColor:[UIColor clearColor] withTarget:self withMethod:@selector(rightButtonClick:)];
 }
 - (void)rightButtonClick:(UIButton *)btn{
-    
+    switch (btn.tag) {
+        case 0:
+            NSLog(@"111111");
+            break;
+        case 1:
+             NSLog(@"2222222");
+            break;
+            
+        default:
+            break;
+    }
 }
 - (void)initgoodColletionView{
     
@@ -113,6 +119,12 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     [self.goodColletionView reloadData];
 }
 #pragma mark --lazyload
+- (DetailGoodsModel *)model{
+    if (!_model) {
+        _model = [[DetailGoodsModel alloc] init];
+    }
+    return _model;
+}
 - (GoodDetaiView *)detailView{
     if (!_detailView) {
         _detailView = [[GoodDetaiView alloc] init];
@@ -178,9 +190,15 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     GoodsCollectionViewCell *cell = (GoodsCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
+    if ([self.goods count] > 0) {
+        
+        GoodsViewController *good = [[GoodsViewController alloc] init];
+//        good.model.imageUrl = model.imageUrl;
+//        good.model.goodsname = model.title;
+//        good.model.goodsprice = model.price;
+        [self.navigationController pushViewController:good animated:YES];
+    }
     
-    GoodsViewController *good = [[GoodsViewController alloc] init];
-    [self.navigationController pushViewController:good animated:YES];
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     GoodsCollectionViewCell *cell = (GoodsCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
@@ -229,16 +247,21 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     NSLog(@"%zi",type);
 }
 - (void)ActionTypeBuy{
+    
     BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
+    buy.model.price = self.model.goodsprice;
+    buy.model.name = self.model.goodsname;
+    buy.model.imageUrl = self.model.imageUrl;
+    buy.type = 0;
     [self.navigationController pushViewController:buy animated:YES];
 }
 - (void)ActionTypeCart{
     
-    PinTabBarController *tabBar=[[PinTabBarController alloc] init];
-    tabBar.selectedIndex=2;
-    tabBar.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-    tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
-    [self presentViewController:tabBar animated:YES completion:nil];
+//    PinTabBarController *tabBar=[[PinTabBarController alloc] init];
+//    tabBar.selectedIndex=2;
+//    tabBar.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+//    tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
+//    [self presentViewController:tabBar animated:YES completion:nil];
 }
 - (void)ActionTypeDetail{
     DetailGoodsViewController *detail =[[DetailGoodsViewController alloc] init];

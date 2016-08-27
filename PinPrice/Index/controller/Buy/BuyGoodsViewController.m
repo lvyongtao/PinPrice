@@ -18,23 +18,48 @@
 
 @property (strong, nonatomic) UIButton *orderBtn;
 
-@property (strong, nonatomic) PlaceOrderModel *model;
+//@property (strong, nonatomic) PlaceOrderModel *model;
 
 @end
 
 @implementation BuyGoodsViewController
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.navigationController.delegate = nil;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initNavgationBar];
     [self initBuyViewWith:nil];
-    
-    
+
     // Do any additional setup after loading the view.
 }
+
 - (void)initNavgationBar{
+    
     [self addTitleViewWithTitle:@"订单"];
+    if (self.type != 0) {
+       [self addLeftBtnWithTitle:nil withImage:[UIImage imageNamed:@"all_backblue"] WithTitleColor:[UIColor blackColor] withTarget:self withMethod:@selector(backBtn)];
+    }
     [self.orderBtn setTintColor:[UIColor clearColor]];
+}
+- (void)backBtn{
+    PinTabBarController *tabBar=[[PinTabBarController alloc] init];
+    tabBar.selectedIndex=2;
+    tabBar.modalTransitionStyle=UIModalTransitionStyleCrossDissolve;
+    tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self presentViewController:tabBar animated:YES completion:nil];
 }
 //- (void)initxibView{
 //    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"BuyGoodsView" owner:nil options:nil];
@@ -43,22 +68,25 @@
 //    [self.view addSubview:self.xibView];
 //}
 - (void)initBuyViewWith:(AddressModel *)addressModel{
-   PlaceOrderModel *model = [[PlaceOrderModel alloc] init];
-    model.imageUrl = @"http://xqproduct.xiangqu.com/FiuVzSQ_tThGIGTKHA_fTlMX6QCe?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/700x700/";
-    model.name = @"晴天雨高档桌椅";
-    model.descname = @"size L";
-    model.price = @"600.00";
-    model.postage = @"10.00";
-    model.ordernum = @"4692 3556 5673 6843";
-    model.address = @"河南省\n朝阳区\n来广营幸福家园三层3318室";
-    model.phone = @"18272917285";
-    model.username = @"吕永涛";
+    
+    self.model.descname = @"size L";
+    self.model.postage = @"10.00";
+    self.model.ordernum = @"4692 3556 5673 6843";
+    self.model.address = @"河南省\n朝阳区\n来广营幸福家园三层3318室";
+    self.model.phone = @"18272917285";
+    self.model.username = @"吕永涛";
     if (addressModel != nil) {
-        model.address = addressModel.address;
-        model.phone = addressModel.phone;
-        model.username = addressModel.name;
+        self.model.address = [addressModel.address stringByAppendingString:addressModel.detailaddress];
+        self.model.phone = addressModel.phone;
+        self.model.username = addressModel.name;
     }
-    self.buyView.model = model;
+    self.buyView.model = self.model;
+}
+- (PlaceOrderModel *)model{
+    if (!_model) {
+        _model = [[PlaceOrderModel alloc] init];
+    }
+    return _model;
 }
 - (BuyGoodsView *)buyView{
     if (!_buyView) {
@@ -95,6 +123,7 @@
     }];
     [self.navigationController pushViewController:address animated:YES];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

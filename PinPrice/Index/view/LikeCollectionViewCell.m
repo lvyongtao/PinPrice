@@ -20,11 +20,11 @@
     // Initialization code
 }
 - (void)setValueWithModel:(LikeGoodsModel *)model{
-    if (model.likeGoodimageUrl) {
-        [_likegoodImage sd_setImageWithURL:[NSURL URLWithString:model.likeGoodimageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
-    }
-    if (model.likeGoodName) {
-        _likegoodLable.text = model.likeGoodName;
+    
+    [_likegoodImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+
+    if (model.name) {
+        _likegoodLable.text = model.name;
     }
    
 }

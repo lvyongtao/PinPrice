@@ -27,18 +27,30 @@
 @property (strong, nonatomic) NSArray *relatedgoods;
 
 @end
+//轮播图model
+@interface CircleGoodsModel : BaseModel
+@property (copy, nonatomic) NSString *imageUrl;
+@property (copy, nonatomic) NSString *price;
+@property (copy, nonatomic) NSString *name;
+
+@property (assign, nonatomic) NSInteger index;
+@end
 //猜你喜欢model
 @interface LikeGoodsModel : BaseModel
 
-@property (copy, nonatomic) NSString *likeGoodimageUrl;
-@property (copy, nonatomic) NSString *likeGoodName;
+@property (copy, nonatomic) NSString *imageUrl;
+@property (copy, nonatomic) NSString *price;
+@property (copy, nonatomic) NSString *name;
 
 @property (assign, nonatomic) NSInteger index;
 
 @end
 //全部商品model
 @interface AllGoodsModel : BaseModel
-@property (copy, nonatomic) NSString *allGoodimageUrl;
+@property (copy, nonatomic) NSString *imageUrl;
+@property (copy, nonatomic) NSString *price;
+@property (copy, nonatomic) NSString *name;
+
 @property (assign, nonatomic) NSInteger index;
 @end
 //首页model
@@ -53,6 +65,7 @@
 //+ (instancetype)goodWithDict:(NSDictionary *)dict; // 字典转模型
 //+ (NSArray *)goodsWithIndex:(NSInteger)index; // 根据索引返回商品数组
 @end
+
 //下订单model
 @interface PlaceOrderModel :BaseModel
 
