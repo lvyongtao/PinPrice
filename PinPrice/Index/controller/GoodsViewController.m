@@ -27,6 +27,9 @@
 @property (strong, nonatomic) UICollectionViewFlowLayout *goodLayout;
 @property (strong, nonatomic) UICollectionReusableView *headerView;
 
+
+//@property (strong, nonatomic) UIImageView *animationImage;
+
 // 全部列表数组
 @property (nonatomic, strong) NSMutableArray *goods;
 
@@ -47,15 +50,19 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 #pragma mark --init
 - (void)initNavgationBar{
     [self addTitleViewWithTitle:@"商品"];
-    [self addRightBtnswithImage1:[UIImage imageNamed:@"Index_selected"] withImage2:[UIImage imageNamed:@"ShoppingCart_selected"] withTitleColor:[UIColor clearColor] withTarget:self withMethod:@selector(rightButtonClick:)];
+    [self addRightBtnswithImage1:[UIImage imageNamed:@"goodcollect"] withImage2:[UIImage imageNamed:@"ShoppingCart_selected"] withTitleColor:[UIColor clearColor] withTarget:self withMethod:@selector(rightButtonClick:)];
 }
 - (void)rightButtonClick:(UIButton *)btn{
     switch (btn.tag) {
         case 0:
-            NSLog(@"111111");
+            // 收藏
+            btn.selected = !btn.selected;
+            btn.selected?[btn setImage:[UIImage imageNamed:@"goodcollect_selected"] forState:UIControlStateNormal]:[btn setImage:[UIImage imageNamed:@"goodcollect"] forState:UIControlStateNormal];
+            btn.selected?[self showMessageTitle:@"已收藏商品"]:[self showMessageTitle:@"取消收藏商品"];;
             break;
         case 1:
-             NSLog(@"2222222");
+            // 购物车
+            [self pushCart];
             break;
             
         default:
@@ -66,6 +73,15 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     
     [self requsetData];
     
+}
+#pragma mark --KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        //CGRectMake(WIDTH/2,0.89*HEIGHT, 30, 30)
+//        [_detailView resetAnimaitonImage];
+//        _detailView.animationImage.frame = CGRectMake(WIDTH/2, 0.78*(HEIGHT + 0.11*HEIGHT - NavH) - self.goodColletionView.contentOffset.y, 30, 30);
+//        NSLog(@"---->%.f",self.goodColletionView.contentOffset.y);
+    }
 }
 
 #pragma mark --requsetData
@@ -151,8 +167,10 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
         _goodColletionView.dataSource = self;
         _goodColletionView.showsVerticalScrollIndicator = NO;
         _goodColletionView.showsHorizontalScrollIndicator = NO;
+        [_goodColletionView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
         [_goodColletionView registerNib:[UINib nibWithNibName:@"GoodsCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellID];
         [_goodColletionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID];
+        [PinMethod addMjRefreshWithCollectView:_goodColletionView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
         [self.view addSubview:_goodColletionView];
     }
     return _goodColletionView;
@@ -164,6 +182,17 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     }
     return _goods;
 }
+
+//- (UIImageView *)animationImage{
+//    if (!_animationImage) {
+//        _animationImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+//        //CGRectMake(WIDTH/2,0.78*(HEIGHT + 0.11*HEIGHT - NavH), 30, 30)
+//        [_animationImage sd_setImageWithURL:[NSURL URLWithString:self.model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+//        _animationImage.backgroundColor =[UIColor redColor];
+//        [self.view addSubview:_animationImage];
+//    }
+//    return _animationImage;
+//}
 #pragma mark --UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -214,6 +243,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
         }
 //        self.headerView.backgroundColor = [UIColor greenColor];
         self.detailView.backgroundColor =[UIColor redColor];
+        
 //        [self requsetData];
         
         return self.headerView;
@@ -257,16 +287,45 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 }
 - (void)ActionTypeCart{
     
-//    PinTabBarController *tabBar=[[PinTabBarController alloc] init];
-//    tabBar.selectedIndex=2;
-//    tabBar.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-//    tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
-//    [self presentViewController:tabBar animated:YES completion:nil];
+    [UIView animateWithDuration:5.3f animations:^{
+        [self.detailView startAnimationImage];
+    } completion:^(BOOL finished) {
+        [self.detailView resetAnimaitonImage];
+        [self showMessageTitle:@"加入购物车成功"];
+        NSLog(@"完成");
+    }];
+
+}
+- (void)pushCart{
+    ShoppingCartViewController *shopcart = [[ShoppingCartViewController alloc] init];
+    shopcart.hidesBottomBarWhenPushed = YES;
+    shopcart.isPush = YES;
+    [self.navigationController pushViewController:shopcart animated:YES];
+    
+    
+//        PinTabBarController *tabBar=[[PinTabBarController alloc] init];
+//        tabBar.selectedIndex=2;
+//        tabBar.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+//        tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
+//        [self presentViewController:tabBar animated:YES completion:nil];
 }
 - (void)ActionTypeDetail{
     DetailGoodsViewController *detail =[[DetailGoodsViewController alloc] init];
     detail.url = @"http://v.juhe.cn/weixin/redirect?wid=wechat_20160825023108";
     [self.navigationController pushViewController:detail animated:YES];
+}
+#pragma mark --MJRefresh
+- (void)refreshData:(MJRefreshNormalHeader *)header{
+    
+    [header endRefreshing];
+}
+
+- (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
+    [footer endRefreshing];
+}
+- (void)dealloc{
+
+    [self.goodColletionView removeObserver:self forKeyPath:@"contentOffset"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

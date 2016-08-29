@@ -218,6 +218,7 @@ static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
 //        [_allGoodColletionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:allcellID];
          [_allGoodColletionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:allheaderID];
         [self.view addSubview:_allGoodColletionView];
+        [PinMethod addMjRefreshWithCollectView:_allGoodColletionView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
     }
     return _allGoodColletionView;
 }
@@ -439,6 +440,16 @@ static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
     }
     NSLog(@"跳转商品");
     [self.navigationController pushViewController:goods animated:YES];
+}
+
+#pragma mark --MJRefresh
+- (void)refreshData:(MJRefreshNormalHeader *)header{
+    
+    [header endRefreshing];
+}
+
+- (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
+    [footer endRefreshing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -15,8 +15,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="342" height="93"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-Cp-ShF">
-                        <rect key="frame" x="18" y="16" width="10" height="75"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-Cp-ShF">
+                        <rect key="frame" x="18" y="8" width="10" height="10"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="10" id="cGv-1B-9sU"/>
@@ -33,23 +33,35 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="null" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXl-F7-GoM">
                         <rect key="frame" x="36" y="3" width="288" height="58"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="singleline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3U-Zg-II6">
+                        <rect key="frame" x="22" y="18" width="1" height="83"/>
+                        <color key="backgroundColor" red="0.077032513916492462" green="0.53945964574813843" blue="0.82196182012557983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="7zl-m5-aOY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3Ce-Cp-ShF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="4jB-NA-ng6"/>
+                    <constraint firstItem="3Ce-Cp-ShF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4jB-NA-ng6"/>
                     <constraint firstAttribute="trailingMargin" secondItem="wCr-Rm-DMn" secondAttribute="trailing" constant="10" id="G5C-eM-ryg"/>
                     <constraint firstItem="wCr-Rm-DMn" firstAttribute="top" secondItem="TXl-F7-GoM" secondAttribute="bottom" constant="3" id="G6h-mW-vje"/>
                     <constraint firstItem="TXl-F7-GoM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-5" id="GD3-es-R0V"/>
                     <constraint firstAttribute="trailingMargin" secondItem="TXl-F7-GoM" secondAttribute="trailing" constant="10" id="IEK-qJ-hJh"/>
                     <constraint firstItem="wCr-Rm-DMn" firstAttribute="top" secondItem="TXl-F7-GoM" secondAttribute="bottom" constant="8" id="M40-XL-lGJ"/>
+                    <constraint firstItem="H3U-Zg-II6" firstAttribute="top" secondItem="3Ce-Cp-ShF" secondAttribute="bottom" id="O8S-Qt-KCa"/>
                     <constraint firstItem="wCr-Rm-DMn" firstAttribute="leading" secondItem="3Ce-Cp-ShF" secondAttribute="trailing" constant="8" id="VzJ-yR-9fb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="H3U-Zg-II6" secondAttribute="bottom" constant="-16" id="eg5-JV-zL2"/>
                     <constraint firstItem="3Ce-Cp-ShF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="gTx-UC-Hks"/>
                     <constraint firstItem="wCr-Rm-DMn" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="hUv-oc-AFW"/>
                     <constraint firstItem="TXl-F7-GoM" firstAttribute="leading" secondItem="3Ce-Cp-ShF" secondAttribute="trailing" constant="8" id="iy5-6h-Z7R"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="3Ce-Cp-ShF" secondAttribute="bottom" constant="-6" id="y6A-g0-jR1"/>
+                    <constraint firstItem="TXl-F7-GoM" firstAttribute="leading" secondItem="H3U-Zg-II6" secondAttribute="trailing" constant="13" id="u6Z-48-RWx"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -61,8 +73,12 @@
                 <outlet property="expressLable" destination="TXl-F7-GoM" id="3Tu-KP-es7"/>
                 <outlet property="lineImageView" destination="3Ce-Cp-ShF" id="sWV-6F-zDI"/>
                 <outlet property="orderIDLable" destination="wCr-Rm-DMn" id="zWb-6a-oG0"/>
+                <outlet property="timeLine" destination="H3U-Zg-II6" id="XAr-yM-SGB"/>
             </connections>
             <point key="canvasLocation" x="409" y="305"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="time_circle.png" width="10" height="10"/>
+    </resources>
 </document>

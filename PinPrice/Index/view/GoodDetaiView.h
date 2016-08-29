@@ -30,4 +30,8 @@ typedef NS_ENUM(NSInteger,BtnActionType){
 @property (strong, nonatomic) NSArray *btnTitles;
 @property (copy, nonatomic) NSString *reloatedText;
 
+@property (strong, nonatomic) UIImageView *animationImage;
+- (void)resetAnimaitonImage;
+- (void)startAnimationImage;
+
 @end

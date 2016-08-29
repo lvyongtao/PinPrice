@@ -9,5 +9,7 @@
 #import "RootViewController.h"
 
 @interface ShoppingCartViewController : RootViewController
+//是否push 跳转
+@property (assign, nonatomic) BOOL isPush;
 
 @end

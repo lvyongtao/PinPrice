@@ -12,7 +12,7 @@
 
 - (instancetype)init{
     if (self =[super init]) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = RGBCOLOR(226, 227, 228);
         
     }
     return self;
@@ -30,7 +30,7 @@
             _segemented.layer.cornerRadius = 4.f;
             _segemented.layer.masksToBounds = YES;
             _segemented.layer.borderWidth = 1.f;
-            _segemented.layer.borderColor = [[UIColor grayColor]CGColor];
+            _segemented.layer.borderColor = [RGBCOLOR(226, 227, 228) CGColor];
             _segemented.selectedSegmentIndex = 0;
             [_segemented setTintColor:RGBCOLOR(50, 158, 237)];
             _segemented.apportionsSegmentWidthsByContent = YES;

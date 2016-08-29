@@ -72,17 +72,31 @@
 }
 
 //
-+(void)addMjRefreshWith:(UITableView *)tableView Target:(id)target WithSelector:(SEL)refreshData WithSelector:(SEL)refreshMoreData{
++(void)addMjRefreshWithTableView:(UITableView *)tableView Target:(id)target WithSelector:(SEL)refreshData WithSelector:(SEL)refreshMoreData{
     
     MJRefreshNormalHeader *mjHeader  = [MJRefreshNormalHeader headerWithRefreshingTarget:target refreshingAction:refreshData];
     mjHeader.automaticallyChangeAlpha = YES;
-    mjHeader.lastUpdatedTimeLabel.hidden = NO;
+    mjHeader.lastUpdatedTimeLabel.hidden = YES;
     
     
     MJRefreshAutoNormalFooter *mjFooter = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:target refreshingAction:refreshMoreData];
     
     tableView.header = mjHeader;
     tableView.footer = mjFooter;
+    
+}
+
++(void)addMjRefreshWithCollectView:(UICollectionView *)collectionView Target:(id)target WithSelector:(SEL)refreshData WithSelector:(SEL)refreshMoreData{
+    
+    MJRefreshNormalHeader *mjHeader  = [MJRefreshNormalHeader headerWithRefreshingTarget:target refreshingAction:refreshData];
+    mjHeader.automaticallyChangeAlpha = YES;
+    mjHeader.lastUpdatedTimeLabel.hidden = YES;
+    
+    
+    MJRefreshAutoNormalFooter *mjFooter = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:target refreshingAction:refreshMoreData];
+    
+    collectionView.header = mjHeader;
+    collectionView.footer = mjFooter;
     
 }
 

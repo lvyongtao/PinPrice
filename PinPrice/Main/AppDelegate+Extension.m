@@ -24,11 +24,23 @@
     }
     [self.window makeKeyAndVisible];
 }
+
+- (void)ThirdLogin{
+//    NSArray *
+}
+
+
+
+
+
+
+
+
+
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
     return [TencentOAuth HandleOpenURL:url];
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     return [TencentOAuth HandleOpenURL:url];
 }
-
 @end

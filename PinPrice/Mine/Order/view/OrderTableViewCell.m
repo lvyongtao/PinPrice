@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.bgView.backgroundColor = RGBCOLOR(228, 229, 230);
     // Initialization code
 }
 - (IBAction)logisticsBtnClick:(UIButton *)sender {

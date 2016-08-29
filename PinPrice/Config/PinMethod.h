@@ -53,8 +53,8 @@
  *  @param refreshData     实现下拉刷新的方法
  *  @param refreshMoreData 实现上拉加载更过数据的方法
  */
-+(void)addMjRefreshWith:(UITableView *)tableView Target:(id)target WithSelector:(SEL)refreshData WithSelector:(SEL)refreshMoreData;
-
++(void)addMjRefreshWithTableView:(UITableView *)tableView Target:(id)target WithSelector:(SEL)refreshData WithSelector:(SEL)refreshMoreData;
++(void)addMjRefreshWithCollectView:(UICollectionView *)collectionView Target:(id)target WithSelector:(SEL)refreshData WithSelector:(SEL)refreshMoreData;
 /**
  *  设置Lable 的行间距
  */

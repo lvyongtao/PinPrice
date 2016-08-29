@@ -7,9 +7,12 @@
 //
 
 #import "BaseModel.h"
-
+//推荐model
 @interface RecommendModel : BaseModel
 
+
 @property (copy, nonatomic) NSString *imageUrl;
+@property (copy, nonatomic) NSString *price;
+@property (copy, nonatomic) NSString *name;
 
 @end

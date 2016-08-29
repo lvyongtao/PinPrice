@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *lineImageView;
 @property (weak, nonatomic) IBOutlet UILabel *expressLable;
 @property (weak, nonatomic) IBOutlet UILabel *orderIDLable;
+@property (weak, nonatomic) IBOutlet UILabel *timeLine;
 
 @property (strong, nonatomic) QueryOrderModel *queryModel;
 

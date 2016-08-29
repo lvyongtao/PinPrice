@@ -175,7 +175,7 @@ static NSString *const cellID = @"orderTableViewCell";
         _willOrderTableView.dataSource = self;
         _willOrderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_willOrderTableView registerNib:[UINib nibWithNibName:@"OrderTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellID];
-        
+        [PinMethod addMjRefreshWithTableView:_willOrderTableView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
         [self.orderScrollView addSubview:_willOrderTableView];
     }
     return _willOrderTableView;
@@ -189,7 +189,7 @@ static NSString *const cellID = @"orderTableViewCell";
         _didOrderTableView.dataSource = self;
         _didOrderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_didOrderTableView registerNib:[UINib nibWithNibName:@"OrderTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellID];
-        
+        [PinMethod addMjRefreshWithTableView:_didOrderTableView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
         [self.orderScrollView addSubview:_didOrderTableView];
     }
     return _didOrderTableView;
@@ -320,6 +320,16 @@ static NSString *const cellID = @"orderTableViewCell";
         [UIView commitAnimations];
     }
     
+}
+
+#pragma mark --MJRefresh
+- (void)refreshData:(MJRefreshNormalHeader *)header{
+    
+    [header endRefreshing];
+}
+
+- (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
+    [footer endRefreshing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

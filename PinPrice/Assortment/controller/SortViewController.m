@@ -13,6 +13,9 @@
 #define CELL_NUM 32
 #define LINESPACE_Y 5
 
+#define TAG_RECOMMEMD 10
+#define TAG_HOT 11
+
 #import "SortViewController.h"
 #import "RecommendCell.h"
 #import "HotCollectionViewCell.h"
@@ -60,37 +63,44 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
     }
         RecommendModel *model = [[RecommendModel alloc] init];
     model.imageUrl = @"http://xqproduct.xiangqu.com/FrGW-ZP5wTyOygFKx4w9CgNF1HWy?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x891/";
-    
+    model.name = @"";
+    model.price = @"";
     [self.recommends addObject:model];
     
     RecommendModel *model1 = [[RecommendModel alloc] init];
     model1.imageUrl = @"http://xqproduct.xiangqu.com/FkdKQqRGkXvToO9Wr3P4g7SF8-JN?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/700x700/";
-    
+    model1.name = @"";
+    model1.price = @"";
     [self.recommends addObject:model1];
     
     RecommendModel *model2 = [[RecommendModel alloc] init];
     model2.imageUrl = @"http://xqproduct.xiangqu.com/Fku8nFowE8o6Q5KgIZ3Oa083riHo?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/460x460/";
-    
+    model2.name = @"";
+    model2.price = @"";
     [self.recommends addObject:model2];
     
     RecommendModel *model3 = [[RecommendModel alloc] init];
     model3.imageUrl = @"http://xqproduct.xiangqu.com/Fk8Q5q_MxELt_dFWP8afoGI38kmr?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/750x500/";
-    
+    model3.name = @"";
+    model3.price = @"";
     [self.recommends addObject:model3];
     
     RecommendModel *model4 = [[RecommendModel alloc] init];
     model4.imageUrl = @"http://xqproduct.xiangqu.com/Fjh9tUJKPi56PDopd5rnGnEd90Um?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";;
-    
+    model4.name = @"";
+    model4.price = @"";
     [self.recommends addObject:model4];
     
     RecommendModel *model5 = [[RecommendModel alloc] init];
     model5.imageUrl = @"http://xqproduct.xiangqu.com/Fk8Q5q_MxELt_dFWP8afoGI38kmr?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/750x500/";
-    
+    model5.name = @"";
+    model5.price = @"";
     [self.recommends addObject:model5];
     
     RecommendModel *model6 = [[RecommendModel alloc] init];
     model6.imageUrl = @"http://xqproduct.xiangqu.com/Fk8Q5q_MxELt_dFWP8afoGI38kmr?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/750x500/";
-    
+    model6.name = @"";
+    model6.price = @"";
     [self.recommends addObject:model6];
     
     
@@ -106,50 +116,57 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
     HotModel *model = [[HotModel alloc] init];
     model.imageUrl = @"http://xqproduct.xiangqu.com/Fku8nFowE8o6Q5KgIZ3Oa083riHo?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/460x460/";
     model.title = @"头骨与蛇7";
-    model.price = @"¥45";
+    model.price = @"45";
     model.type = @"T恤";
+    model.name = @"";
     [self.hots addObject:model];
     
     HotModel *model1 = [[HotModel alloc] init];
     model1.imageUrl = @"http://xqproduct.xiangqu.com/FsA0YbOm5fioYJIpyz8rsNoG7RVh?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/700x700/";;
     model1.title = @"头骨与蛇6";
-    model1.price = @"¥45";
+    model1.price = @"45";
     model1.type = @"T恤";
+    model1.name = @"";
     [self.hots addObject:model1];
     
     HotModel *model2 = [[HotModel alloc] init];
     model2.imageUrl = @"http://xqproduct.xiangqu.com/Fjh9tUJKPi56PDopd5rnGnEd90Um?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
     model2.title = @"头骨与蛇5";
-    model2.price = @"¥45";
+    model2.price = @"45";
     model2.type = @"T恤";
+    model2.name = @"";
     [self.hots addObject:model2];
     
     HotModel *model3 = [[HotModel alloc] init];
     model3.imageUrl = @"http://xqproduct.xiangqu.com/FkdKQqRGkXvToO9Wr3P4g7SF8-JN?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/700x700/";
     model3.title = @"头骨与蛇4";
-    model3.price = @"¥45";
+    model3.price = @"45";
     model3.type = @"T恤";
+    model3.name = @"";
     [self.hots addObject:model3];
     
     HotModel *model4 = [[HotModel alloc] init];
     model4.imageUrl = @"http://xqproduct.xiangqu.com/FoYm07fprsGaSbbFYzAUXbAwMH09?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/1800x1200/";
     model4.title = @"头骨与蛇3";
-    model4.price = @"¥45";
+    model4.price = @"45";
     model4.type = @"T恤";
+    model4.name = @"";
     [self.hots addObject:model4];
     
     HotModel *model5 = [[HotModel alloc] init];
     model5.imageUrl = @"http://xqproduct.xiangqu.com/Fj2kU4K_TS8Kvolme1FhZpmB8weh?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
     model5.title = @"头骨与蛇2";
-    model5.price = @"¥45";
+    model5.price = @"45";
     model5.type = @"T恤";
+    model5.name = @"";
     [self.hots addObject:model5];
     
     HotModel *model6 = [[HotModel alloc] init];
     model6.imageUrl = @"http://xqproduct.xiangqu.com/FrQbHmZzI-MGDQfQGQxrggRe8TUa?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/700x700/";
     model6.title = @"头骨与蛇1";
-    model6.price = @"¥45";
+    model6.price = @"45";
     model6.type = @"T恤";
+    model6.name = @"";
     [self.hots addObject:model6];
     
     
@@ -171,6 +188,7 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
         _hotColletionView.showsHorizontalScrollIndicator = NO;
         [_hotColletionView registerNib:[UINib nibWithNibName:@"HotCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:hotcellID];
         [_hotColletionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:hotheaderID];
+        [PinMethod addMjRefreshWithCollectView:_hotColletionView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
         [self.view addSubview:_hotColletionView];
     }
     return _hotColletionView;
@@ -277,13 +295,12 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
     if (collectionView == _hotColletionView) {
         HotCollectionViewCell *cell = (HotCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
         cell.backgroundColor = [UIColor clearColor];
+        [self PushGoodsViewControllerWith:TAG_HOT IndexPath:indexPath];
     }else{
         RecommendCell *cell = (RecommendCell *)[collectionView cellForItemAtIndexPath:indexPath];
         cell.backgroundColor = [UIColor clearColor];
+        [self PushGoodsViewControllerWith:TAG_RECOMMEMD IndexPath:indexPath];
     }
-    
-    [self PushGoodsViewController];
-    
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -321,11 +338,45 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
     
 }
 
-- (void)PushGoodsViewController{
-    NSLog(@"跳转商品");
+#pragma mark --push
+- (void)PushGoodsViewControllerWith:(NSInteger )tag IndexPath:(NSIndexPath *)indexpath{
     GoodsViewController *goods = [[GoodsViewController alloc] init];
     goods.hidesBottomBarWhenPushed = YES;
+    
+    switch (tag) {
+        case TAG_RECOMMEMD:
+            if ([self.recommends count]>0) {
+                RecommendModel *model = self.recommends[indexpath.row];
+                goods.model.imageUrl = model.imageUrl;
+                goods.model.goodsname = model.name;
+                goods.model.goodsprice = model.price;
+            }
+            break;
+        case TAG_HOT:
+            if ([self.hots count]>0) {
+                HotModel *model = self.hots[indexpath.row];
+                goods.model.imageUrl = model.imageUrl;
+                goods.model.goodsname = model.name;
+                goods.model.goodsprice = model.price;
+            }
+            break;
+            
+        default:
+            break;
+    }
+    NSLog(@"跳转商品");
     [self.navigationController pushViewController:goods animated:YES];
+}
+
+
+#pragma mark --MJRefresh
+- (void)refreshData:(MJRefreshNormalHeader *)header{
+    
+    [header endRefreshing];
+}
+
+- (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
+    [footer endRefreshing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -12,6 +12,12 @@
 
 @interface AppDelegate (Extension)
 
-
+/**
+ *  用户是否登录
+ */
 - (void)initLogin;
+/**
+ *  第三方登陆
+ */
+- (void)ThirdLogin;
 @end

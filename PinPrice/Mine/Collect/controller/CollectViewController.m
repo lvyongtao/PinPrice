@@ -95,6 +95,7 @@ static NSString *const cellID = @"CollectTableViewCell";
     [self.collects addObject:model3];
     [self.collectTableView reloadData];
 }
+#pragma mark --lazyload
 - (UITableView *)collectTableView{
     if (!_collectTableView) {
         _collectTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
@@ -104,6 +105,7 @@ static NSString *const cellID = @"CollectTableViewCell";
         _collectTableView.delegate = self;
         _collectTableView.dataSource = self;
         [_collectTableView registerNib:[UINib nibWithNibName:@"CollectTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellID];
+        [PinMethod addMjRefreshWithTableView:_collectTableView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
         [self.view addSubview:_collectTableView];
     }
     return _collectTableView;
@@ -186,6 +188,16 @@ static NSString *const cellID = @"CollectTableViewCell";
 //    [self.collectTableView reloadData];
 //    
 //}
+
+#pragma mark --MJRefresh
+- (void)refreshData:(MJRefreshNormalHeader *)header{
+    
+    [header endRefreshing];
+}
+
+- (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
+    [footer endRefreshing];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

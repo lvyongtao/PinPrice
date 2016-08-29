@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [UIColor grayColor];
+    self.backgroundColor = RGBCOLOR(240, 241, 242);
+    self.timeLine.backgroundColor = RGBCOLOR(0, 172, 242);
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Initialization code
 }
@@ -22,7 +23,7 @@
         _expressLable.text = queryModel.address;
     }
     if (queryModel.time) {
-        _orderIDLable.text = queryModel.orderid;
+        _orderIDLable.text = queryModel.time;
     }
 }
 

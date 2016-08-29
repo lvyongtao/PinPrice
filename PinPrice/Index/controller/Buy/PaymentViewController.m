@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavgationBar];
+    self.view.backgroundColor = RGBCOLOR(243, 243, 243);
     // Do any additional setup after loading the view from its nib.
 }
 - (void)initNavgationBar{

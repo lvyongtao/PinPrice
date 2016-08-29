@@ -16,4 +16,5 @@
 @property (copy, nonatomic) NSString *address;
 @property (copy, nonatomic) NSString *time;
 
+
 @end

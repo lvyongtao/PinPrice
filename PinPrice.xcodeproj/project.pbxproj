@@ -54,7 +54,6 @@
 		D8445DC71D6329230031C02A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8445DC61D6329230031C02A /* libz.tbd */; };
 		D8461E291D6D46CF008096A8 /* BuyGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8461E281D6D46CF008096A8 /* BuyGoodsView.m */; };
 		D8461E351D6D9C73008096A8 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8461E331D6D9C73008096A8 /* PaymentViewController.m */; };
-		D8461E361D6D9C73008096A8 /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8461E341D6D9C73008096A8 /* PaymentViewController.xib */; };
 		D8592F131D716A8800BF6680 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D8592F111D716A8800BF6680 /* Reachability.m */; };
 		D8592F161D716ABA00BF6680 /* Reachability_NetConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = D8592F151D716ABA00BF6680 /* Reachability_NetConnect.m */; };
 		D8592F181D71755500BF6680 /* shop_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8592F171D71755500BF6680 /* shop_selected@2x.png */; };
@@ -80,6 +79,11 @@
 		D8732B121D6BFFB300963D30 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8732B101D6BFFB300963D30 /* GoodsCollectionViewCell.m */; };
 		D8732B131D6BFFB300963D30 /* GoodsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8732B111D6BFFB300963D30 /* GoodsCollectionViewCell.xib */; };
 		D8810E421D5AFBD500EA4BEA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8810E411D5AFBD500EA4BEA /* CoreText.framework */; };
+		D886CF871D73CCE8005E0A44 /* shop_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF861D73CCE8005E0A44 /* shop_close@2x.png */; };
+		D886CF8A1D73D918005E0A44 /* goodcollect_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF881D73D918005E0A44 /* goodcollect_selected@2x.png */; };
+		D886CF8B1D73D918005E0A44 /* goodcollect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF891D73D918005E0A44 /* goodcollect@2x.png */; };
+		D886CF901D73FF3F005E0A44 /* PaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D886CF8F1D73FF3F005E0A44 /* PaymentView.m */; };
+		D886CF941D741374005E0A44 /* time_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF931D741374005E0A44 /* time_circle@2x.png */; };
 		D8988A301D6C394A00A81799 /* white_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8988A2F1D6C394A00A81799 /* white_line@2x.png */; };
 		D8A1686C1D61BF2E004CDA9B /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1686B1D61BF2E004CDA9B /* LoginView.m */; };
 		D8A1686F1D61BF40004CDA9B /* ThirdLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1686E1D61BF40004CDA9B /* ThirdLoginView.m */; };
@@ -290,7 +294,6 @@
 		D8461E281D6D46CF008096A8 /* BuyGoodsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyGoodsView.m; sourceTree = "<group>"; };
 		D8461E321D6D9C73008096A8 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
 		D8461E331D6D9C73008096A8 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
-		D8461E341D6D9C73008096A8 /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		D8592F101D716A8800BF6680 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D8592F111D716A8800BF6680 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D8592F141D716ABA00BF6680 /* Reachability_NetConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability_NetConnect.h; sourceTree = "<group>"; };
@@ -328,6 +331,12 @@
 		D8732B101D6BFFB300963D30 /* GoodsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsCollectionViewCell.m; sourceTree = "<group>"; };
 		D8732B111D6BFFB300963D30 /* GoodsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D8810E411D5AFBD500EA4BEA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D886CF861D73CCE8005E0A44 /* shop_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop_close@2x.png"; sourceTree = "<group>"; };
+		D886CF881D73D918005E0A44 /* goodcollect_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goodcollect_selected@2x.png"; sourceTree = "<group>"; };
+		D886CF891D73D918005E0A44 /* goodcollect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goodcollect@2x.png"; sourceTree = "<group>"; };
+		D886CF8E1D73FF3F005E0A44 /* PaymentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentView.h; sourceTree = "<group>"; };
+		D886CF8F1D73FF3F005E0A44 /* PaymentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentView.m; sourceTree = "<group>"; };
+		D886CF931D741374005E0A44 /* time_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time_circle@2x.png"; sourceTree = "<group>"; };
 		D8988A2F1D6C394A00A81799 /* white_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_line@2x.png"; sourceTree = "<group>"; };
 		D8A1686A1D61BF2E004CDA9B /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		D8A1686B1D61BF2E004CDA9B /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
@@ -631,6 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				D83C5D041D66AD9C0031D383 /* delect@2x.png */,
+				D886CF931D741374005E0A44 /* time_circle@2x.png */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -672,7 +682,6 @@
 				D84244DD1D6C4D9100632C14 /* BuyGoodsViewController.m */,
 				D8461E321D6D9C73008096A8 /* PaymentViewController.h */,
 				D8461E331D6D9C73008096A8 /* PaymentViewController.m */,
-				D8461E341D6D9C73008096A8 /* PaymentViewController.xib */,
 			);
 			path = Buy;
 			sourceTree = "<group>";
@@ -739,6 +748,7 @@
 				D860CC5E1D5B1ED50043D1E7 /* reduceBlack@2x.png */,
 				D814C1C31D6EED6500C53F47 /* shop_selectedn@2x.png */,
 				D8592F171D71755500BF6680 /* shop_selected@2x.png */,
+				D886CF861D73CCE8005E0A44 /* shop_close@2x.png */,
 			);
 			name = shop;
 			path = PinPrice/PinImages/shop;
@@ -764,6 +774,8 @@
 			isa = PBXGroup;
 			children = (
 				D8988A2F1D6C394A00A81799 /* white_line@2x.png */,
+				D886CF881D73D918005E0A44 /* goodcollect_selected@2x.png */,
+				D886CF891D73D918005E0A44 /* goodcollect@2x.png */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -1053,6 +1065,8 @@
 				D8732B0F1D6BFFB300963D30 /* GoodsCollectionViewCell.h */,
 				D8732B101D6BFFB300963D30 /* GoodsCollectionViewCell.m */,
 				D8732B111D6BFFB300963D30 /* GoodsCollectionViewCell.xib */,
+				D886CF8E1D73FF3F005E0A44 /* PaymentView.h */,
+				D886CF8F1D73FF3F005E0A44 /* PaymentView.m */,
 				D8461E261D6D46B6008096A8 /* Buy */,
 			);
 			path = view;
@@ -1696,8 +1710,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8445DA81D62E7790031C02A /* all_back.png in Resources */,
-				D8461E361D6D9C73008096A8 /* PaymentViewController.xib in Resources */,
 				D860CC621D5B1ED50043D1E7 /* reduceBlack@2x.png in Resources */,
+				D886CF8A1D73D918005E0A44 /* goodcollect_selected@2x.png in Resources */,
 				D819C7C51D61B7EC004A5D8A /* weibo@2x.png in Resources */,
 				D86015A71D655166002DD67A /* 2.plist in Resources */,
 				D8D8F6AE1D6ADFC500FD7868 /* RecommendCell.xib in Resources */,
@@ -1708,6 +1722,7 @@
 				D860CC611D5B1ED50043D1E7 /* reduce@2x.png in Resources */,
 				D86015A61D655166002DD67A /* 1.plist in Resources */,
 				D814C1C41D6EED6500C53F47 /* shop_selectedn@2x.png in Resources */,
+				D886CF8B1D73D918005E0A44 /* goodcollect@2x.png in Resources */,
 				D8E70E731D5B059D0008801D /* MJRefresh.bundle in Resources */,
 				D866D9B91D6A914200D2BCDD /* AddressTableViewCell.xib in Resources */,
 				D8E70E641D5B059D0008801D /* LICENSE in Resources */,
@@ -1731,12 +1746,14 @@
 				D86549F11D6FF19A00D20BE4 /* all_backblue.png in Resources */,
 				D8988A301D6C394A00A81799 /* white_line@2x.png in Resources */,
 				D8A5ECCA1D585B86004551FB /* Assortment@2x.png in Resources */,
+				D886CF871D73CCE8005E0A44 /* shop_close@2x.png in Resources */,
 				D83C5D051D66AD9C0031D383 /* delect@2x.png in Resources */,
 				D8A5ECCE1D585B86004551FB /* Mine_selected@2x.png in Resources */,
 				D8E70E581D5B059D0008801D /* Info.plist in Resources */,
 				D8A5EC731D585004004551FB /* Assets.xcassets in Resources */,
 				D8C8FDFE1D65793200C84CBC /* AllCollectionViewCell.xib in Resources */,
 				D8A5ECCF1D585B86004551FB /* ShoppingCart@2x.png in Resources */,
+				D886CF941D741374005E0A44 /* time_circle@2x.png in Resources */,
 				D8A5EC6E1D585004004551FB /* Main.storyboard in Resources */,
 				D8ABE4341D66EEE4008B6F22 /* QueryTableViewCell.xib in Resources */,
 				D86549E31D6FD6F300D20BE4 /* PayCartTableViewCell.xib in Resources */,
@@ -1825,6 +1842,7 @@
 				D8A5ECB51D585654004551FB /* PinTabBarController.m in Sources */,
 				D8E70E811D5B059D0008801D /* SDWebImagePrefetcher.m in Sources */,
 				D8230E7F1D65C74B0015B842 /* ShoppingModel.m in Sources */,
+				D886CF901D73FF3F005E0A44 /* PaymentView.m in Sources */,
 				D8445DA61D62E61B0031C02A /* RegisterViewController.m in Sources */,
 				D819C7CC1D61B9C5004A5D8A /* PinUserInfo.m in Sources */,
 				D83FB99C1D644D1500CFD5E3 /* TAAnimatedDotView.m in Sources */,

@@ -76,7 +76,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X4K-Jz-JZp" firstAttribute="leading" secondItem="Dm5-hl-PxT" secondAttribute="trailing" constant="8" id="8u8-db-C4k"/>
                             <constraint firstAttribute="trailing" secondItem="h5Q-IR-OLJ" secondAttribute="trailing" constant="8" id="C7R-Ia-4mb"/>
@@ -137,6 +136,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bgView" destination="ugF-wH-QgU" id="itN-xk-TaB"/>
                 <outlet property="brandLable" destination="uUc-0n-Tk3" id="md0-Ia-DnW"/>
                 <outlet property="deleteBtn" destination="Irb-6I-AoL" id="BL9-DP-nx3"/>
                 <outlet property="descLable" destination="Jbo-XS-gAN" id="jit-wa-UOs"/>

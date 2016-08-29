@@ -7,7 +7,7 @@
 //
 
 #import "AssertmentModel.h"
-
+//分类model
 @implementation AssertmentModel
 
 

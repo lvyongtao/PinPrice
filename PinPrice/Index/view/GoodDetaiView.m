@@ -6,6 +6,8 @@
 //  Copyright © 2016年 lvyongtao. All rights reserved.
 //
 #define BTN_H 72
+#define ANGLE_W 180
+
 #import "GoodDetaiView.h"
 //(0,160,234)
 @interface GoodDetaiView ()
@@ -14,6 +16,8 @@
 @property (strong, nonatomic) UILabel *goodsLable;
 @property (strong, nonatomic) UILabel *priceLable;
 @property (strong, nonatomic) UILabel *relatedLable;
+
+
 
 @end
 
@@ -50,6 +54,16 @@
         [self addSubview:_goodsImage];
     }
     return _goodsImage;
+}
+- (UIImageView *)animationImage{
+    if (!_animationImage) {
+        _animationImage = [[UIImageView alloc] init];
+        //CGRectMake(WIDTH/2,0.78*(HEIGHT + 0.11*HEIGHT - NavH), 30, 30)
+        _animationImage.backgroundColor =[UIColor redColor];
+        _animationImage.hidden = YES;
+        [self addSubview:_animationImage];
+    }
+    return _animationImage;
 }
 - (UILabel *)goodsLable{
     if (!_goodsLable) {
@@ -117,6 +131,7 @@
     if (self.model.goodsprice) {
         self.priceLable.text = [NSString stringWithFormat:@"¥%@",model.goodsprice];
     }
+    [self.animationImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
@@ -137,6 +152,17 @@
         btn.frame = CGRectMake(i*self.width/3, self.goodsImage.height,self.width/3, 0.11*self.height);
         [btn setTitle:self.btnTitles[i] forState:UIControlStateNormal];
     }
+    
+    self.animationImage.frame = CGRectMake(self.width/3 + (self.width/3 - 30)/2, self.goodsImage.height - 30, 30, 30);
+}
+- (void)resetAnimaitonImage{
+    self.animationImage.hidden = YES;
+    self.animationImage.frame = CGRectMake(self.width/3 + (self.width/3 - 30)/2, self.goodsImage.height - 30, 30, 30);
+}
+- (void)startAnimationImage{
+    self.animationImage.hidden = NO;
+//    self.animationImage.transform = CGAffineTransformMakeRotation(ANGLE_W *(M_PI / 180.0f));
+    self.animationImage.frame = CGRectMake(WIDTH - 50, 0, 30, 30);
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -42,83 +42,83 @@ static NSString *const cellID = @"ShoppingCartViewCell";
     if (self.shopBuys) {
         [self.shopBuys removeAllObjects];
     }
-//    ShoppingModel *model = [[ShoppingModel alloc] init];
-//    model.imageUrl = @"http://xqproduct.xiangqu.com/FsMd6kTVFnqL5qhupgNeYu4veM39?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
-//    model.title = @"短袖";
-//    model.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
-//    model.price = @"1.00";
-//    model.maxnum = @"10";
-//    model.color = @"蓝色";
-//    model.size = @"S";
-//    model.num = 1;
-//    [self.shopBuys addObject:model];
-//    
-//    ShoppingModel *model1 = [[ShoppingModel alloc] init];
-//    model1.imageUrl = @"http://xqproduct.xiangqu.com/FkKSh-s49Lh767u9bDMCIUF4mIDJ?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/2500x1667/";
-//    model1.title = @"短袖";
-//    model1.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
-//    model1.price = @"10.00";
-//    model1.color = @"蓝色";
-//    model1.maxnum = @"5";
-//    model1.size = @"S";
-//    model1.num = 1;
-//    [self.shopBuys addObject:model1];
-//    
-//    ShoppingModel *model2 = [[ShoppingModel alloc] init];
-//    model2.imageUrl = @"http://xqproduct.xiangqu.com/FnR4RLXJjxLLWk4wvHC4WP5W_M4_?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
-//    model2.title = @"短袖";
-//    model2.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
-//    model2.price = @"100.00";
-//    model2.color = @"蓝色";
-//    model2.maxnum = @"15";
-//    model2.size = @"S";
-//    model2.num = 1;
-//    [self.shopBuys addObject:model2];
-//    
-//    
-//    ShoppingModel *model3 = [[ShoppingModel alloc] init];
-//    model3.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
-//    model3.title = @"短袖";
-//    model3.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
-//    model3.price = @"10.00";
-//    model3.color = @"蓝色";
-//    model3.maxnum = @"3";
-//    model3.size = @"S";
-//    model3.num = 1;
-//    [self.shopBuys addObject:model3];
-//    
-//    ShoppingModel *model4 = [[ShoppingModel alloc] init];
-//    model4.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
-//    model4.title = @"短袖";
-//    model4.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
-//    model4.price = @"100.00";
-//    model4.color = @"蓝色";
-//    model4.maxnum = @"3";
-//    model4.size = @"S";
-//    model4.num = 1;
-//    [self.shopBuys addObject:model4];
-//    
-//    ShoppingModel *model5 = [[ShoppingModel alloc] init];
-//    model5.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
-//    model5.title = @"短袖";
-//    model5.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
-//    model5.price = @"1000.00";
-//    model5.color = @"蓝色";
-//    model5.maxnum = @"3";
-//    model5.size = @"S";
-//    model5.num = 1;
-//    [self.shopBuys addObject:model5];
-//    
-//    ShoppingModel *model6 = [[ShoppingModel alloc] init];
-//    model6.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
-//    model6.title = @"短袖";
-//    model6.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
-//    model6.price = @"10000.00";
-//    model6.color = @"蓝色";
-//    model6.maxnum = @"3";
-//    model6.size = @"S";
-//    model6.num = 1;
-//    [self.shopBuys addObject:model6];
+    ShoppingModel *model = [[ShoppingModel alloc] init];
+    model.imageUrl = @"http://xqproduct.xiangqu.com/FsMd6kTVFnqL5qhupgNeYu4veM39?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
+    model.title = @"短袖";
+    model.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
+    model.price = @"1.00";
+    model.maxnum = @"10";
+    model.color = @"蓝色";
+    model.size = @"S";
+    model.num = 1;
+    [self.shopBuys addObject:model];
+    
+    ShoppingModel *model1 = [[ShoppingModel alloc] init];
+    model1.imageUrl = @"http://xqproduct.xiangqu.com/FkKSh-s49Lh767u9bDMCIUF4mIDJ?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/2500x1667/";
+    model1.title = @"短袖";
+    model1.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
+    model1.price = @"10.00";
+    model1.color = @"蓝色";
+    model1.maxnum = @"5";
+    model1.size = @"S";
+    model1.num = 1;
+    [self.shopBuys addObject:model1];
+    
+    ShoppingModel *model2 = [[ShoppingModel alloc] init];
+    model2.imageUrl = @"http://xqproduct.xiangqu.com/FnR4RLXJjxLLWk4wvHC4WP5W_M4_?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/800x800/";
+    model2.title = @"短袖";
+    model2.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
+    model2.price = @"100.00";
+    model2.color = @"蓝色";
+    model2.maxnum = @"15";
+    model2.size = @"S";
+    model2.num = 1;
+    [self.shopBuys addObject:model2];
+    
+    
+    ShoppingModel *model3 = [[ShoppingModel alloc] init];
+    model3.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
+    model3.title = @"短袖";
+    model3.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
+    model3.price = @"10.00";
+    model3.color = @"蓝色";
+    model3.maxnum = @"3";
+    model3.size = @"S";
+    model3.num = 1;
+    [self.shopBuys addObject:model3];
+    
+    ShoppingModel *model4 = [[ShoppingModel alloc] init];
+    model4.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
+    model4.title = @"短袖";
+    model4.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
+    model4.price = @"100.00";
+    model4.color = @"蓝色";
+    model4.maxnum = @"3";
+    model4.size = @"S";
+    model4.num = 1;
+    [self.shopBuys addObject:model4];
+    
+    ShoppingModel *model5 = [[ShoppingModel alloc] init];
+    model5.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
+    model5.title = @"短袖";
+    model5.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
+    model5.price = @"1000.00";
+    model5.color = @"蓝色";
+    model5.maxnum = @"3";
+    model5.size = @"S";
+    model5.num = 1;
+    [self.shopBuys addObject:model5];
+    
+    ShoppingModel *model6 = [[ShoppingModel alloc] init];
+    model6.imageUrl = @"http://xqproduct.xiangqu.com/Fmsvn7L8TJ_m9RFgqyJHT40MZmVE?imageView2/2/w/300/q/90/format/jpg/@w/$w$@/@h/$h$@/900x900/";
+    model6.title = @"短袖";
+    model6.desctitle = @"关系户最多帮拼允许5个帮拼最高金额3元自己应支付20元";
+    model6.price = @"10000.00";
+    model6.color = @"蓝色";
+    model6.maxnum = @"3";
+    model6.size = @"S";
+    model6.num = 1;
+    [self.shopBuys addObject:model6];
     
     [self.shopTableView reloadData];
     if ([self.shopBuys count] > 0) {
@@ -133,6 +133,9 @@ static NSString *const cellID = @"ShoppingCartViewCell";
     if (!_toolView) {
         _toolView = [[ShopToolView alloc] init];
         _toolView.frame = CGRectMake(0, HEIGHT - kBottomBarHeight - TOOLVIEW_H, WIDTH, TOOLVIEW_H);
+        if (self.isPush) {
+            _toolView.frame = CGRectMake(0, HEIGHT - TOOLVIEW_H, WIDTH, TOOLVIEW_H);
+        }
         _toolView.delegate = self;
         [self.view addSubview:_toolView];
     }
@@ -147,6 +150,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
         _shopTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _shopTableView.delegate = self;
         _shopTableView.dataSource = self;
+        [PinMethod addMjRefreshWithTableView:_shopTableView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
         [self.view addSubview:_shopTableView];
     }
     return _shopTableView;
@@ -177,11 +181,10 @@ static NSString *const cellID = @"ShoppingCartViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ShopTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    cell.tag = indexPath.row;
+    cell.delegate = self;
     if (cell == nil) {
         cell = [[ShopTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-        cell.tag = indexPath.row;
-        cell.delegate = self;
-
     }
     //赋值
     if (self.shopBuys &&[self.shopBuys count]> 0) {
@@ -339,6 +342,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
     }
     [self present];
 }
+#pragma mark --初始化自定义转场动画
 - (void)initInteractiveTransition{
 //    _interactivePush = [XWInteractiveTransition interactiveTransitionWithTransitionType:XWInteractiveTransitionTypePresent GestureDirection:nil];
 //    typeof(self)weakSelf = self;
@@ -362,6 +366,16 @@ static NSString *const cellID = @"ShoppingCartViewCell";
 - (id<UIViewControllerInteractiveTransitioning>)interactiveTransitionForPresent{
     
     return _interactivePush;
+}
+
+#pragma mark --MJRefresh
+- (void)refreshData:(MJRefreshNormalHeader *)header{
+    
+    [header endRefreshing];
+}
+
+- (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
+    [footer endRefreshing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

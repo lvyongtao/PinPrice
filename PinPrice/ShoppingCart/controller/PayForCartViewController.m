@@ -26,6 +26,8 @@
 @property (strong, nonatomic) UIButton *payOrderBtn;
 //back button
 @property (strong, nonatomic) UIButton *backBtn;
+//订单详情
+@property (strong, nonatomic) UILabel *backLable;
 //购物车视图
 @property (strong, nonatomic) UITableView *payTableView;
 
@@ -49,13 +51,15 @@ static NSString *const cellID = @"PayCartTableViewCell";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initInteractiveTransition];
+    
+    //[self initInteractiveTransition];
     [self initTableView];
     // Do any additional setup after loading the view.
 }
 - (void)initTableView{
-    [self.payOrderBtn setTintColor:[UIColor clearColor]];
-    [self.backBtn setTintColor:[UIColor clearColor]];
+    [self.payOrderBtn setTitle:@"立即下单" forState:UIControlStateNormal];
+    [self.backBtn setImage:[UIImage imageNamed:@"shop_close"] forState:UIControlStateNormal];
+    [self.backLable setText:@"确认订单"];
     [self.payTableView reloadData];
 }
 #pragma mark --lazyload
@@ -85,21 +89,29 @@ static NSString *const cellID = @"PayCartTableViewCell";
 - (UIButton *)backBtn{
     if (!_backBtn) {
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _backBtn.backgroundColor = RGBCOLOR(255, 79, 80);
-        _backBtn.frame = CGRectMake(0,0, WIDTH, PAYORDER_BTN_H);
-        [_backBtn setTitle:@"hello，点击返回购物车" forState:UIControlStateNormal];
+        _backBtn.backgroundColor = [UIColor clearColor];
+        _backBtn.frame = CGRectMake(WIDTH - PAYORDER_BTN_H,0, PAYORDER_BTN_H, PAYORDER_BTN_H);
         _backBtn.userInteractionEnabled = YES;
         [_backBtn addTarget:self action:@selector(backBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_backBtn];
     }
-    return _payOrderBtn;
+    return _backBtn;
+}
+- (UILabel *)backLable{
+    if (!_backLable) {
+        _backLable = [[UILabel alloc] init];
+        _backLable.backgroundColor = [UIColor clearColor];
+        _backLable.frame = CGRectMake(10, 0, WIDTH - PAYORDER_BTN_H - 20, PAYORDER_BTN_H);
+        _backLable.textAlignment = NSTextAlignmentLeft;
+        [self.view addSubview:_backLable];
+    }
+    return _backLable;
 }
 - (UIButton *)payOrderBtn{
     if (!_payOrderBtn) {
         _payOrderBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _payOrderBtn.backgroundColor = RGBCOLOR(255, 79, 80);
         _payOrderBtn.frame = CGRectMake(0, PAYVIEW_H - PAYORDER_BTN_H, WIDTH, PAYORDER_BTN_H);
-        [_payOrderBtn setTitle:@"立即下单" forState:UIControlStateNormal];
         _payOrderBtn.userInteractionEnabled = YES;
         [_payOrderBtn addTarget:self action:@selector(payOrderBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_payOrderBtn];
@@ -108,11 +120,13 @@ static NSString *const cellID = @"PayCartTableViewCell";
 }
 #pragma mark --action
 - (void)payOrderBtnClick:(UIButton *)btn{
-    BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
-    buy.type = 1;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:buy];
-//    [self presentViewController:buy animated:YES completion:nil];
-    [self presentViewController:nav animated:YES completion:nil];
+//    BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
+//    buy.type = 1;
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:buy];
+////    [self presentViewController:buy animated:YES completion:nil];
+//    [self presentViewController:nav animated:YES completion:nil];
+    
+    [self showMessageTitle:@"下单成功"];
     NSLog(@"立即下单");
     
 }
@@ -161,7 +175,7 @@ static NSString *const cellID = @"PayCartTableViewCell";
     
 }
 
-#pragma mark --自定义转场动画
+#pragma mark --自定义手势转场动画
 - (void)initInteractiveTransition{
     self.interactiveDismiss = [XWInteractiveTransition interactiveTransitionWithTransitionType:XWInteractiveTransitionTypeDismiss GestureDirection:XWInteractiveTransitionGestureDirectionRight];
     [self.interactiveDismiss addPanGestureForViewController:self];

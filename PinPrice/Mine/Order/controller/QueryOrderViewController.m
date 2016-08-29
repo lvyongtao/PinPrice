@@ -79,7 +79,7 @@ static NSString *const cellID = @"QueryTableViewCell";
         _queryTableView.delegate = self;
         _queryTableView.dataSource = self;
         _queryTableView.tableHeaderView = [self tableHeaderView];
-//        _queryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _queryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_queryTableView registerNib:[UINib nibWithNibName:@"QueryTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellID];
         
         [self.view addSubview:_queryTableView];
@@ -90,7 +90,7 @@ static NSString *const cellID = @"QueryTableViewCell";
     
     
     _headView = [[QueryheadView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEADVIEW_HEIGHT)];
-    _headView.backgroundColor = [UIColor grayColor];
+    _headView.backgroundColor = RGBCOLOR(240, 241, 242);
     if ([self.queryOrders count] > 0) {
         QueryOrderModel *model = self.queryOrders[0];
         _headView.iconUrl =model.imageUrl;
@@ -115,6 +115,12 @@ static NSString *const cellID = @"QueryTableViewCell";
     if (self.queryOrders &&[self.queryOrders count]> 0) {
         cell.fd_enforceFrameLayout = NO;
         cell.queryModel = self.queryOrders[indexPath.row];
+    }
+    
+    if (indexPath.row == [self.queryOrders count] - 1) {
+        cell.timeLine.hidden = YES;
+    }else{
+        cell.timeLine.hidden = NO;
     }
     return cell;
     

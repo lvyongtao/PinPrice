@@ -76,13 +76,26 @@
     }
     return _thirdLoginView;
 }
-#pragma mark --delegate
+#pragma mark --ThirdLoginBtnClickDelegate
 //ThirdLoginBtnClickDelegate
 - (void)thirdLoginTypeClick:(ThirdLoginType)type{
-    
-//    NSLog(@"%ld",type);
+    switch (type) {
+        case ThirdLoginTypeWeibo:
+            
+            break;
+        case ThirdLoginTypeQQ:
+            
+            break;
+        case ThirdLoginTypeWeixin:
+            
+            break;
+            
+        default:
+            break;
+    }
+    NSLog(@"%zi",type);
 }
-//UserLoginBtnClickDelegate
+#pragma mark --UserLoginBtnClickDelegate
 - (void)loginBtnClick:(NSInteger)btntTag{
     switch (btntTag) {
         case 102:
@@ -96,7 +109,7 @@
             break;
     }
 }
-//UsertextFiledClickDelegate
+#pragma mark --UsertextFiledClickDelegate
 - (void)usertextFiledClickTag:(NSInteger)textFiledTag Text:(NSString *)text{
     NSLog(@"输入的信息 是--->%zi：---->%@",textFiledTag,text);
     switch (textFiledTag) {
@@ -115,11 +128,11 @@
 - (void)actionLogin{
     [PinUserInfo setUserID:@"临时的ID类型"];
     if ([PinUserInfo getphone].length == 0) {
-        [self showMessageTitle:@"请重新输入帐号"];
+        [self showMessageTitle:@"请输入帐号"];
         return;
     }
     if ([PinUserInfo getpassword].length == 0) {
-        [self showMessageTitle:@"请重新输入密码"];
+        [self showMessageTitle:@"请输入密码"];
         return;
     }
     if ([[PinUserInfo getphone] isEqualToString:@"18272917285"] && [[PinUserInfo getpassword] isEqualToString:@"12345678"]) {
