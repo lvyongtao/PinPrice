@@ -14,6 +14,7 @@
     [super awakeFromNib];
     self.backgroundColor = RGBCOLOR(240, 241, 242);
     self.timeLine.backgroundColor = RGBCOLOR(0, 172, 242);
+    self.orderIDLable.textColor = [UIColor lightGrayColor];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Initialization code
 }

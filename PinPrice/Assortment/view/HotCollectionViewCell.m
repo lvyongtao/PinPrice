@@ -12,9 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    NSLog(@"%zi",self.tag);
-    self.bgView.layer.borderWidth = 1.f;
-    self.bgView.layer.borderColor = [[UIColor grayColor] CGColor];
+//    NSLog(@"%zi",self.tag);
+    self.bgView.layer.borderWidth = 0.5f;
+    self.bgView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     self.imageView.clipsToBounds = YES;
     // Initialization code
 }

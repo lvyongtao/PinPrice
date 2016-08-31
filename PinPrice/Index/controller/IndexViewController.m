@@ -6,14 +6,12 @@
 //  Copyright © 2016年 lvyongtao. All rights reserved.
 //
 
-#define TIMECELL_HEIGHT 40
 #define MINLINESPACEING 5
 #define MINLINESPACEING_ALL 10
 
-
+#define TIMECELL_HEIGHT 40
 #define CELL_NUM 32
 #define LINESPACE_Y 5
-
 
 #define TAG_ALL 10
 #define TAG_LIKE 11
@@ -26,17 +24,23 @@
 #import "AllCollectionViewCell.h"
 
 @interface IndexViewController ()<SDCycleScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
-
+//轮播图
 @property (strong, nonatomic) SDCycleScrollView *imageScrollerView;
+/**
+ *  猜你喜欢
+ */
 @property (strong, nonatomic) UILabel *likeLable;
 @property (strong, nonatomic) UICollectionView *likeGoodColletionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *likeGoodLayout;
+/**
+ *  全部商品
+ */
 @property (strong, nonatomic) UILabel *allGoodLable;
-
 @property (strong, nonatomic) UICollectionView *allGoodColletionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *allGoodLayout;
+//头视图
 @property (strong, nonatomic) UICollectionReusableView *headerView;
-
+//轮播图数组
 @property (strong, nonatomic) NSMutableArray *picArray;
 //轮播图列表数组
 @property (strong, nonatomic) NSMutableArray *circleGoods;
@@ -51,6 +55,7 @@ static NSString *const cellID = @"likeGoodColletionViewCellID";
 
 static NSString *const allcellID = @"allGoodColletionViewCellID";
 static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
+
 @implementation IndexViewController
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -225,7 +230,7 @@ static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
 - (SDCycleScrollView *)imageScrollerView{
     if (!_imageScrollerView) {
         
-        _imageScrollerView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, - kStatusBarHeight, WIDTH,0.3*HEIGHT)];
+        _imageScrollerView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0,0, WIDTH,0.3*HEIGHT)];
         _imageScrollerView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
         _imageScrollerView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
         _imageScrollerView.backgroundColor =[UIColor whiteColor];
@@ -265,7 +270,7 @@ static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
 - (UILabel *)likeLable{
     if (!_likeLable) {
         _likeLable = [[UILabel alloc] initWithFrame:CGRectMake(15, 0.3*HEIGHT, WIDTH - 15, 0.065*HEIGHT)];
-        _likeLable.textColor = [UIColor greenColor];
+        _likeLable.textColor = RGBCOLOR(0, 158, 235);
         _likeLable.textAlignment = NSTextAlignmentLeft;
         _likeLable.font = [UIFont systemFontOfSize:20];
         [self.headerView addSubview:_likeLable];
@@ -275,7 +280,7 @@ static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
 - (UILabel *)allGoodLable{
     if (!_allGoodLable) {
         _allGoodLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 0.3*HEIGHT + 0.065*HEIGHT +0.2*HEIGHT, WIDTH, 0.065*HEIGHT)];
-        _allGoodLable.textColor = [UIColor greenColor];
+        _allGoodLable.textColor = RGBCOLOR(0, 158, 235);
         _allGoodLable.textAlignment = NSTextAlignmentCenter;
         _allGoodLable.font = [UIFont systemFontOfSize:20];
         [self.headerView addSubview:_allGoodLable];

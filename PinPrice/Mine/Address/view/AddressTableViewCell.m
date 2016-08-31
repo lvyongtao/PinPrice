@@ -15,10 +15,19 @@
     _deleteBtn.tag = self.tag;
     _editingBtn.tag = self.tag;
     _setDefaultBtn.tag = self.tag;
-    self.selectionStyle = UITableViewCellSelectionStyleBlue;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Initialization code
 }
 - (void)setModel:(AddressModel *)model{
+    if (self.tag == 0) {
+        [_setDefaultBtn setTitle:@"默认地址" forState:UIControlStateNormal];
+        [_setDefaultBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        _setDefaultBtn.userInteractionEnabled = NO;
+    }else{
+        [_setDefaultBtn setTitle:@"设为默认" forState:UIControlStateNormal];
+        [_setDefaultBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        _setDefaultBtn.userInteractionEnabled = YES;
+    }
     if (model.name) {
         _titleLable.text = model.name;
     }

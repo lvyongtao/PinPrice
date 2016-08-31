@@ -11,6 +11,7 @@
 #import "ThirdLoginView.h"
 #import "RegisterViewController.h"
 #import "PinTabBarController.h"
+#import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 
 
 @interface LoginViewController ()<ThirdLoginBtnClickDelegate,UserLoginBtnClickDelegate,UsertextFiledClickDelegate>
@@ -41,6 +42,7 @@
     self.loginView.backgroundColor = [UIColor clearColor];
     self.thirdLoginView.backgroundColor = [UIColor clearColor];
 }
+#pragma mark --lazyload
 - (UIImageView *)loginBgView{
     if (!_loginBgView) {
         _loginBgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH,HEIGHT*0.35)];
@@ -79,20 +81,43 @@
 #pragma mark --ThirdLoginBtnClickDelegate
 //ThirdLoginBtnClickDelegate
 - (void)thirdLoginTypeClick:(ThirdLoginType)type{
+    SSDKPlatformType platformType = 0;
     switch (type) {
         case ThirdLoginTypeWeibo:
-            
+            platformType = SSDKPlatformTypeSinaWeibo;
             break;
         case ThirdLoginTypeQQ:
-            
+            platformType = SSDKPlatformTypeQQ;
             break;
         case ThirdLoginTypeWeixin:
-            
+            platformType = SSDKPlatformTypeWechat;
             break;
             
         default:
             break;
     }
+    [SSEThirdPartyLoginHelper loginByPlatform:platformType onUserSync:^(SSDKUser *user, SSEUserAssociateHandler associateHandler) {
+        associateHandler (user.uid, user, user);
+    } onLoginResult:^(SSDKResponseState state, SSEBaseUser *user, NSError *error) {
+        
+        switch (state) {
+            case SSDKResponseStateBegin:
+                [self showMessageTitle:@"开始调用第三方登录"];
+                break;
+            case SSDKResponseStateSuccess:
+                [self showMessageTitle:@"登录成功"];
+                break;
+            case SSDKResponseStateFail:
+                [self showMessageTitle:@"登录失败"];
+                break;
+            case SSDKResponseStateCancel:
+                [self showMessageTitle:@"用户取消登录"];
+                break;
+                
+            default:
+                break;
+        }
+    }];
     NSLog(@"%zi",type);
 }
 #pragma mark --UserLoginBtnClickDelegate
@@ -125,6 +150,7 @@
     }
 }
 #pragma mark --Action
+//登录
 - (void)actionLogin{
     [PinUserInfo setUserID:@"临时的ID类型"];
     if ([PinUserInfo getphone].length == 0) {
@@ -143,7 +169,7 @@
     }else{[self showMessageTitle:@"账号密码不正确，请重新输入"];};
     NSLog(@"登录");
 }
-
+//注册
 - (void)actionRegister{
     NSLog(@"注册");
     RegisterViewController *registerVC = [[RegisterViewController alloc] init];

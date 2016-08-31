@@ -10,10 +10,15 @@
 #import "LoginView.h"
 
 @interface RegisterViewController ()<UserBtnClickDelegate>
-
+/**
+ *  手机号，验证码，输入验证码视图
+ */
 @property (strong, nonatomic) UserAccountView *phoneView;
 @property (strong, nonatomic) UserAccountView *codeView;
 @property (strong, nonatomic) UserAccountView *codeInputView;
+/**
+ *  注册
+ */
 @property (strong, nonatomic) UIButton *enterBtn;
 
 @end
@@ -55,7 +60,7 @@
 - (UserAccountView *)phoneView{
     if (!_phoneView) {
         _phoneView = [[UserAccountView alloc] init];
-        _phoneView.frame =CGRectMake(0.14*WIDTH, 15, WIDTH - WIDTH*0.28,0.086*HEIGHT);
+        _phoneView.frame =CGRectMake(0.14*WIDTH, 15 + NavH, WIDTH - WIDTH*0.28,0.086*HEIGHT);
         _phoneView.text = @"+86";
         _phoneView.placeholder = @"输入手机号";
         _phoneView.tag = 110;
@@ -105,9 +110,11 @@
     return _enterBtn;
 }
 #pragma mark --action
+// 发送验证码
 - (void)userBtnClickTag:(NSInteger)tag{
     NSLog(@"点击了发送验证码");
 }
+// 点击登录按钮
 - (void)btnClick:(UIButton *)btn{
     NSLog(@"点击了登录按钮");
 }

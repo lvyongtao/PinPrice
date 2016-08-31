@@ -17,13 +17,18 @@
 @interface ShopNumView : UIView
 
 @property (weak, nonatomic) id<ShopNumDelegate >delegate;
-
+/**
+ *  加减按钮
+ */
 @property (strong, nonatomic) UIButton *leftBtn;
-
 @property (strong, nonatomic) UIButton *rightBtn;
-
+/**
+ *  购买的数量显示
+ */
 @property (strong, nonatomic) UILabel *numLable;
-
+/**
+ *  购买最大数量
+ */
 @property (assign, nonatomic) int maxNum;
 
 - (void)viewdidload;

@@ -16,4 +16,7 @@
 @property (copy, nonatomic) NSString *phone;
 @property (copy, nonatomic) NSString *name;
 
+
+@property (assign, nonatomic) NSInteger index;
+
 @end

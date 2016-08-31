@@ -6,10 +6,15 @@
 //  Copyright © 2016年 lvyongtao. All rights reserved.
 //
 #define BTN_H 50
+#define CELL_H 53
 #import "PaymentViewController.h"
+#import "PaymentView.h"
 
-@interface PaymentViewController ()
+
+@interface PaymentViewController ()<PaymentViewClickDelegate>
 @property (strong, nonatomic) UIButton *payBtn;
+
+@property (strong, nonatomic) PaymentView *payView;
 @end
 
 @implementation PaymentViewController
@@ -23,7 +28,9 @@
 - (void)initNavgationBar{
     [self addTitleViewWithTitle:@"选择支付方式"];
     [self.payBtn setTintColor:[UIColor clearColor]];
+    [self.payView setFrame:CGRectMake(0, NavH + 10, WIDTH, CELL_H*2 + 10)];
 }
+#pragma mark --lazyload
 - (UIButton *)payBtn{
     if (!_payBtn) {
         _payBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -36,8 +43,37 @@
     }
     return _payBtn;
 }
+- (PaymentView *)payView{
+    if (!_payView) {
+        _payView = [[PaymentView alloc] init];
+        _payView.delegate = self;
+        _payView.paymentTitle = @"支付方式";
+        _payView.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:_payView];
+    }
+    return _payView;
+}
+#pragma mark --支付按钮事件
 - (void)BtnClick:(UIButton *)btn{
+    
     [self showMessageTitle:@"支付成功"];
+}
+#pragma mark --PaymentViewClickDelegate
+- (void)PaymentViewClickType:(PaymentViewClickType)type{
+    switch (type) {
+        case PaymentViewClickTypeWeixin:
+            [self showMessageTitle:@"微信支付"];
+            break;
+        case PaymentViewClickTypeAliPay:
+            [self showMessageTitle:@"支付宝支付"];
+            break;
+        case PaymentViewClickTypeNone:
+            [self showMessageTitle:@"请选择您的支付方式"];
+            break;
+            
+        default:
+            break;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

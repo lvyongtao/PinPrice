@@ -21,10 +21,16 @@
 
 
 @interface GoodsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,GoodDetaiViewBtnActionDelegate>
-@property (strong, nonatomic) UIButton *rightBtn;
+
+//@property (strong, nonatomic) UIButton *rightBtn;
+//商品详情的视图
 @property (strong, nonatomic) GoodDetaiView *detailView;
+/**
+ *  相关商品的推荐
+ */
 @property (strong, nonatomic) UICollectionView *goodColletionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *goodLayout;
+//头视图
 @property (strong, nonatomic) UICollectionReusableView *headerView;
 
 
@@ -37,6 +43,7 @@
 static NSString *const cellID = @"goodColletionViewCellID";
 static NSString *const headerID = @"goodColletionViewCellheaderID";
 @implementation GoodsViewController
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -74,16 +81,6 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     [self requsetData];
     
 }
-#pragma mark --KVO
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    if ([keyPath isEqualToString:@"contentOffset"]) {
-        //CGRectMake(WIDTH/2,0.89*HEIGHT, 30, 30)
-//        [_detailView resetAnimaitonImage];
-//        _detailView.animationImage.frame = CGRectMake(WIDTH/2, 0.78*(HEIGHT + 0.11*HEIGHT - NavH) - self.goodColletionView.contentOffset.y, 30, 30);
-//        NSLog(@"---->%.f",self.goodColletionView.contentOffset.y);
-    }
-}
-
 #pragma mark --requsetData
 - (void)requsetData{
     if (self.goods) {
@@ -167,7 +164,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
         _goodColletionView.dataSource = self;
         _goodColletionView.showsVerticalScrollIndicator = NO;
         _goodColletionView.showsHorizontalScrollIndicator = NO;
-        [_goodColletionView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+//        [_goodColletionView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
         [_goodColletionView registerNib:[UINib nibWithNibName:@"GoodsCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:cellID];
         [_goodColletionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID];
         [PinMethod addMjRefreshWithCollectView:_goodColletionView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
@@ -276,6 +273,7 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     }
     NSLog(@"%zi",type);
 }
+//购买
 - (void)ActionTypeBuy{
     
     BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
@@ -285,9 +283,10 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     buy.type = 0;
     [self.navigationController pushViewController:buy animated:YES];
 }
+//加入购物车
 - (void)ActionTypeCart{
-    
-    [UIView animateWithDuration:5.3f animations:^{
+
+    [UIView animateWithDuration:0.3f animations:^{
         [self.detailView startAnimationImage];
     } completion:^(BOOL finished) {
         [self.detailView resetAnimaitonImage];
@@ -296,6 +295,15 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     }];
 
 }
+
+//商品详情
+- (void)ActionTypeDetail{
+    DetailGoodsViewController *detail =[[DetailGoodsViewController alloc] init];
+    detail.url = @"http://v.juhe.cn/weixin/redirect?wid=wechat_20160825023108";
+    [self.navigationController pushViewController:detail animated:YES];
+}
+
+//跳转购物车
 - (void)pushCart{
     ShoppingCartViewController *shopcart = [[ShoppingCartViewController alloc] init];
     shopcart.hidesBottomBarWhenPushed = YES;
@@ -303,16 +311,11 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
     [self.navigationController pushViewController:shopcart animated:YES];
     
     
-//        PinTabBarController *tabBar=[[PinTabBarController alloc] init];
-//        tabBar.selectedIndex=2;
-//        tabBar.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-//        tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
-//        [self presentViewController:tabBar animated:YES completion:nil];
-}
-- (void)ActionTypeDetail{
-    DetailGoodsViewController *detail =[[DetailGoodsViewController alloc] init];
-    detail.url = @"http://v.juhe.cn/weixin/redirect?wid=wechat_20160825023108";
-    [self.navigationController pushViewController:detail animated:YES];
+    //        PinTabBarController *tabBar=[[PinTabBarController alloc] init];
+    //        tabBar.selectedIndex=2;
+    //        tabBar.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+    //        tabBar.modalPresentationStyle = UIModalPresentationPageSheet;
+    //        [self presentViewController:tabBar animated:YES completion:nil];
 }
 #pragma mark --MJRefresh
 - (void)refreshData:(MJRefreshNormalHeader *)header{
@@ -323,9 +326,15 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 - (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
     [footer endRefreshing];
 }
+#pragma mark --KVO
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+//    if ([keyPath isEqualToString:@"contentOffset"]) {
+//
+//    }
+//}
 - (void)dealloc{
 
-    [self.goodColletionView removeObserver:self forKeyPath:@"contentOffset"];
+//    [self.goodColletionView removeObserver:self forKeyPath:@"contentOffset"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

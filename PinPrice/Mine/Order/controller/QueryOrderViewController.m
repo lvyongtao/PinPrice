@@ -79,9 +79,8 @@ static NSString *const cellID = @"QueryTableViewCell";
         _queryTableView.delegate = self;
         _queryTableView.dataSource = self;
         _queryTableView.tableHeaderView = [self tableHeaderView];
-        _queryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_queryTableView registerNib:[UINib nibWithNibName:@"QueryTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellID];
-        
+        _queryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:_queryTableView];
     }
     return _queryTableView;

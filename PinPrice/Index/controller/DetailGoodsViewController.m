@@ -24,6 +24,7 @@
 @end
 
 @implementation DetailGoodsViewController
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar addSubview:self.progressView];
@@ -41,6 +42,7 @@
 - (void)initNavgationBar{
     [self addTitleViewWithTitle:self.titles];
 }
+#pragma mark --lazyload
 - (NJKWebViewProgressView *)progressView{
     if (!_progressView) {
         CGFloat progressBarHeight = 2.f;
@@ -66,7 +68,7 @@
     }
     return _webview;
 }
-#pragma mark -- Delegate
+#pragma mark -- UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     return YES;
 }

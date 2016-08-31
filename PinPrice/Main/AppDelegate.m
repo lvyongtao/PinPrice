@@ -19,9 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    [PinUserInfo setUserID:@"暂时是有的"];
     //是否登录
     [self initLogin];
+    //注册第三方登录
+    [self ThirdLogin];
     
     [application setStatusBarStyle:UIStatusBarStyleDefault];
     

@@ -10,13 +10,13 @@
 #import "ShopToolView.h"
 #import "ShoppingModel.h"
 @interface ShopToolView ()
-
+//全选按钮
 @property (strong, nonatomic) UIButton *allSelectedBtn;
-
+//总计
 @property (strong, nonatomic) UILabel *totalPriceLable;
-
+//结算
 @property (strong, nonatomic) UIButton *clearingBtn;
-
+//
 @property (strong, nonatomic) ShoppingModel *model;
 
 @end

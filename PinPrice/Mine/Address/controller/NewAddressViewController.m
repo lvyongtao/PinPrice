@@ -83,13 +83,28 @@
     return _SaveBtn;
 }
 - (void)SaveBtnClick:(UIButton *)btn{
+    if (!self.model.name || self.model.name.length ==0) {
+        [self showMessageTitle:@"请填写您的收货人！"];
+        return;
+    }
+    if (!self.model.phone || self.model.phone.length ==0) {
+        [self showMessageTitle:@"请填写您的手机号码！"];
+        return;
+    }
+    if (!self.model.address || self.model.address.length ==0) {
+        [self showMessageTitle:@"请填写您的所在地区！"];
+        return;
+    }
+    if (!self.model.detailaddress || self.model.detailaddress.length ==0) {
+        [self showMessageTitle:@"请填写您的详细地址！"];
+        return;
+    }
     
     if (self.addressEdit) {
         self.addressEdit(self.model);
     }
     NSLog(@"保存%@",self.model);
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 - (void)returnAddressViewController:(AddressEditBlock)block{
     _addressEdit = block;

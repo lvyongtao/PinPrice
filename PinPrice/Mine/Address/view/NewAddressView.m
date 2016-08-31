@@ -106,6 +106,9 @@
     return YES;
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if ([self.textField.text containsString:@"\n"]) {
+        self.textField.text =[self.textField.text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    }
     [self.textField resignFirstResponder];
     return YES;
 }

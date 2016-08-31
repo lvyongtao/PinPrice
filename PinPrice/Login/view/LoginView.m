@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIImageView *iconImage;
 @property (strong, nonatomic) UIButton *codeBtn;
+//title
 @property (strong, nonatomic) UILabel *headLable;
 @property (strong, nonatomic) UIView *singleLine;
 
@@ -26,7 +27,7 @@
     }
     return self;
 }
-
+#pragma mark --lazyload
 - (UIImageView *)iconImage{
     if (!_iconImage) {
         _iconImage = [[UIImageView alloc] init];
@@ -242,8 +243,7 @@
     _RegisterBtn.tag = 103;
     _RegisterBtn.userInteractionEnabled = YES;
     _RegisterBtn.backgroundColor = [UIColor clearColor];
-    [_RegisterBtn setTitle:@"没有账号?点击注册" forState:UIControlStateNormal];
-    [_RegisterBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [_RegisterBtn setAttributedTitle:[self AttributedStringWithString1:@"没有账号？" String2:@"点击注册"] forState:UIControlStateNormal];
     _RegisterBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [_RegisterBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_RegisterBtn];
@@ -262,8 +262,14 @@
     }
     
 }
-
-
-
-
+- (NSAttributedString *)AttributedStringWithString1:(NSString *)string1 String2:(NSString *)string2{
+    // 下划线
+    NSDictionary *attribtDic = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    NSMutableAttributedString *atttibuteStr = [[NSMutableAttributedString alloc] initWithString:string2 attributes:attribtDic];
+    NSDictionary *attribtDic1 = @{NSForegroundColorAttributeName:[UIColor grayColor]};
+    NSMutableAttributedString *atttibuteStr1 = [[NSMutableAttributedString alloc] initWithString:string1 attributes:attribtDic1];
+   [atttibuteStr1 appendAttributedString:atttibuteStr];
+    
+    return atttibuteStr1;
+}
 @end

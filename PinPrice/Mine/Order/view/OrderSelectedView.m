@@ -29,7 +29,7 @@
             _segemented = [[UISegmentedControl alloc] initWithItems:self.titles];
             _segemented.layer.cornerRadius = 4.f;
             _segemented.layer.masksToBounds = YES;
-            _segemented.layer.borderWidth = 1.f;
+            _segemented.layer.borderWidth = 3.f;
             _segemented.layer.borderColor = [RGBCOLOR(226, 227, 228) CGColor];
             _segemented.selectedSegmentIndex = 0;
             [_segemented setTintColor:RGBCOLOR(50, 158, 237)];

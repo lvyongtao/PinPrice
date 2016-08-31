@@ -21,9 +21,10 @@
 #import "SortViewController.h"
 
 @interface AssertmentViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
-
+/**
+ *  分类的视图
+ */
 @property (strong, nonatomic) UICollectionView *typeColletionView;
-
 @property (strong, nonatomic) UICollectionViewFlowLayout *typeLayout;
 
 @property (strong, nonatomic) NSMutableArray *types;
@@ -39,7 +40,7 @@ static NSString *cellID = @"typeColletionViewCellID";
     [self initCollectionView];
    
 }
-
+#pragma mark --init
 - (void)initdate{
     [self addTitleViewWithTitle:@"分类"];
 }
@@ -74,6 +75,7 @@ static NSString *cellID = @"typeColletionViewCellID";
     [self.typeColletionView reloadData];
     
 }
+#pragma mark --lazyload
 - (UICollectionView *)typeColletionView{
     if (!_typeColletionView) {
         _typeLayout = [[UICollectionViewFlowLayout alloc] init];

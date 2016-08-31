@@ -33,7 +33,7 @@
 @property (strong, nonatomic) ShopNumView *shopNumView;
 
 - (void)setValueWithModel:(ShoppingModel *)model;
-
+//设置背景颜色
 - (BOOL )setSelfColorSelected:(BOOL )isSelected;
 
 @end

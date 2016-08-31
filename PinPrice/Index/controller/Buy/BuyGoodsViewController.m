@@ -27,7 +27,14 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
-
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self initNavgationBar];
+    [self initBuyViewWith:nil];
+    
+    // Do any additional setup after loading the view.
+}
 - (instancetype)init
 {
     self = [super init];
@@ -35,15 +42,6 @@
         self.navigationController.delegate = nil;
     }
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self initNavgationBar];
-    [self initBuyViewWith:nil];
-
-    // Do any additional setup after loading the view.
 }
 
 - (void)initNavgationBar{
@@ -82,6 +80,7 @@
     }
     self.buyView.model = self.model;
 }
+#pragma mark --lazyload
 - (PlaceOrderModel *)model{
     if (!_model) {
         _model = [[PlaceOrderModel alloc] init];
@@ -110,11 +109,13 @@
     }
     return _orderBtn;
 }
+//确认下单
 - (void)BtnClick:(UIButton *)btn{
     PaymentViewController *payment = [[PaymentViewController alloc] init];
     [self.navigationController pushViewController:payment animated:YES];
     NSLog(@"下订单");
 }
+#pragma mark --AddressMsgViewDelegate
 - (void)changeAddressWithGestureRecognizer{
     AddressViewController *address = [[AddressViewController alloc] init];
     [address returnBuyGoodsViewController:^(AddressModel *model) {

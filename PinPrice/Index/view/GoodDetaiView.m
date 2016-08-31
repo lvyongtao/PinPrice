@@ -7,6 +7,8 @@
 //
 #define BTN_H 72
 #define ANGLE_W 180
+//动画的宽度
+#define ANIAMTIONIMAGE_W 20
 
 #import "GoodDetaiView.h"
 //(0,160,234)
@@ -60,6 +62,7 @@
         _animationImage = [[UIImageView alloc] init];
         //CGRectMake(WIDTH/2,0.78*(HEIGHT + 0.11*HEIGHT - NavH), 30, 30)
         _animationImage.backgroundColor =[UIColor redColor];
+        [_animationImage.image circleImage];
         _animationImage.hidden = YES;
         [self addSubview:_animationImage];
     }
@@ -153,16 +156,18 @@
         [btn setTitle:self.btnTitles[i] forState:UIControlStateNormal];
     }
     
-    self.animationImage.frame = CGRectMake(self.width/3 + (self.width/3 - 30)/2, self.goodsImage.height - 30, 30, 30);
+    self.animationImage.frame = CGRectMake(self.width/3 + (self.width/3 - ANIAMTIONIMAGE_W)/2, self.goodsImage.height - ANIAMTIONIMAGE_W, ANIAMTIONIMAGE_W, ANIAMTIONIMAGE_W);
 }
 - (void)resetAnimaitonImage{
     self.animationImage.hidden = YES;
-    self.animationImage.frame = CGRectMake(self.width/3 + (self.width/3 - 30)/2, self.goodsImage.height - 30, 30, 30);
+    self.animationImage.alpha = 1.0;
+    self.animationImage.frame = CGRectMake(self.width/3 + (self.width/3 - ANIAMTIONIMAGE_W)/2, self.goodsImage.height - ANIAMTIONIMAGE_W, ANIAMTIONIMAGE_W, ANIAMTIONIMAGE_W);
 }
 - (void)startAnimationImage{
     self.animationImage.hidden = NO;
-//    self.animationImage.transform = CGAffineTransformMakeRotation(ANGLE_W *(M_PI / 180.0f));
-    self.animationImage.frame = CGRectMake(WIDTH - 50, 0, 30, 30);
+    self.animationImage.alpha = 0.1;
+    self.animationImage.frame = CGRectMake(WIDTH - 40, 0, ANIAMTIONIMAGE_W, ANIAMTIONIMAGE_W);
+//    self.animationImage.transform = CGAffineTransformMakeScale(0.5, 0.5);
 }
 /*
 // Only override drawRect: if you perform custom drawing.

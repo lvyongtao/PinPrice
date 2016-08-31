@@ -36,7 +36,7 @@
     if (!_expressLable) {
         _expressLable = [[UILabel alloc] init];
         _expressLable.backgroundColor = [UIColor clearColor];//0.07
-        _expressLable.textColor = [UIColor blackColor];
+        _expressLable.textColor = [UIColor lightGrayColor];
         _expressLable.textAlignment = NSTextAlignmentLeft;
         _expressLable.font = [UIFont systemFontOfSize:15];
         [self addSubview:_expressLable];
@@ -47,7 +47,7 @@
     if (!_orderIDLable) {
         _orderIDLable = [[UILabel alloc] init];
         _orderIDLable.backgroundColor = [UIColor clearColor];//0.07
-        _orderIDLable.textColor = [UIColor blackColor];
+        _orderIDLable.textColor = [UIColor lightGrayColor];
         _orderIDLable.textAlignment = NSTextAlignmentLeft;
         _orderIDLable.font = [UIFont systemFontOfSize:15];
         [self addSubview:_orderIDLable];

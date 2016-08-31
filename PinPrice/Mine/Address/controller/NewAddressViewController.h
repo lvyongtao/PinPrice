@@ -14,6 +14,7 @@ typedef void(^AddressEditBlock)(AddressModel *);
 @property (strong, nonatomic) AddressModel *model;
 
 @property (copy, nonatomic) AddressEditBlock addressEdit;
+
 - (void)returnAddressViewController:(AddressEditBlock )block;
 
 @end

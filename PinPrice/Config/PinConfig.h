@@ -13,6 +13,8 @@
 #define LVNotificationCenter [NSNotificationCenter defaultCenter]
 #define LVUserDefault [NSUserDefaults standardUserDefaults]
 
+
+#define ShareSDKAPP_KEY @"169c8a47b74b9"
 //第三方服务的key
 #define UmengAppKey @"550a9500fd98c55ab1000f57"//友盟分享appKey
 #define ShareQQAppID @"1104418201"//腾讯appID

@@ -219,7 +219,7 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
 - (UILabel *)recommendLable{
     if (!_recommendLable) {
         _recommendLable = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, WIDTH - 15, 0.065*HEIGHT)];
-        _recommendLable.textColor = [UIColor greenColor];
+        _recommendLable.textColor = RGBCOLOR(0, 158, 235);
         _recommendLable.textAlignment = NSTextAlignmentLeft;
         _recommendLable.font = [UIFont systemFontOfSize:20];
         [self.headerView addSubview:_recommendLable];
@@ -229,7 +229,7 @@ static NSString *const hotheaderID = @"hotGoodColletionViewCellheaderID";
 - (UILabel *)hotLable{
     if (!_hotLable) {
         _hotLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 0.065*HEIGHT +WIDTH/3, WIDTH, 0.065*HEIGHT)];
-        _hotLable.textColor = [UIColor greenColor];
+        _hotLable.textColor = RGBCOLOR(0, 158, 235);
         _hotLable.textAlignment = NSTextAlignmentCenter;
         _hotLable.font = [UIFont systemFontOfSize:20];
         [self.headerView addSubview:_hotLable];

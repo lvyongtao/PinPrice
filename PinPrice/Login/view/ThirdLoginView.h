@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSInteger,ThirdLoginType){
+/**
+ *  第三方登录：微博，QQ，微信
+ */
+typedef NS_ENUM(NSInteger,ThirdLoginType) {
     ThirdLoginTypeWeibo = 0,
     ThirdLoginTypeQQ,
     ThirdLoginTypeWeixin
 };
+/**
+ *  登录的类型代理
+ */
 @protocol ThirdLoginBtnClickDelegate <NSObject>
 @required
 - (void)thirdLoginTypeClick:(ThirdLoginType )type;
