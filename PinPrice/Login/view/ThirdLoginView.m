@@ -28,6 +28,7 @@
     _titleLable.backgroundColor = [UIColor clearColor];//0.07
     _titleLable.textColor = RGBCOLOR(145,148,154);
     _titleLable.textAlignment = NSTextAlignmentCenter;
+    _titleLable.text = @"第三方登录";
     _titleLable.font = [UIFont systemFontOfSize:11];
     [self addSubview:_titleLable];
     
@@ -70,7 +71,6 @@
 
 
 - (void)layoutSubviews{
-    _titleLable.text = @"第三方登录";
     __weak typeof(self) weakSelf = self;
     [_titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.mas_top).offset(0.08*HEIGHT);

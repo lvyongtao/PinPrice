@@ -130,29 +130,31 @@
         [self.textView resignFirstResponder];
     }
 }
+- (void)setTitleText:(NSString *)titleText{
+    _titleText = titleText;
+    self.titleLable.text = [NSString stringWithFormat:@"%@:",titleText];
+}
+- (void)setDetailText:(NSString *)detailText{
+    _detailText = detailText;
+    if (detailText && detailText.length > 0) {
+        if (self.tag == 3) {
+            self.textView.text = self.detailText;
+        }else{
+            self.textField.text = self.detailText;
+        }
+    }
+}
 #pragma mark --layoutSubviews
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.titleLable.text = [NSString stringWithFormat:@"%@:",self.titleText];
 
     CGSize size = [PinMethod sizeWithString:[NSString stringWithFormat:@"%@:",self.titleText] fount:[UIFont systemFontOfSize:18] maxSize:CGSizeMake(self.width/2, self.height)];
     self.titleLable.frame = CGRectMake(5, 0, size.width + 1, self.height - 1);
-    
     if (self.tag == 3) {
-        if (self.detailText && self.detailText.length > 0) {
-            self.textView.text = self.detailText;
-        }
         self.textView.frame = CGRectMake(size.width + 1 + 5, 0, self.width - size.width- 6, self.height - 1);
     }else{
-        
-        if (self.detailText && self.detailText.length > 0) {
-            self.textField.text = self.detailText;
-        }
         self.textField.frame = CGRectMake(size.width + 1 + 5, 0, self.width - size.width - 6, self.height - 1);
     }
-    
-    
-    
     self.singleLine.frame = CGRectMake(0, self.height - 1, self.width, 1);
 }
 

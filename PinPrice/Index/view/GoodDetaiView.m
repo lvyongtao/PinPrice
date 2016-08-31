@@ -135,13 +135,25 @@
         self.priceLable.text = [NSString stringWithFormat:@"¥%@",model.goodsprice];
     }
     [self.animationImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+   
+}
+- (void)setReloatedText:(NSString *)reloatedText{
+    _reloatedText = reloatedText;
+    if (self.reloatedText) {
+        self.relatedLable.text = reloatedText;
+    }
+}
+- (void)setBtnTitles:(NSArray *)btnTitles{
+    _btnTitles = btnTitles;
+    for (int i = 0;i < 3; i ++) {
+        UIButton *btn = [self viewWithTag:100 + i];
+        [btn setTitle:btnTitles[i] forState:UIControlStateNormal];
+    }
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    if (self.reloatedText) {
-        self.relatedLable.text = self.reloatedText;
-    }
+    
     self.goodsImage.frame = CGRectMake(0, 0, self.width, HEIGHT - 0.11*self.height - NavH);
     
     self.goodsLable.frame = CGRectMake(0, self.goodsImage.height - 0.088*self.height, self.width/2, 0.088*self.height);
@@ -153,7 +165,6 @@
     for (int i = 0;i < 3; i ++) {
         UIButton *btn = [self viewWithTag:100 + i];
         btn.frame = CGRectMake(i*self.width/3, self.goodsImage.height,self.width/3, 0.11*self.height);
-        [btn setTitle:self.btnTitles[i] forState:UIControlStateNormal];
     }
     
     self.animationImage.frame = CGRectMake(self.width/3 + (self.width/3 - ANIAMTIONIMAGE_W)/2, self.goodsImage.height - ANIAMTIONIMAGE_W, ANIAMTIONIMAGE_W, ANIAMTIONIMAGE_W);

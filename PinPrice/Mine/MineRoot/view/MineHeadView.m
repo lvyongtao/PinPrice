@@ -44,9 +44,16 @@
     }
     return _nameLable;
 }
+- (void)setIconUrl:(NSString *)iconUrl{
+    _iconUrl = iconUrl;
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+}
+- (void)setNametext:(NSString *)nametext{
+    _nametext = nametext;
+    self.nameLable.text = nametext;
+}
 - (void)layoutSubviews{
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:_iconUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
-    self.nameLable.text = self.nametext;
+    
     __weak typeof(self) weakSelf = self;
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.mas_top).offset(0.044*HEIGHT);

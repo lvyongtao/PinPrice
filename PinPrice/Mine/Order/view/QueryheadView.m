@@ -54,11 +54,21 @@
     }
     return _orderIDLable;
 }
+
+- (void)setIconUrl:(NSString *)iconUrl{
+    _iconUrl = iconUrl;
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
+}
+- (void)setExpresstext:(NSString *)expresstext{
+    _expresstext = expresstext;
+    self.expressLable.text = expresstext;
+}
+- (void)setOrderIDtext:(NSString *)orderIDtext{
+    _orderIDtext = orderIDtext;
+    self.orderIDLable.text = orderIDtext;
+}
 - (void)layoutSubviews{
-    
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:_iconUrl] placeholderImage:[UIImage imageNamed:@"login_bgImage"]];
-    self.expressLable.text = self.expresstext;
-    self.orderIDLable.text = self.orderIDtext;
+
     __weak typeof(self) weakSelf = self;
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(weakSelf.mas_centerY);
