@@ -120,7 +120,6 @@ static NSString *const cellID = @"PayCartTableViewCell";
 }
 #pragma mark --action
 - (void)payOrderBtnClick:(UIButton *)btn{
-    
     [self showMessageTitle:@"下单成功"];
     NSLog(@"立即下单");
     
