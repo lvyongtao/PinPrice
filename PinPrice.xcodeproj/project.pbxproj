@@ -98,7 +98,6 @@
 		D886CF871D73CCE8005E0A44 /* shop_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF861D73CCE8005E0A44 /* shop_close@2x.png */; };
 		D886CF8A1D73D918005E0A44 /* goodcollect_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF881D73D918005E0A44 /* goodcollect_selected@2x.png */; };
 		D886CF8B1D73D918005E0A44 /* goodcollect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF891D73D918005E0A44 /* goodcollect@2x.png */; };
-		D886CF901D73FF3F005E0A44 /* PaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D886CF8F1D73FF3F005E0A44 /* PaymentView.m */; };
 		D886CF941D741374005E0A44 /* time_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D886CF931D741374005E0A44 /* time_circle@2x.png */; };
 		D8988A301D6C394A00A81799 /* white_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8988A2F1D6C394A00A81799 /* white_line@2x.png */; };
 		D8A1686C1D61BF2E004CDA9B /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1686B1D61BF2E004CDA9B /* LoginView.m */; };
@@ -216,6 +215,11 @@
 		D8E70E881D5B059D0008801D /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E70E4F1D5B059D0008801D /* UIView+WebCacheOperation.m */; };
 		D8E70E8A1D5B059D0008801D /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E70E551D5B059D0008801D /* NSObject+YYModel.m */; };
 		D8E70E8B1D5B059D0008801D /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E70E571D5B059D0008801D /* YYClassInfo.m */; };
+		D8F601761D77CE6000220FE2 /* GoodsTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F601751D77CE6000220FE2 /* GoodsTypeViewController.m */; };
+		D8F601791D77D2AF00220FE2 /* PaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F601781D77D2AF00220FE2 /* PaymentView.m */; };
+		D8F6017B1D77F66800220FE2 /* buy_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F6017A1D77F66700220FE2 /* buy_right@2x.png */; };
+		D8F6017E1D77FCF100220FE2 /* GoodTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F6017D1D77FCF100220FE2 /* GoodTypeView.m */; };
+		D8F601801D77FD9400220FE2 /* Snip20160901_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F6017F1D77FD9400220FE2 /* Snip20160901_1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -381,8 +385,6 @@
 		D886CF861D73CCE8005E0A44 /* shop_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop_close@2x.png"; sourceTree = "<group>"; };
 		D886CF881D73D918005E0A44 /* goodcollect_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goodcollect_selected@2x.png"; sourceTree = "<group>"; };
 		D886CF891D73D918005E0A44 /* goodcollect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goodcollect@2x.png"; sourceTree = "<group>"; };
-		D886CF8E1D73FF3F005E0A44 /* PaymentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentView.h; sourceTree = "<group>"; };
-		D886CF8F1D73FF3F005E0A44 /* PaymentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentView.m; sourceTree = "<group>"; };
 		D886CF931D741374005E0A44 /* time_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time_circle@2x.png"; sourceTree = "<group>"; };
 		D8988A2F1D6C394A00A81799 /* white_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_line@2x.png"; sourceTree = "<group>"; };
 		D8A1686A1D61BF2E004CDA9B /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -605,6 +607,14 @@
 		D8E70E551D5B059D0008801D /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		D8E70E561D5B059D0008801D /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		D8E70E571D5B059D0008801D /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		D8F601741D77CE6000220FE2 /* GoodsTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsTypeViewController.h; sourceTree = "<group>"; };
+		D8F601751D77CE6000220FE2 /* GoodsTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsTypeViewController.m; sourceTree = "<group>"; };
+		D8F601771D77D2AF00220FE2 /* PaymentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentView.h; sourceTree = "<group>"; };
+		D8F601781D77D2AF00220FE2 /* PaymentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentView.m; sourceTree = "<group>"; };
+		D8F6017A1D77F66700220FE2 /* buy_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy_right@2x.png"; sourceTree = "<group>"; };
+		D8F6017C1D77FCF100220FE2 /* GoodTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodTypeView.h; sourceTree = "<group>"; };
+		D8F6017D1D77FCF100220FE2 /* GoodTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodTypeView.m; sourceTree = "<group>"; };
+		D8F6017F1D77FD9400220FE2 /* Snip20160901_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20160901_1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -758,6 +768,8 @@
 			children = (
 				D8461E271D6D46CF008096A8 /* BuyGoodsView.h */,
 				D8461E281D6D46CF008096A8 /* BuyGoodsView.m */,
+				D8F601771D77D2AF00220FE2 /* PaymentView.h */,
+				D8F601781D77D2AF00220FE2 /* PaymentView.m */,
 			);
 			path = Buy;
 			sourceTree = "<group>";
@@ -906,6 +918,8 @@
 				D8988A2F1D6C394A00A81799 /* white_line@2x.png */,
 				D886CF881D73D918005E0A44 /* goodcollect_selected@2x.png */,
 				D886CF891D73D918005E0A44 /* goodcollect@2x.png */,
+				D8F6017A1D77F66700220FE2 /* buy_right@2x.png */,
+				D8F6017F1D77FD9400220FE2 /* Snip20160901_1.png */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -1160,6 +1174,8 @@
 				D8A5ECEA1D585E36004551FB /* IndexViewController.m */,
 				D8D8F6A41D6AD55D00FD7868 /* GoodsViewController.h */,
 				D8D8F6A51D6AD55D00FD7868 /* GoodsViewController.m */,
+				D8F601741D77CE6000220FE2 /* GoodsTypeViewController.h */,
+				D8F601751D77CE6000220FE2 /* GoodsTypeViewController.m */,
 				D814C1B11D6EBADE00C53F47 /* DetailGoodsViewController.h */,
 				D814C1B21D6EBADE00C53F47 /* DetailGoodsViewController.m */,
 				D84244DB1D6C4D7200632C14 /* Buy */,
@@ -1195,8 +1211,8 @@
 				D8732B0F1D6BFFB300963D30 /* GoodsCollectionViewCell.h */,
 				D8732B101D6BFFB300963D30 /* GoodsCollectionViewCell.m */,
 				D8732B111D6BFFB300963D30 /* GoodsCollectionViewCell.xib */,
-				D886CF8E1D73FF3F005E0A44 /* PaymentView.h */,
-				D886CF8F1D73FF3F005E0A44 /* PaymentView.m */,
+				D8F6017C1D77FCF100220FE2 /* GoodTypeView.h */,
+				D8F6017D1D77FCF100220FE2 /* GoodTypeView.m */,
 				D8461E261D6D46B6008096A8 /* Buy */,
 			);
 			path = view;
@@ -1849,6 +1865,7 @@
 				D861462A1D751F4700C9916D /* read_me.txt in Resources */,
 				D860CC601D5B1ED50043D1E7 /* addBlack@2x.png in Resources */,
 				D8A5ECD01D585B86004551FB /* ShoppingCart_selected@2x.png in Resources */,
+				D8F601801D77FD9400220FE2 /* Snip20160901_1.png in Resources */,
 				D86015A81D655166002DD67A /* 3.plist in Resources */,
 				D8D8F6B31D6ADFE400FD7868 /* HotCollectionViewCell.xib in Resources */,
 				D860CC611D5B1ED50043D1E7 /* reduce@2x.png in Resources */,
@@ -1888,6 +1905,7 @@
 				D8A5EC731D585004004551FB /* Assets.xcassets in Resources */,
 				D8C8FDFE1D65793200C84CBC /* AllCollectionViewCell.xib in Resources */,
 				D8A5ECCF1D585B86004551FB /* ShoppingCart@2x.png in Resources */,
+				D8F6017B1D77F66800220FE2 /* buy_right@2x.png in Resources */,
 				D886CF941D741374005E0A44 /* time_circle@2x.png in Resources */,
 				D86146281D751F4700C9916D /* WeiboSDK.bundle in Resources */,
 				D8A5EC6E1D585004004551FB /* Main.storyboard in Resources */,
@@ -1940,6 +1958,7 @@
 				D8E70DDC1D5B010F0008801D /* PinMethod.m in Sources */,
 				D83FB9A01D644D1500CFD5E3 /* SDCycleScrollView.m in Sources */,
 				D8E70E6C1D5B059D0008801D /* MJRefreshAutoStateFooter.m in Sources */,
+				D8F6017E1D77FCF100220FE2 /* GoodTypeView.m in Sources */,
 				D8E70E5E1D5B059D0008801D /* MASViewConstraint.m in Sources */,
 				D8E70E851D5B059D0008801D /* UIImage+WebP.m in Sources */,
 				D8E017BE1D64259C00DC4A40 /* CollectViewController.m in Sources */,
@@ -1962,6 +1981,7 @@
 				D8D8F6AD1D6ADFC500FD7868 /* RecommendCell.m in Sources */,
 				D8A5ECB21D585622004551FB /* RootViewController.m in Sources */,
 				D8E70E5D1D5B059D0008801D /* MASViewAttribute.m in Sources */,
+				D8F601791D77D2AF00220FE2 /* PaymentView.m in Sources */,
 				D8E70E5B1D5B059D0008801D /* MASConstraintMaker.m in Sources */,
 				D8A5ECE51D585E20004551FB /* ShoppingCartViewController.m in Sources */,
 				D8E017B61D63F8C300DC4A40 /* MineViewController.m in Sources */,
@@ -1978,7 +1998,6 @@
 				D8A5ECB51D585654004551FB /* PinTabBarController.m in Sources */,
 				D8E70E811D5B059D0008801D /* SDWebImagePrefetcher.m in Sources */,
 				D8230E7F1D65C74B0015B842 /* ShoppingModel.m in Sources */,
-				D886CF901D73FF3F005E0A44 /* PaymentView.m in Sources */,
 				D8445DA61D62E61B0031C02A /* RegisterViewController.m in Sources */,
 				D819C7CC1D61B9C5004A5D8A /* PinUserInfo.m in Sources */,
 				D83FB99C1D644D1500CFD5E3 /* TAAnimatedDotView.m in Sources */,
@@ -2002,6 +2021,7 @@
 				D8D8F6B61D6AE11B00FD7868 /* RecommendModel.m in Sources */,
 				D83FB9A41D64701500CFD5E3 /* GoodCollectionViewLayout.m in Sources */,
 				D8E70E701D5B059D0008801D /* MJRefreshGifHeader.m in Sources */,
+				D8F601761D77CE6000220FE2 /* GoodsTypeViewController.m in Sources */,
 				D8E70E6E1D5B059D0008801D /* MJRefreshBackNormalFooter.m in Sources */,
 				D866D9B81D6A914200D2BCDD /* AddressTableViewCell.m in Sources */,
 				D814C1CA1D6EF9A900C53F47 /* XWInteractiveTransition.m in Sources */,

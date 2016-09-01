@@ -120,14 +120,21 @@ static NSString *const cellID = @"PayCartTableViewCell";
 }
 #pragma mark --action
 - (void)payOrderBtnClick:(UIButton *)btn{
-//    BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
-//    buy.type = 1;
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:buy];
-////    [self presentViewController:buy animated:YES completion:nil];
-//    [self presentViewController:nav animated:YES completion:nil];
     
     [self showMessageTitle:@"下单成功"];
     NSLog(@"立即下单");
+    
+    BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
+    buy.model.price = @"100";
+    buy.model.name = @"购物车商品";
+    buy.model.imageUrl = @"";
+    buy.type = 1;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:buy];
+//    [self presentViewController:buy animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:nil];
+    
+    
+
     
 }
 - (void)backBtnClick:(UIButton *)btn{

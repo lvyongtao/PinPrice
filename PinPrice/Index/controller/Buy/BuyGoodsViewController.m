@@ -12,7 +12,7 @@
 #import "AddressViewController.h"
 #import "AddressModel.h"
 
-@interface BuyGoodsViewController ()<AddressMsgViewDelegate>
+@interface BuyGoodsViewController ()<BuyGoodsViewDelegate>
 
 @property (strong, nonatomic) BuyGoodsView*buyView;
 
@@ -115,7 +115,7 @@
     [self.navigationController pushViewController:payment animated:YES];
     NSLog(@"下订单");
 }
-#pragma mark --AddressMsgViewDelegate
+#pragma mark --BuyGoodsViewDelegate
 - (void)changeAddressWithGestureRecognizer{
     AddressViewController *address = [[AddressViewController alloc] init];
     [address returnBuyGoodsViewController:^(AddressModel *model) {
@@ -124,6 +124,11 @@
     }];
     [self.navigationController pushViewController:address animated:YES];
 }
+
+- (void)changeGoodsMsgWithGestureRecognizer{
+    NSLog(@"更改商品的信息");
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

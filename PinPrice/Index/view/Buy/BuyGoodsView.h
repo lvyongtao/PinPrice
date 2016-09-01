@@ -55,14 +55,14 @@
 /**
  *  确认订单
  */
-@protocol AddressMsgViewDelegate <NSObject>
+@protocol BuyGoodsViewDelegate <NSObject>
 @required
 - (void)changeAddressWithGestureRecognizer;
 
 @end
 @interface BuyGoodsView : UIView
 
-@property (weak, nonatomic) id<AddressMsgViewDelegate >delegate;
+@property (weak, nonatomic) id<BuyGoodsViewDelegate >delegate;
 
 @property (strong, nonatomic) PlaceOrderModel *model;
 

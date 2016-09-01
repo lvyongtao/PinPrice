@@ -19,9 +19,15 @@
 #import "ShoppingCartViewController.h"
 #import "DetailGoodsViewController.h"
 
+#import "GoodsTypeViewController.h"
+#import "XWInteractiveTransition.h"
+#import "XWPresentOneTransition.h"
 
-@interface GoodsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,GoodDetaiViewBtnActionDelegate>
 
+@interface GoodsViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,GoodDetaiViewBtnActionDelegate,GoodsTypeViewControllerDelegate>
+
+
+@property (nonatomic, strong) XWInteractiveTransition *interactivePush;
 //@property (strong, nonatomic) UIButton *rightBtn;
 //商品详情的视图
 @property (strong, nonatomic) GoodDetaiView *detailView;
@@ -32,6 +38,10 @@
 @property (strong, nonatomic) UICollectionViewFlowLayout *goodLayout;
 //头视图
 @property (strong, nonatomic) UICollectionReusableView *headerView;
+
+
+
+@property (assign, nonatomic) BOOL isSize;
 
 
 //@property (strong, nonatomic) UIImageView *animationImage;
@@ -275,17 +285,23 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 }
 //购买
 - (void)ActionTypeBuy{
-    
-    BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
-    buy.model.price = self.model.goodsprice;
-    buy.model.name = self.model.goodsname;
-    buy.model.imageUrl = self.model.imageUrl;
-    buy.type = 0;
-    [self.navigationController pushViewController:buy animated:YES];
+//    self.isSize?[self present]:[self]
+    if (self.isSize) {
+        BuyGoodsViewController *buy = [[BuyGoodsViewController alloc] init];
+        buy.model.price = self.model.goodsprice;
+        buy.model.name = self.model.goodsname;
+        buy.model.imageUrl = self.model.imageUrl;
+        buy.type = 0;
+        [self.navigationController pushViewController:buy animated:YES];
+    }else{
+       [self present];
+    }
+
 }
 //加入购物车
 - (void)ActionTypeCart{
-
+    if (self.isSize) {
+        
     [UIView animateWithDuration:0.3f animations:^{
         [self.detailView startAnimationImage];
     } completion:^(BOOL finished) {
@@ -293,6 +309,14 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
         [self showMessageTitle:@"加入购物车成功"];
         NSLog(@"完成");
     }];
+        
+    }else{
+        [self present];
+    }
+    
+    
+    
+
 
 }
 
@@ -325,6 +349,41 @@ static NSString *const headerID = @"goodColletionViewCellheaderID";
 
 - (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
     [footer endRefreshing];
+}
+#pragma mark --初始化自定义转场动画
+- (void)initInteractiveTransition{
+    //    _interactivePush = [XWInteractiveTransition interactiveTransitionWithTransitionType:XWInteractiveTransitionTypePresent GestureDirection:nil];
+    //    typeof(self)weakSelf = self;
+    //    _interactivePush.presentConifg = ^(){
+    //        [weakSelf present];
+    //    };
+    //    [_interactivePush addPanGestureForViewController:self.navigationController];
+}
+- (void)present{
+    GoodsTypeViewController *type = [[GoodsTypeViewController alloc] init];
+    type.delegate = self;
+//    type.payGoods = [self.clearings copy];
+    [self presentViewController:type animated:YES completion:nil];
+}
+
+- (void)presentedGoodsTypeViewControllerDissmissWithType:(GoodsViewDissMissType)type{
+    switch (type) {
+        case GoodsViewDissMissTypeOk:
+            self.isSize = YES;
+            break;
+        case GoodsViewDissMissTypeBack:
+            self.isSize = NO;
+            break;
+            
+        default:
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactiveTransitionForPresent{
+    
+    return _interactivePush;
 }
 #pragma mark --KVO
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{

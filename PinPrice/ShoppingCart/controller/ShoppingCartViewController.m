@@ -265,10 +265,31 @@ static NSString *const cellID = @"ShoppingCartViewCell";
 //    [self.clearings removeObject:self.shopBuys[indexPath.row]];
     
 }
-//返回的是编辑样式(删除还是添加)
--(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewCellEditingStyleDelete|UITableViewCellEditingStyleInsert;
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+            [self.shopBuys removeObjectAtIndex:indexPath.row];
+            [self.shopTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case UITableViewCellEditingStyleInsert:
+//            [self.shopBuys removeObjectAtIndex:indexPath.row];
+//            [self.shopTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case UITableViewCellEditingStyleNone:
+//            [self.shopBuys removeObjectAtIndex:indexPath.row];
+//            [self.shopTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            break;
+    }
     
+}
+- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
 }
 #pragma mark --ShopButtonClickDelegate
 - (void)shopButtonClickNumString:(NSString *)numString ButtonTag:(NSInteger)buttonTag{

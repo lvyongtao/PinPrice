@@ -191,6 +191,7 @@
 
 @property (strong, nonatomic) UILabel *titleLable;
 @property (strong, nonatomic) UILabel *detailLable;
+@property (strong, nonatomic) UIImageView *rightImage;
 @end
 @implementation AddressMsgView
 
@@ -227,6 +228,19 @@
     }
     return _singleLine;
 }
+- (UIImageView *)rightImage{
+    if (!_rightImage) {
+        _rightImage = [[UIImageView alloc] init];
+        _rightImage.backgroundColor = [UIColor clearColor];
+        _rightImage.image = [UIImage imageNamed:@"buy_right"];
+        [self addSubview:_rightImage];
+    }
+    return _rightImage;
+}
+//- (void)setDetailtitile:(NSString *)detailtitile{
+//    _detailtitile = detailtitile;
+//    self.detailLable.text = detailtitile;
+//}
 - (void)setdetailLableValue{
     _detailLable.text = self.detailtitile;
 }
@@ -250,6 +264,12 @@
     [self.singleLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.width.left.equalTo(weakSelf);
         make.height.offset(1);
+    }];
+    
+    [self.rightImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(weakSelf.mas_centerY);
+        make.width.height.offset(0.0532*(HEIGHT - BTN_H - NavH));
+        make.right.equalTo(weakSelf.mas_right);
     }];
 }
 @end
@@ -501,8 +521,8 @@
     self.postageMsgView.title = @"邮费";
     self.postageMsgView.detailtitile = [@"¥" stringByAppendingString:model.postage];
     
-    self.orderNumMsgView.title = @"订单号";
-    self.orderNumMsgView.detailtitile = model.ordernum;
+//    self.orderNumMsgView.title = @"订单号";
+//    self.orderNumMsgView.detailtitile = model.ordernum;
     
     //地址赋值
     self.addressMsgView.title = @"地址";
@@ -531,14 +551,14 @@
         make.left.right.equalTo(weakSelf);
         make.height.offset(weakSelf.height*0.1);
     }];
-    [self.orderNumMsgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_postageMsgView.mas_bottom);
-        make.left.right.equalTo(weakSelf);
-        make.height.equalTo(_postageMsgView);
-    }];
+//    [self.orderNumMsgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_postageMsgView.mas_bottom);
+//        make.left.right.equalTo(weakSelf);
+//        make.height.equalTo(_postageMsgView);
+//    }];
     
     [self.addressMsgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_orderNumMsgView.mas_bottom);
+        make.top.equalTo(_postageMsgView.mas_bottom);
         make.left.right.equalTo(weakSelf);
         make.height.equalTo(_goodMsgView);
     }];
