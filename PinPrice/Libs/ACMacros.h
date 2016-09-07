@@ -117,8 +117,11 @@
 #define FONT(NAME, FONTSIZE)    [UIFont fontWithName:(NAME) size:(FONTSIZE)]
 
 // 颜色(RGB)
-#define RGBCOLOR(r, g, b)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
-#define RGBACOLOR(r, g, b, a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+//#define RGBCOLOR(r, g, b)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+//#define RGBACOLOR(r, g, b, a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+//16进制RGB颜色(格式：RGB_A)
+//#define RGBA_HEX(RRGGBB, A) [UIColor colorWithRed:((float)((RRGGBB & 0xFF0000) >> 16))/255.0 green:((float)((RRGGBB & 0xFF00) >> 8))/255.0 blue:((float)(RRGGBB & 0xFF))/255.0 alpha:A]
+//#define RGB_HEX(RRGGBB) COLORWITHRRGGBBA(RRGGBB, 1.0)
 
 //number转String
 #define IntTranslateStr(int_str) [NSString stringWithFormat:@"%d",int_str];

@@ -9,12 +9,15 @@
 #define CELL_H 53
 #import "PaymentViewController.h"
 #import "PaymentView.h"
+#import "PaymentManager.h"
 
 
 @interface PaymentViewController ()<PaymentViewClickDelegate>
 @property (strong, nonatomic) UIButton *payBtn;
 
 @property (strong, nonatomic) PaymentView *payView;
+
+@property (assign, nonatomic) PaymentViewClickType type;
 @end
 
 @implementation PaymentViewController
@@ -55,11 +58,27 @@
 }
 #pragma mark --支付按钮事件
 - (void)BtnClick:(UIButton *)btn{
-    
+    switch (self.type) {
+        case PaymentViewClickTypeWeixin:
+            [[PaymentManager shareManager] WeiXinPaymentManager];
+//            [self showMessageTitle:@"微信支付"];
+            break;
+        case PaymentViewClickTypeAliPay:
+            [[PaymentManager shareManager] AlipayPaymentManager];
+//            [self showMessageTitle:@"支付宝支付"];
+            break;
+        case PaymentViewClickTypeNone:
+//            [self showMessageTitle:@"请选择您的支付方式"];
+            break;
+            
+        default:
+            break;
+    }
     [self showMessageTitle:@"支付成功"];
 }
 #pragma mark --PaymentViewClickDelegate
-- (void)PaymentViewClickType:(PaymentViewClickType)type{
+- (void)PaymentViewClickType:(PaymentViewClickType )type{
+    self.type = type;
     switch (type) {
         case PaymentViewClickTypeWeixin:
             [self showMessageTitle:@"微信支付"];

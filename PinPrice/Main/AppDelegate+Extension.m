@@ -79,7 +79,9 @@
     
 }
 
-
+- (void)initPaymentManager{
+    [WXApi registerApp:@"wxde12ad1a56b4f6ae"];
+}
 
 
 

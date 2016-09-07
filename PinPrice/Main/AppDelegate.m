@@ -24,6 +24,8 @@
     //注册第三方登录
     [self ThirdLogin];
     
+    [self initPaymentManager];
+    
     [application setStatusBarStyle:UIStatusBarStyleDefault];
     
     return YES;

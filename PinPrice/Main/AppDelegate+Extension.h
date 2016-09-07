@@ -20,4 +20,8 @@
  *  第三方登陆
  */
 - (void)ThirdLogin;
+/**
+ *  支付的SDK
+ */
+- (void)initPaymentManager;
 @end

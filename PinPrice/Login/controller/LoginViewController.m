@@ -136,7 +136,7 @@
 }
 #pragma mark --UsertextFiledClickDelegate
 - (void)usertextFiledClickTag:(NSInteger)textFiledTag Text:(NSString *)text{
-    NSLog(@"输入的信息 是--->%zi：---->%@",textFiledTag,text);
+    DLog(@"输入的信息 是--->%zi：---->%@",textFiledTag,text);
     switch (textFiledTag) {
         case 100:
             [PinUserInfo setphone:text];
