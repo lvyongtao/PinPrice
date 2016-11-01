@@ -12,6 +12,7 @@
 
 @interface AppDelegate ()
 
+
 @end
 
 @implementation AppDelegate
@@ -23,8 +24,10 @@
     [self initLogin];
     //注册第三方登录
     [self ThirdLogin];
-    
+    //注册第三方支付
     [self initPaymentManager];
+    //网络监听
+    [self addObserverForNetwork];
     
     [application setStatusBarStyle:UIStatusBarStyleDefault];
     

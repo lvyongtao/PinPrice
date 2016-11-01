@@ -36,6 +36,8 @@
 @end
 static NSString *const cellID = @"PayCartTableViewCell";
 @implementation PayForCartViewController
+#pragma mark
+#pragma mark --lifecycle
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -62,6 +64,7 @@ static NSString *const cellID = @"PayCartTableViewCell";
     [self.backLable setText:@"确认订单"];
     [self.payTableView reloadData];
 }
+#pragma mark
 #pragma mark --lazyload
 - (UITableView *)payTableView{
     if (!_payTableView) {
@@ -118,6 +121,7 @@ static NSString *const cellID = @"PayCartTableViewCell";
     }
     return _payOrderBtn;
 }
+#pragma mark
 #pragma mark --action
 - (void)payOrderBtnClick:(UIButton *)btn{
     [self showMessageTitle:@"下单成功"];
@@ -180,7 +184,7 @@ static NSString *const cellID = @"PayCartTableViewCell";
     return UITableViewCellEditingStyleDelete|UITableViewCellEditingStyleInsert;
     
 }
-
+#pragma mark
 #pragma mark --自定义手势转场动画
 - (void)initInteractiveTransition{
     self.interactiveDismiss = [XWInteractiveTransition interactiveTransitionWithTransitionType:XWInteractiveTransitionTypeDismiss GestureDirection:XWInteractiveTransitionGestureDirectionRight];

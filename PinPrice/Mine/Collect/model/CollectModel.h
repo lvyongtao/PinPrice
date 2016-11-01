@@ -8,7 +8,7 @@
 
 #import "BaseModel.h"
 
-@interface CollectModel : BaseModel
+@interface CollectModel : BaseModel<NSCoding>
 
 @property (copy, nonatomic) NSString *imageUrl;
 @property (copy, nonatomic) NSString *title;

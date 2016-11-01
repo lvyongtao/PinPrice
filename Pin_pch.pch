@@ -28,6 +28,8 @@
 #import "SDImageCache.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "FMDB.h"
+#import "NetManager.h"
+#import "Canvas.h"
 //自定义类头文件
 #import "PinConfig.h"
 #import "PinUserInfo.h"

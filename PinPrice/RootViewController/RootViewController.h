@@ -27,6 +27,12 @@
  */
 - (void)showMessageTitle:(NSString *)title;
 /**
+ <#Description#>
+ 
+ - returns: <#return value description#>
+ */
++(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+/**
  *  自定义NavgationBar
  */
 - (void)initNavgationBar;

@@ -89,6 +89,28 @@
 - (void)stopLoadingAnimation{
     [UIView MBHiddenAllWith: self.view];
 }
+#pragma mark --showAlert
++(void)showAlertWithTitle:(NSString *)title message:(NSString *)message{
+    
+    if (FSystemVersion >= 8.0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"人体成分检测" message:@"您成功完成一次体测，是否现在查看体测结果？" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"查看" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        UIAlertAction *cancaleAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [alert addAction:okAction];
+        [alert addAction:cancaleAction];
+//        [self presentViewController:alert animated:YES completion:nil];
+        
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"人体成分检测"  message:@"您成功完成一次体测，是否现在查看体测结果？"  delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:@"查看", nil];
+        alert.tag = 100;
+        [alert show];
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+}
 - (void)showMessageTitle:(NSString *)title{
     [UIView MBAlertViewWithMsg:title With:self.view];
     [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(removeMBAlertView:) userInfo:nil repeats:NO];

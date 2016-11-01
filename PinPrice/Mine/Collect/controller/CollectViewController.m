@@ -23,6 +23,8 @@
 
 @implementation CollectViewController
 static NSString *const cellID = @"CollectTableViewCell";
+#pragma mark
+#pragma mark --lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -95,6 +97,7 @@ static NSString *const cellID = @"CollectTableViewCell";
     [self.collects addObject:model3];
     [self.collectTableView reloadData];
 }
+#pragma mark
 #pragma mark --lazyload
 - (UITableView *)collectTableView{
     if (!_collectTableView) {
@@ -188,7 +191,13 @@ static NSString *const cellID = @"CollectTableViewCell";
 //    [self.collectTableView reloadData];
 //    
 //}
+#pragma mark
+#pragma mark --requestData
+- (void)requestData{
+    
+}
 
+#pragma mark
 #pragma mark --MJRefresh
 - (void)refreshData:(MJRefreshNormalHeader *)header{
     
@@ -198,6 +207,9 @@ static NSString *const cellID = @"CollectTableViewCell";
 - (void)refreshMoreData:(MJRefreshAutoNormalFooter *)footer{
     [footer endRefreshing];
 }
+
+
+#pragma mark --Cache
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

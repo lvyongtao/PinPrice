@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 #import <TencentOpenAPI/TencentApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "Reachability.h"
+#import "LVNetworkTool.h"
 
 @interface AppDelegate (Extension)
+
+
 
 /**
  *  用户是否登录
@@ -24,4 +28,7 @@
  *  支付的SDK
  */
 - (void)initPaymentManager;
+
+
+- (void)addObserverForNetwork;
 @end

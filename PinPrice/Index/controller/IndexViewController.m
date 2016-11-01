@@ -199,6 +199,9 @@ static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
     model4.price = @"69.00";
     [self.allGoods addObject:model4];
     
+    
+    [PinMethod addMjRefreshWithCollectView:self.allGoodColletionView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
+    
     [self.allGoodColletionView reloadData];
 }
 #pragma mark --lazyload
@@ -223,7 +226,6 @@ static NSString *const allheaderID = @"allGoodColletionViewCellheaderID";
 //        [_allGoodColletionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:allcellID];
          [_allGoodColletionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:allheaderID];
         [self.view addSubview:_allGoodColletionView];
-        [PinMethod addMjRefreshWithCollectView:_allGoodColletionView Target:self WithSelector:@selector(refreshData:) WithSelector:@selector(refreshMoreData:)];
     }
     return _allGoodColletionView;
 }

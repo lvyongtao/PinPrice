@@ -98,6 +98,8 @@
     collectionView.header = mjHeader;
     collectionView.footer = mjFooter;
     
+    [collectionView.header beginRefreshing];
+    
 }
 
 

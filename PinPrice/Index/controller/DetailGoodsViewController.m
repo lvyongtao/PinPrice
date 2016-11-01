@@ -87,7 +87,7 @@
     [context evaluateScript:alert];
     NSLog(@"加载完成");
 }
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error{
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     NSLog(@"加载失败原因%@",error);
 }
 

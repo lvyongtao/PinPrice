@@ -30,7 +30,8 @@
 @end
 static NSString *const cellID = @"ShoppingCartViewCell";
 @implementation ShoppingCartViewController
-
+#pragma mark
+#pragma mark --lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addTitleViewWithTitle:@"购物车"];
@@ -128,6 +129,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
 - (void)initToolView{
     [self.toolView setValueWithPrice:@"0.00"];
 }
+#pragma mark
 #pragma mark --lazyload
 - (ShopToolView *)toolView{
     if (!_toolView) {
@@ -174,7 +176,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
     return _numDic;
 }
 #pragma mark
-#pragma mark ——UITableViewDataSource
+#pragma mark --UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.shopBuys count];
 }
@@ -205,7 +207,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
 
     return cell;
 }
-#pragma mark ——UITableViewDelegate
+#pragma mark --UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return cellH;
 }
@@ -291,6 +293,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
 - (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除";
 }
+#pragma mark
 #pragma mark --ShopButtonClickDelegate
 - (void)shopButtonClickNumString:(NSString *)numString ButtonTag:(NSInteger)buttonTag{
     NSLog(@"buy count--->%@--->%zi",numString,buttonTag);
@@ -320,6 +323,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
     
     
 }
+#pragma mark
 #pragma mark --ShopToolViewBtnClickDelegate
 - (void)ShopToolViewBtnClickIndex:(ShopToolViewBtnType)index Selected:(BOOL)selected{
     switch (index) {
@@ -363,6 +367,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
     }
     [self present];
 }
+#pragma mark
 #pragma mark --初始化自定义转场动画
 - (void)initInteractiveTransition{
 //    _interactivePush = [XWInteractiveTransition interactiveTransitionWithTransitionType:XWInteractiveTransitionTypePresent GestureDirection:nil];
@@ -388,7 +393,7 @@ static NSString *const cellID = @"ShoppingCartViewCell";
     
     return _interactivePush;
 }
-
+#pragma mark
 #pragma mark --MJRefresh
 - (void)refreshData:(MJRefreshNormalHeader *)header{
     

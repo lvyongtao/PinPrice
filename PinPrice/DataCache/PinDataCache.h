@@ -7,6 +7,7 @@
 //
 
 #import "BaseModel.h"
+#import "CollectModel.h"
 
 @interface PinDataCache : BaseModel
 
@@ -17,20 +18,26 @@
  */
 @property (copy, nonatomic) NSString *database_path;
 @property (strong, nonatomic) FMDatabase *dataBase;
+
+
+
 /**
- *  创表
+ *  我的收藏创表
  *
  *  @param tableName 表名
  *
  *  @return  是否创建成功 Default NO
  */
-- (BOOL )creatTableWithTableName:(NSString *)tableName;
+- (BOOL )WhetherCollectionTableCreateSuccess;
+//插入
+- (BOOL )insertTableDataSucess;
+//查询
+- (NSArray *)selectTableDataSucess;
+//删除
+- (BOOL )deleteTableDataSucess;
 
 
-- (BOOL )insertTableDataWithTableName:(NSString *)tableName;
 
-- (BOOL )selectTableDataWithTableName:(NSString *)tableName;
 
-- (BOOL )deleteTableDataWithTableName:(NSString *)tableName;
 
 @end
