@@ -10,7 +10,6 @@
 #import <TencentOpenAPI/TencentApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 #import "Reachability.h"
-#import "LVNetworkTool.h"
 
 @interface AppDelegate (Extension)
 

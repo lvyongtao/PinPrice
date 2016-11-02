@@ -16,9 +16,8 @@ class LoginViewController: RootViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.green
-        
-      subString = UserInfo().GetUserPhone()
+     //   self.view.backgroundColor = UIColor.green
+        subString = UserInfo().GetUserPhone()
         print(subString)
         // Do any additional setup after loading the view.
     }

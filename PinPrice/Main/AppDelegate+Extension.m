@@ -94,30 +94,6 @@
 {
     
     NSString *tips;
-    NetworkStates currentStates = [LVNetworkTool getNetworkStates];
-    switch (currentStates) {
-        case NetworkStatesNone:
-            tips = @"当前无网络, 请检查您的网络状态";
-            break;
-        case NetworkStates2G:
-            tips = @"切换到了2G网络";
-            break;
-        case NetworkStates3G:
-            tips = @"切换到了3G网络";
-            break;
-        case NetworkStates4G:
-            tips = @"切换到了4G网络";
-            break;
-        case NetworkStatesWIFI:
-            tips = @"切换到了WI-FI网络";
-            break;
-        default:
-            break;
-    }
-    NSLog(@"tips = %@",tips);
-    NSSLog(@"tips = %@",tips);
-    
-    
     Reachability *curReach = [noti object];
     NetworkStatus status = [curReach currentReachabilityStatus];
     switch (status) {

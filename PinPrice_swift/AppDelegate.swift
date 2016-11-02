@@ -18,25 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var isUserid = true
         isUserid = false
-
         if isUserid {
-            self.window?.rootViewController?.present(TabBarViewController(), animated: true, completion:{
-                print("tabbar sucess")
-                }
-            )
-            
+            let tabBar = TabBarViewController()
+            self.window?.rootViewController! = tabBar
         }else{
-//            let nav = UINavigationController(.init(rootViewController: LoginViewController()),
-            self.window?.rootViewController?.present(LoginViewController(), animated: true, completion: {
-                print("login sucess")
-            })
-//            self.window?.rootViewController?.present(LoginViewController(coder: .init())!, animated: true, completion: {
-//                print("login sucess")
-//            })
+            let login = LoginViewController()
+            let navvvv = UINavigationController.init(rootViewController: login)
+            self.window?.rootViewController = navvvv
         }
         self.window?.makeKeyAndVisible()
-        
-        
         // Override point for customization after application launch.
         return true
     }

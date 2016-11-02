@@ -29,7 +29,7 @@
 		D80612E51DC8414200470F2C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D80612D71DC8414200470F2C /* AFURLSessionManager.m */; };
 		D80612E61DC8414200470F2C /* MD5_Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = D80612DA1DC8414200470F2C /* MD5_Encryption.m */; };
 		D80612E71DC8414200470F2C /* NetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D80612DC1DC8414200470F2C /* NetManager.m */; };
-		D80612EA1DC845EB00470F2C /* LVNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D80612E91DC845EB00470F2C /* LVNetworkTool.m */; };
+		D80612EC1DC8A3EF00470F2C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80612EB1DC8A3EF00470F2C /* LoginViewController.xib */; };
 		D814C1B41D6EBADE00C53F47 /* DetailGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D814C1B21D6EBADE00C53F47 /* DetailGoodsViewController.m */; };
 		D814C1BB1D6EC0DA00C53F47 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D814C1B81D6EC0DA00C53F47 /* NJKWebViewProgress.m */; };
 		D814C1BC1D6EC0DA00C53F47 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D814C1BA1D6EC0DA00C53F47 /* NJKWebViewProgressView.m */; };
@@ -326,8 +326,7 @@
 		D80612DA1DC8414200470F2C /* MD5_Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5_Encryption.m; sourceTree = "<group>"; };
 		D80612DB1DC8414200470F2C /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetManager.h; sourceTree = "<group>"; };
 		D80612DC1DC8414200470F2C /* NetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetManager.m; sourceTree = "<group>"; };
-		D80612E81DC845EB00470F2C /* LVNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVNetworkTool.h; sourceTree = "<group>"; };
-		D80612E91DC845EB00470F2C /* LVNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVNetworkTool.m; sourceTree = "<group>"; };
+		D80612EB1DC8A3EF00470F2C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D814C1B11D6EBADE00C53F47 /* DetailGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGoodsViewController.h; sourceTree = "<group>"; };
 		D814C1B21D6EBADE00C53F47 /* DetailGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGoodsViewController.m; sourceTree = "<group>"; };
 		D814C1B71D6EC0DA00C53F47 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
@@ -939,6 +938,7 @@
 			isa = PBXGroup;
 			children = (
 				D836DEBC1DBDE3EB00B10E65 /* LoginViewController.swift */,
+				D80612EB1DC8A3EF00470F2C /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -946,8 +946,8 @@
 		D836DEB71DBDE39300B10E65 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D836DEA61DBDE17600B10E65 /* AppDelegate.swift */,
 				D836DEA81DBDE17600B10E65 /* ViewController.swift */,
+				D836DEA61DBDE17600B10E65 /* AppDelegate.swift */,
 				D836DEB81DBDE3C200B10E65 /* TabBarViewController.swift */,
 				D836DEBA1DBDE3DC00B10E65 /* RootViewController.swift */,
 			);
@@ -1042,8 +1042,6 @@
 		D8592F0D1D716A8800BF6680 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				D80612E81DC845EB00470F2C /* LVNetworkTool.h */,
-				D80612E91DC845EB00470F2C /* LVNetworkTool.m */,
 				D8592F141D716ABA00BF6680 /* Reachability_NetConnect.h */,
 				D8592F151D716ABA00BF6680 /* Reachability_NetConnect.m */,
 				D8592F101D716A8800BF6680 /* Reachability.h */,
@@ -2152,9 +2150,9 @@
 			projectRoot = "";
 			targets = (
 				D8A5EC5F1D585004004551FB /* PinPrice */,
+				D836DEA31DBDE17600B10E65 /* PinPrice_swift */,
 				D8A5EC7B1D585005004551FB /* PinPriceTests */,
 				D8A5EC861D585005004551FB /* PinPriceUITests */,
-				D836DEA31DBDE17600B10E65 /* PinPrice_swift */,
 			);
 		};
 /* End PBXProject section */
@@ -2164,6 +2162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80612EC1DC8A3EF00470F2C /* LoginViewController.xib in Resources */,
 				D836DEB11DBDE17600B10E65 /* LaunchScreen.storyboard in Resources */,
 				D836DEAE1DBDE17600B10E65 /* Assets.xcassets in Resources */,
 				D836DEAC1DBDE17600B10E65 /* Main.storyboard in Resources */,
@@ -2297,7 +2296,6 @@
 				D8E70E5E1D5B059D0008801D /* MASViewConstraint.m in Sources */,
 				D8E70E851D5B059D0008801D /* UIImage+WebP.m in Sources */,
 				D8E017BE1D64259C00DC4A40 /* CollectViewController.m in Sources */,
-				D80612EA1DC845EB00470F2C /* LVNetworkTool.m in Sources */,
 				D81FF77F1D7D50E500EAC5CE /* FMDatabase.m in Sources */,
 				D8C8FDF91D655A6400C84CBC /* BaseModel.m in Sources */,
 				D8E70E6F1D5B059D0008801D /* MJRefreshBackStateFooter.m in Sources */,
@@ -2510,7 +2508,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = 39VP6NWEHS;
 				INFOPLIST_FILE = PinPrice_swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lvyongtao.com.PinPrice-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2530,7 +2528,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEVELOPMENT_TEAM = 39VP6NWEHS;
 				INFOPLIST_FILE = PinPrice_swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lvyongtao.com.PinPrice-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
