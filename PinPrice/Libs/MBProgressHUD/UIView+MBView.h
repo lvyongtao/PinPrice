@@ -18,26 +18,29 @@
  */
 + (void)MBAlertViewShowWith:(UIView *)superMBView;
 /**
- *  显示提示框
+ *  显示提示框——文字提醒
  *
  *  @param message     文字提醒
  *  @param superMBView
  */
 + (void)MBAlertViewWithMsg:(NSString *)message With:(UIView *)superMBView;
 /**
- *  显示提示框
+ *  显示提示框——自定义视图
  *
  *  @param message     自定义视图
  *  @param superMBView
  */
 + (void)MBAlertCustomViewWithMsg:(NSString *)message With:(UIView *)superMBView;
 /**
- *  显示提示框
+ *  显示提示框——自定义样式
  *
  *  @param message     自定义样式
  *  @param superMBView
  */
 + (void)MBAlertCustomStyleWithMsg:(NSString *)message With:(UIView *)superMBView;
+
+
+
 /**
  *  隐藏提示框
  *

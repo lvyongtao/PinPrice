@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        var isUserid = true
-        isUserid = false
+        let isUserid = true
+//        isUserid = false
         if isUserid {
             let tabBar = TabBarViewController()
             self.window?.rootViewController! = tabBar

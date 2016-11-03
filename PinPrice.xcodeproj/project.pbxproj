@@ -254,6 +254,14 @@
 		D8E70E881D5B059D0008801D /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E70E4F1D5B059D0008801D /* UIView+WebCacheOperation.m */; };
 		D8E70E8A1D5B059D0008801D /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E70E551D5B059D0008801D /* NSObject+YYModel.m */; };
 		D8E70E8B1D5B059D0008801D /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E70E571D5B059D0008801D /* YYClassInfo.m */; };
+		D8F0B6EE1DC991E900502BB7 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0B6EC1DC991E900502BB7 /* IndexViewController.swift */; };
+		D8F0B6EF1DC991E900502BB7 /* IndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F0B6ED1DC991E900502BB7 /* IndexViewController.xib */; };
+		D8F0B6F21DC991FC00502BB7 /* AssertmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0B6F01DC991FC00502BB7 /* AssertmentViewController.swift */; };
+		D8F0B6F31DC991FC00502BB7 /* AssertmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F0B6F11DC991FC00502BB7 /* AssertmentViewController.xib */; };
+		D8F0B6F61DC9921000502BB7 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0B6F41DC9921000502BB7 /* ShoppingCartViewController.swift */; };
+		D8F0B6F71DC9921000502BB7 /* ShoppingCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F0B6F51DC9921000502BB7 /* ShoppingCartViewController.xib */; };
+		D8F0B6FA1DC9921B00502BB7 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F0B6F81DC9921B00502BB7 /* MineViewController.swift */; };
+		D8F0B6FB1DC9921B00502BB7 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F0B6F91DC9921B00502BB7 /* MineViewController.xib */; };
 		D8F4BF751D7FAF13007FCEFD /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F4BF741D7FAF13007FCEFD /* UIColor+Hex.m */; };
 		D8F601761D77CE6000220FE2 /* GoodsTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F601751D77CE6000220FE2 /* GoodsTypeViewController.m */; };
 		D8F601791D77D2AF00220FE2 /* PaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F601781D77D2AF00220FE2 /* PaymentView.m */; };
@@ -370,9 +378,9 @@
 		D836DEA61DBDE17600B10E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		D836DEA81DBDE17600B10E65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		D836DEAB1DBDE17600B10E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D836DEAD1DBDE17600B10E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D836DEAD1DBDE17600B10E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		D836DEB01DBDE17600B10E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D836DEB21DBDE17600B10E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D836DEB21DBDE17600B10E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		D836DEB81DBDE3C200B10E65 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D836DEBA1DBDE3DC00B10E65 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D836DEBC1DBDE3EB00B10E65 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -718,6 +726,14 @@
 		D8E70E551D5B059D0008801D /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		D8E70E561D5B059D0008801D /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		D8E70E571D5B059D0008801D /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		D8F0B6EC1DC991E900502BB7 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		D8F0B6ED1DC991E900502BB7 /* IndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexViewController.xib; sourceTree = "<group>"; };
+		D8F0B6F01DC991FC00502BB7 /* AssertmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssertmentViewController.swift; sourceTree = "<group>"; };
+		D8F0B6F11DC991FC00502BB7 /* AssertmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssertmentViewController.xib; sourceTree = "<group>"; };
+		D8F0B6F41DC9921000502BB7 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		D8F0B6F51DC9921000502BB7 /* ShoppingCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartViewController.xib; sourceTree = "<group>"; };
+		D8F0B6F81DC9921B00502BB7 /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		D8F0B6F91DC9921B00502BB7 /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
 		D8F4BF731D7FAF13007FCEFD /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "UIViewExtension/UIColor+Hex.h"; sourceTree = "<group>"; };
 		D8F4BF741D7FAF13007FCEFD /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "UIViewExtension/UIColor+Hex.m"; sourceTree = "<group>"; };
 		D8F601741D77CE6000220FE2 /* GoodsTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsTypeViewController.h; sourceTree = "<group>"; };
@@ -923,13 +939,10 @@
 		D836DEA51DBDE17600B10E65 /* PinPrice_swift */ = {
 			isa = PBXGroup;
 			children = (
+				D8F0B6E71DC9917000502BB7 /* Class */,
 				D836DEBE1DBDE8CD00B10E65 /* Config */,
 				D836DEB71DBDE39300B10E65 /* Main */,
 				D836DEB61DBDE36D00B10E65 /* Login */,
-				D836DEAA1DBDE17600B10E65 /* Main.storyboard */,
-				D836DEAD1DBDE17600B10E65 /* Assets.xcassets */,
-				D836DEAF1DBDE17600B10E65 /* LaunchScreen.storyboard */,
-				D836DEB21DBDE17600B10E65 /* Info.plist */,
 			);
 			path = PinPrice_swift;
 			sourceTree = "<group>";
@@ -950,6 +963,10 @@
 				D836DEA61DBDE17600B10E65 /* AppDelegate.swift */,
 				D836DEB81DBDE3C200B10E65 /* TabBarViewController.swift */,
 				D836DEBA1DBDE3DC00B10E65 /* RootViewController.swift */,
+				D836DEAA1DBDE17600B10E65 /* Main.storyboard */,
+				D836DEAD1DBDE17600B10E65 /* Assets.xcassets */,
+				D836DEAF1DBDE17600B10E65 /* LaunchScreen.storyboard */,
+				D836DEB21DBDE17600B10E65 /* Info.plist */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2033,6 +2050,53 @@
 			path = YYModel;
 			sourceTree = "<group>";
 		};
+		D8F0B6E71DC9917000502BB7 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				D8F0B6E91DC991C200502BB7 /* Index */,
+				D8F0B6E81DC991C200502BB7 /* Assortment */,
+				D8F0B6EB1DC991C200502BB7 /* ShoppingCart */,
+				D8F0B6EA1DC991C200502BB7 /* Mine */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		D8F0B6E81DC991C200502BB7 /* Assortment */ = {
+			isa = PBXGroup;
+			children = (
+				D8F0B6F01DC991FC00502BB7 /* AssertmentViewController.swift */,
+				D8F0B6F11DC991FC00502BB7 /* AssertmentViewController.xib */,
+			);
+			path = Assortment;
+			sourceTree = "<group>";
+		};
+		D8F0B6E91DC991C200502BB7 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				D8F0B6EC1DC991E900502BB7 /* IndexViewController.swift */,
+				D8F0B6ED1DC991E900502BB7 /* IndexViewController.xib */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
+		D8F0B6EA1DC991C200502BB7 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				D8F0B6F81DC9921B00502BB7 /* MineViewController.swift */,
+				D8F0B6F91DC9921B00502BB7 /* MineViewController.xib */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		D8F0B6EB1DC991C200502BB7 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				D8F0B6F41DC9921000502BB7 /* ShoppingCartViewController.swift */,
+				D8F0B6F51DC9921000502BB7 /* ShoppingCartViewController.xib */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2162,10 +2226,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F0B6F31DC991FC00502BB7 /* AssertmentViewController.xib in Resources */,
+				D8F0B6EF1DC991E900502BB7 /* IndexViewController.xib in Resources */,
+				D8F0B6F71DC9921000502BB7 /* ShoppingCartViewController.xib in Resources */,
 				D80612EC1DC8A3EF00470F2C /* LoginViewController.xib in Resources */,
 				D836DEB11DBDE17600B10E65 /* LaunchScreen.storyboard in Resources */,
 				D836DEAE1DBDE17600B10E65 /* Assets.xcassets in Resources */,
 				D836DEAC1DBDE17600B10E65 /* Main.storyboard in Resources */,
+				D8F0B6FB1DC9921B00502BB7 /* MineViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2256,10 +2324,14 @@
 			files = (
 				D836DEA91DBDE17600B10E65 /* ViewController.swift in Sources */,
 				D836DEB91DBDE3C200B10E65 /* TabBarViewController.swift in Sources */,
+				D8F0B6F61DC9921000502BB7 /* ShoppingCartViewController.swift in Sources */,
 				D836DEBB1DBDE3DC00B10E65 /* RootViewController.swift in Sources */,
 				D836DEBD1DBDE3EB00B10E65 /* LoginViewController.swift in Sources */,
 				D836DEC01DBDE8DE00B10E65 /* UserInfo.swift in Sources */,
+				D8F0B6EE1DC991E900502BB7 /* IndexViewController.swift in Sources */,
+				D8F0B6F21DC991FC00502BB7 /* AssertmentViewController.swift in Sources */,
 				D836DEA71DBDE17600B10E65 /* AppDelegate.swift in Sources */,
+				D8F0B6FA1DC9921B00502BB7 /* MineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2470,6 +2542,7 @@
 				D836DEAB1DBDE17600B10E65 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D836DEAF1DBDE17600B10E65 /* LaunchScreen.storyboard */ = {
@@ -2478,6 +2551,7 @@
 				D836DEB01DBDE17600B10E65 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D8A5EC6C1D585004004551FB /* Main.storyboard */ = {

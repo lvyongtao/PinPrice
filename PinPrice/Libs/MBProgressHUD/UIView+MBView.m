@@ -24,6 +24,7 @@
     mbHub.mode = MBProgressHUDModeText;
     mbHub.labelFont = [UIFont systemFontOfSize:14];
     mbHub.color = RGBCOLOR(10, 10, 10);
+    mbHub.animationType = MBProgressHUDAnimationZoom;//MBProgressHUDAnimationZoom MBProgressHUDAnimationZoomIn MBProgressHUDAnimationFade
     mbHub.labelColor = [UIColor whiteColor];
     mbHub.labelText = message;
     [mbHub setMinSize:CGSizeZero];
@@ -51,8 +52,15 @@
     mbHub.labelText = message;
     mbHub.square = YES;
     mbHub.mode = MBProgressHUDModeCustomView;
-    mbHub.color = [UIColor colorWithRed:0.906 green:0.627 blue:0.638 alpha:1.000];
+    mbHub.color = [UIColor blackColor];
     mbHub.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark"]];
+    mbHub.animationType = MBProgressHUDAnimationZoom;
+//    MBBarProgressView  *mbBar = [[MBBarProgressView alloc] init];
+//    mbBar.progress = 0.8;
+//    mbBar.lineColor = [UIColor grayColor];
+//    mbBar.progressRemainingColor = [UIColor greenColor];
+//    mbBar.progressRemainingColor = [UIColor redColor];
+//    mbHub.customView = mbBar;
     [mbHub show:YES];
 }
 
